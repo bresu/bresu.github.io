@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+
+<html lang="de-de" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Scraping Austria - Eine Sisyphus-Aufgabe - Bresu Blog</title>
+
+<meta name="description" content="Vom Versuch, die Websites aller österr. Gemeinden zu finden">
+
+
+
+<link rel="icon" type="image/x-icon" href="https://bresu.github.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://bresu.github.io/favicon.png">
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="https://bresu.github.io/css/style.min.fd95df255d735d1bbbe9d010ac1dbb4c1867757afcdf7106e6de20cb79789590.css" integrity="sha256-/ZXfJV1zXRu76dAQrB27TBhndXr833EG5t4gy3l4lZA=">
+    
+
+
+
+
+
+
+<meta property="og:title" content="Scraping Austria - Eine Sisyphus-Aufgabe" />
+<meta property="og:description" content="Vom Versuch, die Websites aller österr. Gemeinden zu finden" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bresu.github.io/de/posts/scraping_austria/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scraping Austria - Eine Sisyphus-Aufgabe"/>
+<meta name="twitter:description" content="Vom Versuch, die Websites aller österr. Gemeinden zu finden"/>
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Zum hauptinhalt springen</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <h1 class="site-title">
+        <a href="/de">Bresu Blog</a>
+    </h1>
+    <ul class="social-icons">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/bresu" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="https://twitter.com/LeanderDerHero" title="Twitter" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+</div>
+
+    <nav>
+        
+        
+        <a class="" href="https://bresu.github.io/de/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://bresu.github.io/de/impressum.html" title="About">About</a>
+        
+    </nav>
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Scraping Austria - Eine Sisyphus-Aufgabe</h1>
+
+                
+    
+    <span>
+        <ul class="post-translations">
+            
+                
+                    <li>
+                        <a href="https://bresu.github.io/posts/scraping_austria/">EN</a>
+                    </li>
+                
+            
+                
+                    <li>
+                        DE
+                    </li>
+                
+            
+        </ul>
+    </span>
+
+            </header>
+        </div>
+        <div class="content e-content">
+            <p><img src="media/headerImage.png" alt="Hallstatt-Foto" title="Hallstatt">
+Servus! Die Inspiration für dieses Projek kommt von diesem Youtube-Video<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Darin zeigt ein sehr
+sympathischer Typ, wie er mit ein wenig Aufwand tausende E-Mails an zig Botschaften in der ganzen
+Welt verschickt. In der Mail fragt er die Botschaft nach der Flagge des Landes.
+Das Video hat mir dann so gut gefallen, dass ich mich dazu entschlossen habe, auch sowas zu machen.</p>
+<p>Botschaften scrapen und anschreiben konnte ich ja defintiv nicht mehr bringen, also dachte ich kurz
+nach, was man noch so alles scrapen könnte (was im besten Fall noch gar nicht gescraped wurde).</p>
+<p>Dann kam mir die Idee:</p>
+<h1 id="alle-websiten-aller-österreichischen-gemeinden--deren-e-mail">Alle Websiten aller österreichischen Gemeinden + deren E-Mail!
+<span><a href="#alle-websiten-aller-%c3%b6sterreichischen-gemeinden--deren-e-mail">#</a></span>
+</h1><p>Mit diesem Ziel im Visier begann ich damit, einen Plan auszudenken. Der lautete dann ca. so:</p>
+<ol>
+<li>Liste aller Gemeinden finden</li>
+<li>Mögliche Domains anhand des Gemeinde-Namens generieren</li>
+<li>Schauen welche Domains existieren</li>
+<li>Verbleibende Domains auf Authentizität prüfen (Keine Domain-Registrierungen und schon gar keine
+Business-Sites!)</li>
+</ol>
+<p><em>Let&rsquo;s go!</em></p>
+<h1 id="die-suche-nach-der-liste---statistik-austria-returns">Die Suche nach der Liste - Statistik Austria Returns
+<span><a href="#die-suche-nach-der-liste---statistik-austria-returns">#</a></span>
+</h1><p>Anfangs dachte ich, eine aktuelle Liste aller österreichischen Gemeinden wäre möglicherweise schwer
+aufzufinden - aber im Gegenteil! Statistik Austria hat halt wirklich ALLES (Man muss nur lange und
+gründlich suchen!). So bin ich dann auf diese Tabellen<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> gestoßen, die jede Gemeinde und deren
+zugehörige Postleitzahl(PLZ) und <strong>Gemeindekennziffer(GKZ)</strong> beinhaltet.</p>
+<p>🧐 <em>Was zum F*ck ist eine Gemeindekennziffer?</em></p>
+<p><img src="media/confusedDoggo.webp" alt="Confused Dog"></p>
+<p>Gut das du fragst! Es handelt sich dabei um eine eindeutige Nummer, die jeder Gemeinde zugeordnet wird, sehr ähnlich wie eine PLZ - aber eben keine PLZ. Die GKZ besteht aus 5 Ziffern, die PLZ bekanntlich nur aus 4. PLZs sind alt und nicht sehr schön, man kann aus ihnen nicht eindeutig ablesen, in welchem Bundesland die Gemeinde liegt.</p>
+<p>Ein Beispiel:</p>
+<ul>
+<li>2384 ist die PLZ von Breitenfurt, Niederösterreich</li>
+<li>3012 ist die PLZ für Wolfsgraben, auch Niederösterreich, nur 4km von Breitenfurt entfernt</li>
+</ul>
+<p>Solche Überschneidungen kommen auch noch mit Süd-Tirol und Kärnten, sowie Vorarlberg und dem anderen Teil von Tirol vor.</p>
+<p>Man sieht: PLZs sind hässlich, vor allem sind sie nicht gut, um Verwaltungsgrenzen (wie es die Bundesländer sind) für eine Gemeinde zu definieren. Deswegen hat sich irgendwer die GKZ ausgedacht!</p>
+<h1 id="gkz-love-">GKZ love ❤️
+<span><a href="#gkz-love-">#</a></span>
+</h1><p>Die 5 Zahlen der GKZ funktionieren wie folgt:</p>
+<pre tabindex="0"><code>1. Stelle: Bundesland (Alphabetisch)
+2 + 3. Stelle: Bezirk (Alphabetisch)
+4 + 5. Stelle: Gemeinde-Code
+</code></pre><p>Zur Veranschaulichung, my hometown<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> <em>Bisamberg</em> mit der GKZ</p>
+<p><strong>3 12 01</strong></p>
+<ul>
+<li>3: Niederösterreich</li>
+<li>12: Bezirk Korneuburg</li>
+<li>01: Bisamberg</li>
+</ul>
+<p>Die PLZ kann einpacken gehen, GKZ ist der neue heiße Scheiß!</p>
+<h1 id="kombinatorik--permutation">Kombinatorik &amp; Permutation
+<span><a href="#kombinatorik--permutation">#</a></span>
+</h1><p>Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor allem wenn man pro Gemeinde mehrere Domains checken muss. Das schaut dann ungefähr so aus:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bisamberg&#34;</span><span style="color:#f92672">.</span>lower()
+
+    list_possible_domains <span style="color:#f92672">=</span> [
+    
+    <span style="color:#75715e"># Official Gov-Domain</span>
+    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.gv.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name)
+    
+    <span style="color:#75715e"># Nicht jeder machts anscheinend offiziell</span>
+    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name)
+    
+    <span style="color:#75715e"># Super Patrioten haben noch(!) eine Domain-Ending [.tirol, .bgld und .ooe]</span>
+    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.tirol.gv.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name)
+
+    <span style="color:#75715e"># und so weiter</span>
+    ]
+</code></pre></div><p>Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format <code>&quot;x an der y&quot;</code>, <code>&quot;x bei y&quot;</code> oder <code>&quot;St. x&quot;</code> wirds schwieriger. Veraunschaulicht habe ich es am Beispiel <em>Krems an der Donau</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unschoener_gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Krems an der Donau&#34;</span><span style="color:#f92672">.</span>lower()
+splitted_gemeinde_name <span style="color:#f92672">=</span> unschoener_gemeinde_name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>) 
+<span style="color:#75715e"># [&#39;krems&#39;,&#39;an&#39;,&#39;der&#39;,&#39;donau&#39;] </span>
+
+<span style="color:#75715e"># Dann hab ich ein paar richtig unschöne Funktionen geschrieben um diese Lkiste zu permutieren</span>
+<span style="color:#75715e"># Die Details erspare ich euch, aber das Ergebniss schaut dann ca. so aus:</span>
+
+list_possible_domains <span style="color:#f92672">=</span> [
+
+    <span style="color:#e6db74">&#34;http://www.krems.gv.at&#34;</span>
+    <span style="color:#e6db74">&#34;http://www.krems-an-der-donau.gv.at&#34;</span>
+    <span style="color:#e6db74">&#34;http://www.krems-donau.gv.at&#34;</span>
+    <span style="color:#e6db74">&#34;http://www.krems.at&#34;</span>
+    <span style="color:#e6db74">&#34;http://www.krems-an-der-donau.at&#34;</span>
+    <span style="color:#e6db74">&#34;http://www.krems-donau.at&#34;</span>
+    <span style="color:#75715e"># und so weiter...</span>
+]
+</code></pre></div><h1 id="bist-du-da">Bist du da?!
+<span><a href="#bist-du-da">#</a></span>
+</h1><p>Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen druchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+
+<span style="color:#66d9ef">for</span> domain <span style="color:#f92672">in</span> list_possible_domains:
+    <span style="color:#66d9ef">try</span>:
+        rsp <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(domain)
+        <span style="color:#66d9ef">if</span> rsp<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+            <span style="color:#75715e"># domain abspeichern</span>
+    execept:
+        <span style="color:#66d9ef">continue</span>
+</code></pre></div><h1 id="false-positives">False positives
+<span><a href="#false-positives">#</a></span>
+</h1><p>Nachdem ich so ca. 10.000 Domains auf ihre Existenz überprüft hatte, wurde es ernster.
+Es gab nämlich Websiten, die zwar existent waren, jedoch dann einer Firma (Meistens im Bereich Tourismus ansäßig) gehörten, oder eben nur &ldquo;geparkt&rdquo; waren. Dann bin ich noch einmal alle existenten Sites durch gegangen und habe währenddessen nach Keywords wie &ldquo;Rathaus&rdquo; oder &ldquo;Gemeindeamt&rdquo; Ausschau gehalten. Aber auch nach all diesen Checks wird es mit ziemlicher Sicherheit noch immer falsche Einträge in dem Datensatz geben.</p>
+<blockquote>
+<p>Ohne E-Mail, ohne Liebe,
+ist das Leben wirklich trübe 📧  <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+</blockquote>
+<p>Als ich dann endlich eine vollständige Liste mit den richtigen Domains hatte, ging das Spiel von vorne los. Anstatt jedoch nach Keywords zu suchen, war ich jetzt auf der Jagd nach E-Mailadressen. Dazu musste ich meistens die &ldquo;Kontakt&rdquo;-oder &ldquo;Impressum&rdquo;-Seite finden. Dafür habe ich dann im Endeffekt Selenium[^5] verwendet, da viele Seiten nur mit Javascript-Rendering ihre E-Mail preisgeben.
+Dank Selenium war dieser ganze Prozess recht schnell gecodet, dafür musste aber auch mehr rechenpower fürs Rendern der Website her.</p>
+<p>Nachdem ich alle E-Mails gescraped hatte, schaute ich nochmal schnell über den Datensatz drüber (zB ob E-Mails doppelt vorgekommen sind weil Webmaster etc.) und musste noch ein bisschen mit Encodings rumschustern.
+Dann war ich endlich fertig!</p>
+<p>Ich habe durch dieses Projekt einiges über das Web-Scraping gelernt und es hat auch wirklich Spaß gemacht!</p>
+<p>Den Datensatz gibts als CSV, JSON und XLSX auf meinem <a href="https://github.com/bresu/oe_gemeinden">Github</a></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Super <a href="https://www.youtube.com/watch?v=Jbix9y8iV38">YT-Video</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Danke Statistik Austria für <a href="">das hier</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://www.youtube.com/watch?v=77gKSp8WoRg">🎵 My Hometown</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Erwin Koch&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+        
+
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2020-06-10</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://bresu.github.io/de/posts/scraping_austria/">https://bresu.github.io/de/posts/scraping_austria/</a>
+    <a href="https://bresu.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Bresu</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://bresu.github.io/de/tags/python">#python</a></li>
+                    
+                        <li><a href="https://bresu.github.io/de/tags/scraping">#scraping</a></li>
+                    
+                        <li><a href="https://bresu.github.io/de/tags/webcrawling">#webcrawling</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+        
+
+
+
+    
+
+    
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wasmachtdas" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+    
+
+    
+        
+
+
+
+
+<article class="post">
+<script
+    data-isso="https://comments.example.com/"
+    data-isso-id="thread-id"
+    data-isso-css="true"
+    data-isso-lang="de"
+    data-isso-reply-to-self="true"
+    data-isso-require-author="true"
+    data-isso-require-email="true"
+    data-isso-avatar="true"
+    data-isso-avatar-bg="#f0f0f0"
+    src="https://comments.example.com/js/embed.min.js">
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="https://posativ.org/isso/">Isso</a>.</noscript>
+<div>
+  <section id="isso-thread"></section>
+</div>
+</article>
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+        <ul class="language-select">
+    
+    
+    
+
+    
+        
+            <li><a href="https://bresu.github.io/posts/scraping_austria/">English</a></li>
+        
+    
+        
+            <li>Deutsch</li>
+        
+    
+</ul>
+
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Bresu, 2021<br>
+            Erstellt mit <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, Theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>  
+        </div> 
+
+        
+
+    
+
+
+
+    <button class="theme-switcher">
+        Dunkles theme
+    </button>
+
+    <script>
+    const STORAGE_KEY = 'user-color-scheme'
+    const defaultTheme = "light"
+
+    let currentTheme
+    let switchButton
+    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const autoChangeScheme = e => {
+        currentTheme = e.matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', currentTheme)
+        changeButtonText()
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        switchButton = document.querySelector('.theme-switcher')
+        currentTheme = detectCurrentScheme()
+        if (currentTheme == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        if (currentTheme == 'auto') {
+            autoChangeScheme(autoDefinedScheme);
+            autoDefinedScheme.addListener(autoChangeScheme);
+        }
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    })
+
+    function detectCurrentScheme() {
+        if (localStorage.getItem(STORAGE_KEY)) {
+            return localStorage.getItem(STORAGE_KEY)
+        } 
+        if (defaultTheme) {
+            return defaultTheme
+        } 
+        if (!window.matchMedia) {
+            return 'light'
+        } 
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+        return 'light'
+    }
+
+    function changeButtonText()
+    {   
+        switchButton.textContent = currentTheme == 'dark' ?  "Helles theme" : "Dunkles theme"
+    }
+
+    function switchTheme(e) {
+        if (currentTheme == 'dark') {
+            localStorage.setItem(STORAGE_KEY, 'light')
+            document.documentElement.setAttribute('data-theme', 'light')
+            currentTheme = 'light'
+        } else {
+            localStorage.setItem(STORAGE_KEY, 'dark')
+            document.documentElement.setAttribute('data-theme', 'dark')
+            currentTheme = 'dark'
+        }
+        changeButtonText()
+    }
+    </script>
+   
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://bresu.github.io/ class="p-name u-url url fn" rel="me">Bresu</a> 
+
+    
+
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

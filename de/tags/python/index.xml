@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Bresu Blog</title>
+    <link>https://bresu.github.io/de/tags/python/</link>
+    <description>Bresu Blog (python)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://bresu.github.io/de/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scraping Austria - Eine Sisyphus-Aufgabe</title>
+      <link>https://bresu.github.io/de/posts/scraping_austria/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bresu.github.io/de/posts/scraping_austria/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;media/headerImage.png&#34; alt=&#34;Hallstatt-Foto&#34; title=&#34;Hallstatt&#34;&gt;
+Servus! Die Inspiration für dieses Projek kommt von diesem Youtube-Video&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Darin zeigt ein sehr
+sympathischer Typ, wie er mit ein wenig Aufwand tausende E-Mails an zig Botschaften in der ganzen
+Welt verschickt. In der Mail fragt er die Botschaft nach der Flagge des Landes.
+Das Video hat mir dann so gut gefallen, dass ich mich dazu entschlossen habe, auch sowas zu machen.&lt;/p&gt;
+&lt;p&gt;Botschaften scrapen und anschreiben konnte ich ja defintiv nicht mehr bringen, also dachte ich kurz
+nach, was man noch so alles scrapen könnte (was im besten Fall noch gar nicht gescraped wurde).&lt;/p&gt;
+&lt;p&gt;Dann kam mir die Idee:&lt;/p&gt;
+&lt;h1 id=&#34;alle-websiten-aller-österreichischen-gemeinden--deren-e-mail&#34;&gt;Alle Websiten aller österreichischen Gemeinden + deren E-Mail!
+&lt;span&gt;&lt;a href=&#34;#alle-websiten-aller-%c3%b6sterreichischen-gemeinden--deren-e-mail&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Mit diesem Ziel im Visier begann ich damit, einen Plan auszudenken. Der lautete dann ca. so:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Liste aller Gemeinden finden&lt;/li&gt;
+&lt;li&gt;Mögliche Domains anhand des Gemeinde-Namens generieren&lt;/li&gt;
+&lt;li&gt;Schauen welche Domains existieren&lt;/li&gt;
+&lt;li&gt;Verbleibende Domains auf Authentizität prüfen (Keine Domain-Registrierungen und schon gar keine
+Business-Sites!)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Let&amp;rsquo;s go!&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;die-suche-nach-der-liste---statistik-austria-returns&#34;&gt;Die Suche nach der Liste - Statistik Austria Returns
+&lt;span&gt;&lt;a href=&#34;#die-suche-nach-der-liste---statistik-austria-returns&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Anfangs dachte ich, eine aktuelle Liste aller österreichischen Gemeinden wäre möglicherweise schwer
+aufzufinden - aber im Gegenteil! Statistik Austria hat halt wirklich ALLES (Man muss nur lange und
+gründlich suchen!). So bin ich dann auf diese Tabellen&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; gestoßen, die jede Gemeinde und deren
+zugehörige Postleitzahl(PLZ) und &lt;strong&gt;Gemeindekennziffer(GKZ)&lt;/strong&gt; beinhaltet.&lt;/p&gt;
+&lt;p&gt;🧐 &lt;em&gt;Was zum F*ck ist eine Gemeindekennziffer?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/confusedDoggo.webp&#34; alt=&#34;Confused Dog&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Gut das du fragst! Es handelt sich dabei um eine eindeutige Nummer, die jeder Gemeinde zugeordnet wird, sehr ähnlich wie eine PLZ - aber eben keine PLZ. Die GKZ besteht aus 5 Ziffern, die PLZ bekanntlich nur aus 4. PLZs sind alt und nicht sehr schön, man kann aus ihnen nicht eindeutig ablesen, in welchem Bundesland die Gemeinde liegt.&lt;/p&gt;
+&lt;p&gt;Ein Beispiel:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2384 ist die PLZ von Breitenfurt, Niederösterreich&lt;/li&gt;
+&lt;li&gt;3012 ist die PLZ für Wolfsgraben, auch Niederösterreich, nur 4km von Breitenfurt entfernt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solche Überschneidungen kommen auch noch mit Süd-Tirol und Kärnten, sowie Vorarlberg und dem anderen Teil von Tirol vor.&lt;/p&gt;
+&lt;p&gt;Man sieht: PLZs sind hässlich, vor allem sind sie nicht gut, um Verwaltungsgrenzen (wie es die Bundesländer sind) für eine Gemeinde zu definieren. Deswegen hat sich irgendwer die GKZ ausgedacht!&lt;/p&gt;
+&lt;h1 id=&#34;gkz-love-&#34;&gt;GKZ love ❤️
+&lt;span&gt;&lt;a href=&#34;#gkz-love-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Die 5 Zahlen der GKZ funktionieren wie folgt:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1. Stelle: Bundesland (Alphabetisch)
+2 + 3. Stelle: Bezirk (Alphabetisch)
+4 + 5. Stelle: Gemeinde-Code
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Zur Veranschaulichung, my hometown&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;Bisamberg&lt;/em&gt; mit der GKZ&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3 12 01&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3: Niederösterreich&lt;/li&gt;
+&lt;li&gt;12: Bezirk Korneuburg&lt;/li&gt;
+&lt;li&gt;01: Bisamberg&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Die PLZ kann einpacken gehen, GKZ ist der neue heiße Scheiß!&lt;/p&gt;
+&lt;h1 id=&#34;kombinatorik--permutation&#34;&gt;Kombinatorik &amp;amp; Permutation
+&lt;span&gt;&lt;a href=&#34;#kombinatorik--permutation&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor allem wenn man pro Gemeinde mehrere Domains checken muss. Das schaut dann ungefähr so aus:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Bisamberg&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
+
+    list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+    
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Official Gov-Domain&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.gv.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
+    
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Nicht jeder machts anscheinend offiziell&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
+    
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Super Patrioten haben noch(!) eine Domain-Ending [.tirol, .bgld und .ooe]&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.tirol.gv.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter&lt;/span&gt;
+    ]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format &lt;code&gt;&amp;quot;x an der y&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;x bei y&amp;quot;&lt;/code&gt; oder &lt;code&gt;&amp;quot;St. x&amp;quot;&lt;/code&gt; wirds schwieriger. Veraunschaulicht habe ich es am Beispiel &lt;em&gt;Krems an der Donau&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;unschoener_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Krems an der Donau&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
+splitted_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; unschoener_gemeinde_name&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;) 
+&lt;span style=&#34;color:#75715e&#34;&gt;# [&amp;#39;krems&amp;#39;,&amp;#39;an&amp;#39;,&amp;#39;der&amp;#39;,&amp;#39;donau&amp;#39;] &lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Dann hab ich ein paar richtig unschöne Funktionen geschrieben um diese Lkiste zu permutieren&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Die Details erspare ich euch, aber das Ergebniss schaut dann ca. so aus:&lt;/span&gt;
+
+list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems.gv.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-an-der-donau.gv.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-donau.gv.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-an-der-donau.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-donau.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter...&lt;/span&gt;
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;bist-du-da&#34;&gt;Bist du da?!
+&lt;span&gt;&lt;a href=&#34;#bist-du-da&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen druchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; domain &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; list_possible_domains:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+        rsp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(domain)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; rsp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;status_code &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;:
+            &lt;span style=&#34;color:#75715e&#34;&gt;# domain abspeichern&lt;/span&gt;
+    execept:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;false-positives&#34;&gt;False positives
+&lt;span&gt;&lt;a href=&#34;#false-positives&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Nachdem ich so ca. 10.000 Domains auf ihre Existenz überprüft hatte, wurde es ernster.
+Es gab nämlich Websiten, die zwar existent waren, jedoch dann einer Firma (Meistens im Bereich Tourismus ansäßig) gehörten, oder eben nur &amp;ldquo;geparkt&amp;rdquo; waren. Dann bin ich noch einmal alle existenten Sites durch gegangen und habe währenddessen nach Keywords wie &amp;ldquo;Rathaus&amp;rdquo; oder &amp;ldquo;Gemeindeamt&amp;rdquo; Ausschau gehalten. Aber auch nach all diesen Checks wird es mit ziemlicher Sicherheit noch immer falsche Einträge in dem Datensatz geben.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ohne E-Mail, ohne Liebe,
+ist das Leben wirklich trübe 📧  &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Als ich dann endlich eine vollständige Liste mit den richtigen Domains hatte, ging das Spiel von vorne los. Anstatt jedoch nach Keywords zu suchen, war ich jetzt auf der Jagd nach E-Mailadressen. Dazu musste ich meistens die &amp;ldquo;Kontakt&amp;rdquo;-oder &amp;ldquo;Impressum&amp;rdquo;-Seite finden. Dafür habe ich dann im Endeffekt Selenium[^5] verwendet, da viele Seiten nur mit Javascript-Rendering ihre E-Mail preisgeben.
+Dank Selenium war dieser ganze Prozess recht schnell gecodet, dafür musste aber auch mehr rechenpower fürs Rendern der Website her.&lt;/p&gt;
+&lt;p&gt;Nachdem ich alle E-Mails gescraped hatte, schaute ich nochmal schnell über den Datensatz drüber (zB ob E-Mails doppelt vorgekommen sind weil Webmaster etc.) und musste noch ein bisschen mit Encodings rumschustern.
+Dann war ich endlich fertig!&lt;/p&gt;
+&lt;p&gt;Ich habe durch dieses Projekt einiges über das Web-Scraping gelernt und es hat auch wirklich Spaß gemacht!&lt;/p&gt;
+&lt;p&gt;Den Datensatz gibts als CSV, JSON und XLSX auf meinem &lt;a href=&#34;https://github.com/bresu/oe_gemeinden&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Super &lt;a href=&#34;https://www.youtube.com/watch?v=Jbix9y8iV38&#34;&gt;YT-Video&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Danke Statistik Austria für &lt;a href=&#34;&#34;&gt;das hier&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=77gKSp8WoRg&#34;&gt;🎵 My Hometown&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Erwin Koch&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
