@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+
+<html lang="de-de" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>scraping austria - a painful lesson in webscraping - Bresu Blog</title>
+
+<meta name="description" content="Servus! I got the inspiration for this project by a youtube video I watched. In the video, the guy scrapes some embassy websites and automatically sends an e-mail to every single embassy. It&rsquo;s a very entertaining video, you can watch the video here. Inspired by the &ldquo;simple&rdquo; approach, I thought: Well, embassies are taken, what else is there to scrape? And I wanted something more challenging than scraping 10 accumulating websites that have basically done my job already.">
+
+
+
+<link rel="icon" type="image/x-icon" href="https://bresu.github.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://bresu.github.io/favicon.png">
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="https://bresu.github.io/css/style.min.5e3b473cf092e9c5387a8abd70960f1543d001c8484bbfc09dd1bd897a55567c.css" integrity="sha256-XjtHPPCS6cU4eoq9cJYPFUPQAchIS7/AndG9iXpVVnw=">
+    
+
+
+
+
+
+
+<meta property="og:title" content="scraping austria - a painful lesson in webscraping" />
+<meta property="og:description" content="Servus! I got the inspiration for this project by a youtube video I watched. In the video, the guy scrapes some embassy websites and automatically sends an e-mail to every single embassy. It&rsquo;s a very entertaining video, you can watch the video here. Inspired by the &ldquo;simple&rdquo; approach, I thought: Well, embassies are taken, what else is there to scrape? And I wanted something more challenging than scraping 10 accumulating websites that have basically done my job already." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bresu.github.io/en/posts/scraping_austria/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="scraping austria - a painful lesson in webscraping"/>
+<meta name="twitter:description" content="Servus! I got the inspiration for this project by a youtube video I watched. In the video, the guy scrapes some embassy websites and automatically sends an e-mail to every single embassy. It&rsquo;s a very entertaining video, you can watch the video here. Inspired by the &ldquo;simple&rdquo; approach, I thought: Well, embassies are taken, what else is there to scrape? And I wanted something more challenging than scraping 10 accumulating websites that have basically done my job already."/>
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <h1 class="site-title">
+        <a href="/en">Bresu Blog</a>
+    </h1>
+    <ul class="social-icons">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/bresu" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="https://twitter.com/LeanderDerHero" title="Twitter" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+</div>
+
+    <nav>
+        
+        
+        <a class="" href="https://bresu.github.io/en/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://bresu.github.io/en/impressum.html" title="About">About</a>
+        
+    </nav>
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">scraping austria - a painful lesson in webscraping</h1>
+
+                
+    
+    <span>
+        <ul class="post-translations">
+            
+                
+                    <li>
+                        <a href="https://bresu.github.io/posts/scraping_austria/">DE</a>
+                    </li>
+                
+            
+                
+                    <li>
+                        EN
+                    </li>
+                
+            
+        </ul>
+    </span>
+
+            </header>
+        </div>
+        <div class="content e-content">
+            <p><img src="/pics/scraping_austria/headerImage.png" alt="Österreichische Stadt am See">
+Servus! I got the inspiration for this project by a youtube video I watched. In the video, the guy scrapes some embassy websites and automatically sends an e-mail to every single embassy. It&rsquo;s a very entertaining video, you can watch the <a href="https://www.youtube.com/watch?v=Jbix9y8iV38&amp;t=115s">video here</a>. Inspired by the &ldquo;simple&rdquo; approach, I thought: Well, embassies are taken, what else is there to scrape? And I wanted something more challenging than scraping 10 accumulating websites that have basically done my job already.
+So I came up with something original:</p>
+<h1 id="scraping-every-single-website-of-every-municipality-in-austria-">scraping every single website of every municipality in austria 🇦🇹
+<span><a href="#scraping-every-single-website-of-every-municipality-in-austria-">#</a></span>
+</h1><p>The task was determined, now all I needed was a well thought out plan:</p>
+<ol>
+<li>find a list of ALL municipalities</li>
+<li>combine each municipality&rsquo;s name with different domains</li>
+<li>find existing domains</li>
+<li>look for indicators that the current site is the correct one (and not just a registered, unused one or - even worse - a business site)</li>
+</ol>
+<p><em>Let&rsquo;s go!</em></p>
+<h1 id="finding-a-list---all-hail-statistik-austria">finding a list - all hail statistik austria
+<span><a href="#finding-a-list---all-hail-statistik-austria">#</a></span>
+</h1><p>Finding a complete and up-to-date list wasn&rsquo;t quite as hard as I thought it would be. Turns out that Statistik Austria has some pretty cool stuff on their website, like <a href="http://www.statistik.at/verzeichnis/reglisten/gemliste_knz.xls">this table</a> which contains every municipality, it&rsquo;s postal code (PLZ) and it&rsquo;s <strong>Gemeindekennziffer</strong> (GKZ).</p>
+<p><em>What the hell is a GKZ?</em></p>
+<p><img src="/pics/scraping_austria/confusedDoggo.webp" alt="Confused Dog"></p>
+<p>Glad you asked! It&rsquo;s a unique number assigned to each municipality, much like a postal code number, but still very much different. The GKZ has five digits, while the PLZ has only four. PLZs are an old system which has it&rsquo;s pros and cons, the biggest disadvantage being that PLZs don&rsquo;t have geographical meaningfulness:</p>
+<ul>
+<li>2384 is the PLZ for Breitenfurt, Lower Austria</li>
+<li>3012 is the PLZ for Wolfsgraben, Lower Austria (only 4km away from the former)</li>
+<li>Vorarlberg&rsquo;s PLZs all start with 6, which is also Tyrol&rsquo;s first number</li>
+<li>Except South Tyrol&rsquo;s PLZ: starts with 9, which is otherwise Carinthia&rsquo;s!<br>
+<br>
+One can see: This system is not good, especially if you want to retrieve geographical data from it.<br>
+That&rsquo;s why Statistik Austria came up with the GKZ</li>
+</ul>
+<h1 id="the-genius-way-of-gkz">the genius way of GKZ
+<span><a href="#the-genius-way-of-gkz">#</a></span>
+</h1><p>As mentioned above the GKZ consists of 5 numbers:
+The first representing the state with numbers 1 to 9.
+Second and third represent the political districts within the state.
+The last two digits represent the municipalities within that district.
+So Bisamberg for example has the GKZ: 3 12 01</p>
+<ul>
+<li>3: Lower Austria</li>
+<li>12: District of Korneuburg</li>
+<li>01: Bisamberg<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+<br><br>
+<em>Way better!</em></li>
+</ul>
+<h1 id="combinations-and-permutations-are-a-pain-in-the-ass">combinations and permutations are a pain in the ass
+<span><a href="#combinations-and-permutations-are-a-pain-in-the-ass">#</a></span>
+</h1><p>So Austria has roughly 2100 municipalities. That&rsquo;s a lot. Especially if you think about all possible combinations for domains.
+&lsquo;&lsquo;&lsquo;python
+gemeinde_name = &ldquo;Bisamberg&rdquo;.lower()</p>
+<pre><code>list_possible_domains = [
+
+    # If the website isn't in HTTPS, trying to access it via HTTPS will throw an error
+    &quot;http://www.{gemeinde_name}.gv.at&quot;.format(gemeinde_name)
+
+    # Not everybody uses .gv domains
+    &quot;http://www.{gemeinde_name}.at&quot;.format(gemeinde_name)
+
+    # Turns out: states have domains??? Mostly Tyrol (.tirol), Burgenland (.bgld) and Upper Austria (.ooe)
+    &quot;http://www.{gemeinde_name}.bgld.gv.at&quot;.format(gemeinde_name)
+
+]
+</code></pre>
+<p>'&rsquo;&rsquo;
+For one-worded municipalities this approach works fine but it won&rsquo;t work with such as &ldquo;Krems an der Donau&rdquo;. Another example are all municipalities with &ldquo;Sankt&rdquo;, like &ldquo;St. Georgen im Lavanttal&rdquo;. The work-around I came up with is a very simple one:</p>
+<pre><code>ugly_gemeinde_name_1 = &quot;Krems an der Donau&quot;.lower()
+
+split_gemeinde_name_1 = ugly_gemeinde_name_1.split(&quot; &quot;) // =&gt; ['krems','an','der','donau']
+
+# Then I wrote some very ugly functions that format different possible domain names - I will spare you the details.
+# In the end, the list of possible domains looked like this
+
+list_of_possible_domains = [
+
+    &quot;http://www.krems.at&quot;,
+    &quot;http://www.krems-an-der-donau.at&quot;,
+    &quot;http://www.krems-donau.at&quot;,
+    &quot;http://www.krems.gv.at&quot;,
+    &quot;http://www.krems-an-der-donau.gv.at&quot;,
+    &quot;http://www.krems-donau.gv.at&quot;
+
+# ... and more ]
+</code></pre>
+<h1 id="requests-and-false-positives">requests and false positives
+<span><a href="#requests-and-false-positives">#</a></span>
+</h1><p>So after generating all possibilities, I cycled through them and sent a GET request to each one. If the domain doesn&rsquo;t exist, python will throw an error and with a simple try except magic, you can easily catch those and verify existing sites.</p>
+<h1 id="are-you-4-real">are you 4 real?
+<span><a href="#are-you-4-real">#</a></span>
+</h1><p>So it turned out: just because the site exists doesn&rsquo;t mean that it&rsquo;s the right one. There are business or private sites that use one of the generated domains. I had to check for keywords like &ldquo;Rathaus&rdquo;, &ldquo;Gemeindeamt&rdquo; etc. And even with these checks, I am pretty sure that there are STILL wrong sites in my table - nobody&rsquo;s perfect!</p>
+<h1 id="you-got-mail">you got mail
+<span><a href="#you-got-mail">#</a></span>
+</h1><p>After hours of crawling &amp; scraping I finally had a table to work with for scraping the e-mail adresses. It&rsquo;s basically the same step as before when I checked for keywords, only that this time I was looking for words like &ldquo;Kontakt&rdquo; and &ldquo;Impressum&rdquo; and then had to parse only the adress without any unwanted text like the &ldquo;to:&rdquo; junk. For this step I had to use selenium because many of the sites use an excessive amount of javascript. So I had to render it. But I actually really enjoyed working with selenium - very powerful tool!</p>
+<p>Now all that was left to do was to look for errors (there were a LOT) and some general cleanup and encoding issues. I learned a lot while doing this and also had a lot of fun. You can find the data on my <a href="https://github.com/bresu/oe_gemeinden">github</a>.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>My <a href="https://www.youtube.com/watch?v=77gKSp8WoRg">hometown</a>!&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+        
+
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2020-06-10</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://bresu.github.io/en/posts/scraping_austria/">https://bresu.github.io/en/posts/scraping_austria/</a>
+    <a href="https://bresu.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Bresu</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+    </div>
+</div>
+
+    </article>
+
+    
+        
+    <div class="pagination post-pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/en/posts/2021-01-12-simsssss/">how to get a nearly anonymous sim-card (in austria)</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+
+    
+        
+
+
+
+
+<article class="post">
+<script
+    data-isso="https://comments.example.com/"
+    data-isso-id="thread-id"
+    data-isso-css="true"
+    data-isso-lang="de"
+    data-isso-reply-to-self="true"
+    data-isso-require-author="true"
+    data-isso-require-email="true"
+    data-isso-avatar="true"
+    data-isso-avatar-bg="#f0f0f0"
+    src="https://comments.example.com/js/embed.min.js">
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="https://posativ.org/isso/">Isso</a>.</noscript>
+<div>
+  <section id="isso-thread"></section>
+</div>
+</article>
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+        <ul class="language-select">
+    
+    
+    
+
+    
+        
+            <li><a href="https://bresu.github.io/posts/scraping_austria/">German</a></li>
+        
+    
+        
+            <li>English</li>
+        
+    
+</ul>
+
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Bresu, 2022<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>  
+        </div> 
+
+        
+
+    
+
+
+
+    <button class="theme-switcher">
+        Dark theme
+    </button>
+
+    <script>
+    const STORAGE_KEY = 'user-color-scheme'
+    const defaultTheme = "light"
+
+    let currentTheme
+    let switchButton
+    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const autoChangeScheme = e => {
+        currentTheme = e.matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', currentTheme)
+        changeButtonText()
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        switchButton = document.querySelector('.theme-switcher')
+        currentTheme = detectCurrentScheme()
+        if (currentTheme == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        if (currentTheme == 'auto') {
+            autoChangeScheme(autoDefinedScheme);
+            autoDefinedScheme.addListener(autoChangeScheme);
+        }
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    })
+
+    function detectCurrentScheme() {
+        if (localStorage.getItem(STORAGE_KEY)) {
+            return localStorage.getItem(STORAGE_KEY)
+        } 
+        if (defaultTheme) {
+            return defaultTheme
+        } 
+        if (!window.matchMedia) {
+            return 'light'
+        } 
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+        return 'light'
+    }
+
+    function changeButtonText()
+    {   
+        switchButton.textContent = currentTheme == 'dark' ?  "Light theme" : "Dark theme"
+    }
+
+    function switchTheme(e) {
+        if (currentTheme == 'dark') {
+            localStorage.setItem(STORAGE_KEY, 'light')
+            document.documentElement.setAttribute('data-theme', 'light')
+            currentTheme = 'light'
+        } else {
+            localStorage.setItem(STORAGE_KEY, 'dark')
+            document.documentElement.setAttribute('data-theme', 'dark')
+            currentTheme = 'dark'
+        }
+        changeButtonText()
+    }
+    </script>
+   
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://bresu.github.io/ class="p-name u-url url fn" rel="me">Bresu</a> 
+
+    
+
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>
