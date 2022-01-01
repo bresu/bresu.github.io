@@ -17,8 +17,8 @@
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://bresu.github.io/de/posts/scraping_austria/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;media/headerImage.png&#34; alt=&#34;Hallstatt-Foto&#34; title=&#34;Hallstatt&#34;&gt;
-Servus! Die Inspiration für dieses Projek kommt von diesem Youtube-Video&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Darin zeigt ein sehr
+      <description>&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/headerImage.png&#34; alt=&#34;Hallstatt-Foto&#34; title=&#34;Hallstatt&#34;&gt;
+Servus! Die Inspiration für dieses Projekt kommt von diesem Youtube-Video&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Darin zeigt ein sehr
 sympathischer Typ, wie er mit ein wenig Aufwand tausende E-Mails an zig Botschaften in der ganzen
 Welt verschickt. In der Mail fragt er die Botschaft nach der Flagge des Landes.
 Das Video hat mir dann so gut gefallen, dass ich mich dazu entschlossen habe, auch sowas zu machen.&lt;/p&gt;
@@ -43,7 +43,7 @@ aufzufinden - aber im Gegenteil! Statistik Austria hat halt wirklich ALLES (Man 
 gründlich suchen!). So bin ich dann auf diese Tabellen&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; gestoßen, die jede Gemeinde und deren
 zugehörige Postleitzahl(PLZ) und &lt;strong&gt;Gemeindekennziffer(GKZ)&lt;/strong&gt; beinhaltet.&lt;/p&gt;
 &lt;p&gt;🧐 &lt;em&gt;Was zum F*ck ist eine Gemeindekennziffer?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;media/confusedDoggo.webp&#34; alt=&#34;Confused Dog&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.webp&#34; alt=&#34;Confused Dog&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Gut das du fragst! Es handelt sich dabei um eine eindeutige Nummer, die jeder Gemeinde zugeordnet wird, sehr ähnlich wie eine PLZ - aber eben keine PLZ. Die GKZ besteht aus 5 Ziffern, die PLZ bekanntlich nur aus 4. PLZs sind alt und nicht sehr schön, man kann aus ihnen nicht eindeutig ablesen, in welchem Bundesland die Gemeinde liegt.&lt;/p&gt;
 &lt;p&gt;Ein Beispiel:&lt;/p&gt;
 &lt;ul&gt;

@@ -17,7 +17,7 @@
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://bresu.github.io/posts/scraping_austria/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;media/headerImage.png&#34; alt=&#34;Österreichische Stadt am See&#34; title=&#34;Title&#34;&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/headerImage.png&#34; alt=&#34;Österreichische Stadt am See&#34;&gt;
 Servus! I got the inspiration for this project by a youtube video I watched. In the video, the guy scrapes some embassy websites and automatically sends an e-mail to every single embassy. It&amp;rsquo;s a very entertaining video, you can watch the &lt;a href=&#34;https://www.youtube.com/watch?v=Jbix9y8iV38&amp;amp;t=115s&#34;&gt;video here&lt;/a&gt;. Inspired by the &amp;ldquo;simple&amp;rdquo; approach, I thought: Well, embassies are taken, what else is there to scrape? And I wanted something more challenging than scraping 10 accumulating websites that have basically done my job already.
 So I came up with something original:&lt;/p&gt;
 &lt;h1 id=&#34;scraping-every-single-website-of-every-municipality-in-austria-&#34;&gt;scraping every single website of every municipality in austria 🇦🇹
@@ -32,8 +32,9 @@ So I came up with something original:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Let&amp;rsquo;s go!&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;finding-a-list---all-hail-statistik-austria&#34;&gt;finding a list - all hail statistik austria
 &lt;span&gt;&lt;a href=&#34;#finding-a-list---all-hail-statistik-austria&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Finding a complete and up-to-date list wasn&amp;rsquo;t quite as hard as I thought it would be. Turns out that Statistik Austria has some pretty cool stuff on their website, like &lt;a href=&#34;http://www.statistik.at/verzeichnis/reglisten/gemliste_knz.xls&#34;&gt;this table&lt;/a&gt; which contains every municipality, it&amp;rsquo;s postal code (PLZ) and it&amp;rsquo;s Gemeindekennziffer (GKZ).&lt;/p&gt;
-&lt;p&gt;&lt;i&gt;What the hell is a GKZ?&lt;/i&gt;&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;Finding a complete and up-to-date list wasn&amp;rsquo;t quite as hard as I thought it would be. Turns out that Statistik Austria has some pretty cool stuff on their website, like &lt;a href=&#34;http://www.statistik.at/verzeichnis/reglisten/gemliste_knz.xls&#34;&gt;this table&lt;/a&gt; which contains every municipality, it&amp;rsquo;s postal code (PLZ) and it&amp;rsquo;s &lt;strong&gt;Gemeindekennziffer&lt;/strong&gt; (GKZ).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;What the hell is a GKZ?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.webp&#34; alt=&#34;Confused Dog&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Glad you asked! It&amp;rsquo;s a unique number assigned to each municipality, much like a postal code number, but still very much different. The GKZ has five digits, while the PLZ has only four. PLZs are an old system which has it&amp;rsquo;s pros and cons, the biggest disadvantage being that PLZs don&amp;rsquo;t have geographical meaningfulness:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;2384 is the PLZ for Breitenfurt, Lower Austria&lt;/li&gt;
