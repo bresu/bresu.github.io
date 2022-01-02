@@ -71,6 +71,16 @@
   </url><url>
     <loc>https://bresu.github.io/posts/webuntis/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://bresu.github.io/en/posts/webuntis/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://bresu.github.io/posts/webuntis/"
+                />
   </url><url>
     <loc>https://bresu.github.io/tags/sicherheit/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
