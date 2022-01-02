@@ -2,77 +2,99 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bresu.github.io/de/</loc>
+    <loc>https://bresu.github.io/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://bresu.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
                 href="https://bresu.github.io/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://bresu.github.io/de/"
-                />
   </url><url>
-    <loc>https://bresu.github.io/de/posts/</loc>
+    <loc>https://bresu.github.io/posts/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://bresu.github.io/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
                 href="https://bresu.github.io/posts/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://bresu.github.io/de/posts/"
-                />
   </url><url>
-    <loc>https://bresu.github.io/de/tags/python/</loc>
+    <loc>https://bresu.github.io/tags/python/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bresu.github.io/de/tags/scraping/</loc>
+    <loc>https://bresu.github.io/tags/scraping/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bresu.github.io/de/posts/scraping_austria/</loc>
+    <loc>https://bresu.github.io/posts/scraping_austria/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://bresu.github.io/en/posts/scraping_austria/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
                 href="https://bresu.github.io/posts/scraping_austria/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://bresu.github.io/de/posts/scraping_austria/"
-                />
   </url><url>
-    <loc>https://bresu.github.io/de/tags/</loc>
+    <loc>https://bresu.github.io/tags/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://bresu.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
                 href="https://bresu.github.io/tags/"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://bresu.github.io/de/tags/"
-                />
   </url><url>
-    <loc>https://bresu.github.io/de/tags/webcrawling/</loc>
+    <loc>https://bresu.github.io/tags/webcrawling/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bresu.github.io/de/categories/</loc>
+    <loc>https://bresu.github.io/tags/datenschutz/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/schulen/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/posts/webuntis/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://bresu.github.io/categories/"
+                href="https://bresu.github.io/en/posts/webuntis/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://bresu.github.io/de/categories/"
+                href="https://bresu.github.io/posts/webuntis/"
+                />
+  </url><url>
+    <loc>https://bresu.github.io/tags/sicherheit/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://bresu.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://bresu.github.io/categories/"
                 />
   </url>
 </urlset>

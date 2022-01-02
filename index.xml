@@ -12,106 +12,136 @@
     
     
     <item>
-      <title>scraping austria - a painful lesson in webscraping</title>
+      <title>Scraping Austria - Eine Sisyphus-Aufgabe</title>
       <link>https://bresu.github.io/posts/scraping_austria/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://bresu.github.io/posts/scraping_austria/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/headerImage.png&#34; alt=&#34;Österreichische Stadt am See&#34;&gt;
-Servus! I got the inspiration for this project by a youtube video I watched. In the video, the guy scrapes some embassy websites and automatically sends an e-mail to every single embassy. It&amp;rsquo;s a very entertaining video, you can watch the &lt;a href=&#34;https://www.youtube.com/watch?v=Jbix9y8iV38&amp;amp;t=115s&#34;&gt;video here&lt;/a&gt;. Inspired by the &amp;ldquo;simple&amp;rdquo; approach, I thought: Well, embassies are taken, what else is there to scrape? And I wanted something more challenging than scraping 10 accumulating websites that have basically done my job already.
-So I came up with something original:&lt;/p&gt;
-&lt;h1 id=&#34;scraping-every-single-website-of-every-municipality-in-austria-&#34;&gt;scraping every single website of every municipality in austria 🇦🇹
-&lt;span&gt;&lt;a href=&#34;#scraping-every-single-website-of-every-municipality-in-austria-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;The task was determined, now all I needed was a well thought out plan:&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/headerImage.png&#34; alt=&#34;Hallstatt-Foto&#34; title=&#34;Hallstatt&#34;&gt;
+Servus! Die Inspiration für dieses Projekt kommt von diesem Youtube-Video&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Darin zeigt ein sehr
+sympathischer Typ, wie er mit ein wenig Aufwand tausende E-Mails an zig Botschaften in der ganzen
+Welt verschickt. In der Mail fragt er die Botschaft nach der Flagge des Landes.
+Das Video hat mir dann so gut gefallen, dass ich mich dazu entschlossen habe, auch sowas zu machen.&lt;/p&gt;
+&lt;p&gt;Botschaften scrapen und anschreiben konnte ich ja definitiv nicht mehr bringen, also dachte ich kurz
+nach, was man noch so alles scrapen könnte (was im besten Fall noch gar nicht gescraped wurde).&lt;/p&gt;
+&lt;p&gt;Dann kam mir die Idee:&lt;/p&gt;
+&lt;h1 id=&#34;alle-websiten-aller-österreichischen-gemeinden--deren-e-mail&#34;&gt;Alle Websiten aller österreichischen Gemeinden + deren E-Mail!
+&lt;span&gt;&lt;a href=&#34;#alle-websiten-aller-%c3%b6sterreichischen-gemeinden--deren-e-mail&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Mit diesem Ziel im Visier begann ich damit, einen Plan auszudenken. Der lautete dann ca. so:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;find a list of ALL municipalities&lt;/li&gt;
-&lt;li&gt;combine each municipality&amp;rsquo;s name with different domains&lt;/li&gt;
-&lt;li&gt;find existing domains&lt;/li&gt;
-&lt;li&gt;look for indicators that the current site is the correct one (and not just a registered, unused one or - even worse - a business site)&lt;/li&gt;
+&lt;li&gt;Liste aller Gemeinden finden&lt;/li&gt;
+&lt;li&gt;Mögliche Domains anhand des Gemeinde-Namens generieren&lt;/li&gt;
+&lt;li&gt;Schauen welche Domains existieren&lt;/li&gt;
+&lt;li&gt;Verbleibende Domains auf Authentizität prüfen (Keine Domain-Registrierungen und schon gar keine
+Business-Sites!)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;Let&amp;rsquo;s go!&lt;/em&gt;&lt;/p&gt;
-&lt;h1 id=&#34;finding-a-list---all-hail-statistik-austria&#34;&gt;finding a list - all hail statistik austria
-&lt;span&gt;&lt;a href=&#34;#finding-a-list---all-hail-statistik-austria&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Finding a complete and up-to-date list wasn&amp;rsquo;t quite as hard as I thought it would be. Turns out that Statistik Austria has some pretty cool stuff on their website, like &lt;a href=&#34;http://www.statistik.at/verzeichnis/reglisten/gemliste_knz.xls&#34;&gt;this table&lt;/a&gt; which contains every municipality, it&amp;rsquo;s postal code (PLZ) and it&amp;rsquo;s &lt;strong&gt;Gemeindekennziffer&lt;/strong&gt; (GKZ).&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;What the hell is a GKZ?&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;die-suche-nach-der-liste---statistik-austria-returns&#34;&gt;Die Suche nach der Liste - Statistik Austria Returns
+&lt;span&gt;&lt;a href=&#34;#die-suche-nach-der-liste---statistik-austria-returns&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Anfangs dachte ich, eine aktuelle Liste aller österreichischen Gemeinden wäre möglicherweise schwer
+aufzufinden - aber im Gegenteil! Statistik Austria hat halt wirklich ALLES (Man muss nur lange und
+gründlich suchen!). So bin ich dann auf diese Tabellen&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; gestoßen, die jede Gemeinde und deren
+zugehörige Postleitzahl(PLZ) und &lt;strong&gt;Gemeindekennziffer(GKZ)&lt;/strong&gt; beinhaltet.&lt;/p&gt;
+&lt;p&gt;🧐 &lt;em&gt;Was zum F*ck ist eine Gemeindekennziffer?&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.webp&#34; alt=&#34;Confused Dog&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Glad you asked! It&amp;rsquo;s a unique number assigned to each municipality, much like a postal code number, but still very much different. The GKZ has five digits, while the PLZ has only four. PLZs are an old system which has it&amp;rsquo;s pros and cons, the biggest disadvantage being that PLZs don&amp;rsquo;t have geographical meaningfulness:&lt;/p&gt;
+&lt;p&gt;Gute Frage! Es handelt sich dabei um eine eindeutige Nummer, die jeder Gemeinde zugeordnet wird, sehr ähnlich wie eine PLZ - aber eben keine PLZ. Die GKZ besteht aus 5 Ziffern, die PLZ bekanntlich nur aus 4. PLZs sind alt und nicht sehr schön, man kann aus ihnen nicht eindeutig ablesen, in welchem Bundesland die Gemeinde liegt.&lt;/p&gt;
+&lt;p&gt;Ein Beispiel:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;2384 is the PLZ for Breitenfurt, Lower Austria&lt;/li&gt;
-&lt;li&gt;3012 is the PLZ for Wolfsgraben, Lower Austria (only 4km away from the former)&lt;/li&gt;
-&lt;li&gt;Vorarlberg&amp;rsquo;s PLZs all start with 6, which is also Tyrol&amp;rsquo;s first number&lt;/li&gt;
-&lt;li&gt;Except South Tyrol&amp;rsquo;s PLZ: starts with 9, which is otherwise Carinthia&amp;rsquo;s!&lt;br&gt;
-&lt;br&gt;
-One can see: This system is not good, especially if you want to retrieve geographical data from it.&lt;br&gt;
-That&amp;rsquo;s why Statistik Austria came up with the GKZ&lt;/li&gt;
+&lt;li&gt;2384 ist die PLZ von Breitenfurt, Niederösterreich&lt;/li&gt;
+&lt;li&gt;3012 ist die PLZ für Wolfsgraben, auch Niederösterreich, nur 4km von Breitenfurt entfernt&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;the-genius-way-of-gkz&#34;&gt;the genius way of GKZ
-&lt;span&gt;&lt;a href=&#34;#the-genius-way-of-gkz&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;As mentioned above the GKZ consists of 5 numbers:
-The first representing the state with numbers 1 to 9.
-Second and third represent the political districts within the state.
-The last two digits represent the municipalities within that district.
-So Bisamberg for example has the GKZ: 3 12 01&lt;/p&gt;
+&lt;p&gt;Solche Überschneidungen kommen auch noch mit Süd-Tirol und Kärnten, sowie Vorarlberg und dem anderen Teil von Tirol vor.&lt;/p&gt;
+&lt;p&gt;Man sieht: PLZs sind hässlich, vor allem sind sie nicht gut, um Verwaltungsgrenzen (wie es die Bundesländer sind) für eine Gemeinde zu definieren. Deswegen hat sich irgendwer die GKZ ausgedacht!&lt;/p&gt;
+&lt;h1 id=&#34;gkz-love-&#34;&gt;GKZ love ❤️
+&lt;span&gt;&lt;a href=&#34;#gkz-love-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Die 5 Zahlen der GKZ funktionieren wie folgt:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1. Stelle: Bundesland (Alphabetisch)
+2 + 3. Stelle: Bezirk (Alphabetisch)
+4 + 5. Stelle: Gemeinde-Code (Alphabetisch)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Zur Veranschaulichung, my hometown&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;Bisamberg&lt;/em&gt; mit der GKZ&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3 12 01&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;3: Lower Austria&lt;/li&gt;
-&lt;li&gt;12: District of Korneuburg&lt;/li&gt;
-&lt;li&gt;01: Bisamberg&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;em&gt;Way better!&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;3: Niederösterreich&lt;/li&gt;
+&lt;li&gt;12: Bezirk Korneuburg&lt;/li&gt;
+&lt;li&gt;01: Bisamberg&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;combinations-and-permutations-are-a-pain-in-the-ass&#34;&gt;combinations and permutations are a pain in the ass
-&lt;span&gt;&lt;a href=&#34;#combinations-and-permutations-are-a-pain-in-the-ass&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So Austria has roughly 2100 municipalities. That&amp;rsquo;s a lot. Especially if you think about all possible combinations for domains.
-&amp;lsquo;&amp;lsquo;&amp;lsquo;python
-gemeinde_name = &amp;ldquo;Bisamberg&amp;rdquo;.lower()&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;list_possible_domains = [
+&lt;p&gt;Die PLZ kann einpacken gehen, GKZ ist der neue heiße Scheiß!&lt;/p&gt;
+&lt;h1 id=&#34;kombinatorik--permutation&#34;&gt;Kombinatorik &amp;amp; Permutation
+&lt;span&gt;&lt;a href=&#34;#kombinatorik--permutation&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor allem wenn man pro Gemeinde mehrere Domains checken muss. Das schaut dann ungefähr so aus:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Bisamberg&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
 
-    # If the website isn&#39;t in HTTPS, trying to access it via HTTPS will throw an error
-    &amp;quot;http://www.{gemeinde_name}.gv.at&amp;quot;.format(gemeinde_name)
+    list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+    
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Official Gov-Domain&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.gv.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
+    
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Nicht jeder machts anscheinend offiziell&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
+    
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Super Patrioten haben noch(!) eine Domain-Ending [.tirol, .bgld und .ooe]&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.tirol.gv.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
 
-    # Not everybody uses .gv domains
-    &amp;quot;http://www.{gemeinde_name}.at&amp;quot;.format(gemeinde_name)
+    &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter&lt;/span&gt;
+    ]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format &lt;code&gt;&amp;quot;x an der y&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;x bei y&amp;quot;&lt;/code&gt; oder &lt;code&gt;&amp;quot;St. x&amp;quot;&lt;/code&gt; wird&amp;rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel &lt;em&gt;Krems an der Donau&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;unschoener_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Krems an der Donau&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
+splitted_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; unschoener_gemeinde_name&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;) 
+&lt;span style=&#34;color:#75715e&#34;&gt;# [&amp;#39;krems&amp;#39;,&amp;#39;an&amp;#39;,&amp;#39;der&amp;#39;,&amp;#39;donau&amp;#39;] &lt;/span&gt;
 
-    # Turns out: states have domains??? Mostly Tyrol (.tirol), Burgenland (.bgld) and Upper Austria (.ooe)
-    &amp;quot;http://www.{gemeinde_name}.bgld.gv.at&amp;quot;.format(gemeinde_name)
+&lt;span style=&#34;color:#75715e&#34;&gt;# Dann hab ich ein paar richtig unschöne Funktionen geschrieben um diese Liste zu permutieren&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus&lt;/span&gt;
 
+list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems.gv.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-an-der-donau.gv.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-donau.gv.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-an-der-donau.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-donau.at&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter...&lt;/span&gt;
 ]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&#39;&amp;rsquo;&amp;rsquo;
-For one-worded municipalities this approach works fine but it won&amp;rsquo;t work with such as &amp;ldquo;Krems an der Donau&amp;rdquo;. Another example are all municipalities with &amp;ldquo;Sankt&amp;rdquo;, like &amp;ldquo;St. Georgen im Lavanttal&amp;rdquo;. The work-around I came up with is a very simple one:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ugly_gemeinde_name_1 = &amp;quot;Krems an der Donau&amp;quot;.lower()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;bist-du-da&#34;&gt;Bist du da?!
+&lt;span&gt;&lt;a href=&#34;#bist-du-da&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests
 
-split_gemeinde_name_1 = ugly_gemeinde_name_1.split(&amp;quot; &amp;quot;) // =&amp;gt; [&#39;krems&#39;,&#39;an&#39;,&#39;der&#39;,&#39;donau&#39;]
-
-# Then I wrote some very ugly functions that format different possible domain names - I will spare you the details.
-# In the end, the list of possible domains looked like this
-
-list_of_possible_domains = [
-
-    &amp;quot;http://www.krems.at&amp;quot;,
-    &amp;quot;http://www.krems-an-der-donau.at&amp;quot;,
-    &amp;quot;http://www.krems-donau.at&amp;quot;,
-    &amp;quot;http://www.krems.gv.at&amp;quot;,
-    &amp;quot;http://www.krems-an-der-donau.gv.at&amp;quot;,
-    &amp;quot;http://www.krems-donau.gv.at&amp;quot;
-
-# ... and more ]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;requests-and-false-positives&#34;&gt;requests and false positives
-&lt;span&gt;&lt;a href=&#34;#requests-and-false-positives&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So after generating all possibilities, I cycled through them and sent a GET request to each one. If the domain doesn&amp;rsquo;t exist, python will throw an error and with a simple try except magic, you can easily catch those and verify existing sites.&lt;/p&gt;
-&lt;h1 id=&#34;are-you-4-real&#34;&gt;are you 4 real?
-&lt;span&gt;&lt;a href=&#34;#are-you-4-real&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So it turned out: just because the site exists doesn&amp;rsquo;t mean that it&amp;rsquo;s the right one. There are business or private sites that use one of the generated domains. I had to check for keywords like &amp;ldquo;Rathaus&amp;rdquo;, &amp;ldquo;Gemeindeamt&amp;rdquo; etc. And even with these checks, I am pretty sure that there are STILL wrong sites in my table - nobody&amp;rsquo;s perfect!&lt;/p&gt;
-&lt;h1 id=&#34;you-got-mail&#34;&gt;you got mail
-&lt;span&gt;&lt;a href=&#34;#you-got-mail&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;After hours of crawling &amp;amp; scraping I finally had a table to work with for scraping the e-mail adresses. It&amp;rsquo;s basically the same step as before when I checked for keywords, only that this time I was looking for words like &amp;ldquo;Kontakt&amp;rdquo; and &amp;ldquo;Impressum&amp;rdquo; and then had to parse only the adress without any unwanted text like the &amp;ldquo;to:&amp;rdquo; junk. For this step I had to use selenium because many of the sites use an excessive amount of javascript. So I had to render it. But I actually really enjoyed working with selenium - very powerful tool!&lt;/p&gt;
-&lt;p&gt;Now all that was left to do was to look for errors (there were a LOT) and some general cleanup and encoding issues. I learned a lot while doing this and also had a lot of fun. You can find the data on my &lt;a href=&#34;https://github.com/bresu/oe_gemeinden&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; domain &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; list_possible_domains:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
+        rsp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(domain)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; rsp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;status_code &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;:
+            &lt;span style=&#34;color:#75715e&#34;&gt;# domain abspeichern&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt;:
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;false-positives&#34;&gt;False positives
+&lt;span&gt;&lt;a href=&#34;#false-positives&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Nachdem ich so ca. 10.000 Domains auf ihre Existenz überprüft hatte, wurde es ernster.
+Es gab nämlich Websiten, die zwar existent waren, jedoch dann einer Firma (Meistens im Bereich Tourismus ansässig) gehörten, oder eben nur &amp;ldquo;geparkt&amp;rdquo; waren. Dann bin ich noch einmal alle existenten Sites durch gegangen und habe währenddessen nach Keywords wie &amp;ldquo;Rathaus&amp;rdquo; oder &amp;ldquo;Gemeindeamt&amp;rdquo; Ausschau gehalten. Aber auch nach all diesen Checks wird es mit ziemlicher Sicherheit noch immer falsche Einträge in dem Datensatz geben.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ohne E-Mail, ohne Liebe,
+ist das Leben wirklich trübe 📧  &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Als ich dann endlich eine vollständige Liste mit den richtigen Domains hatte, ging das Spiel von vorne los. Anstatt jedoch nach Keywords zu suchen, war ich jetzt auf der Jagd nach E-Mailadressen. Dazu musste ich meistens die &amp;ldquo;Kontakt&amp;rdquo;-oder &amp;ldquo;Impressum&amp;rdquo;-Seite finden. Dafür habe ich dann im Endeffekt Selenium[^5] verwendet, da viele Seiten nur mit Javascript-Rendering ihre E-Mail preisgeben.
+Dank Selenium war dieser ganze Prozess recht schnell gecodet, dafür musste aber auch mehr rechenpower fürs Rendern der Website her.&lt;/p&gt;
+&lt;p&gt;Nachdem ich alle E-Mails gescraped hatte, schaute ich nochmal schnell über den Datensatz drüber (zB ob E-Mails doppelt vorgekommen sind weil Webmaster etc.) und musste noch ein bisschen mit Encodings rumschustern.
+Dann war ich endlich fertig!&lt;/p&gt;
+&lt;p&gt;Ich habe durch dieses Projekt einiges über das Web-Scraping gelernt und es hat auch wirklich Spaß gemacht!&lt;/p&gt;
+&lt;p&gt;Den Datensatz gibt&amp;rsquo;s als CSV, JSON und XLSX auf meinem &lt;a href=&#34;https://github.com/bresu/oe_gemeinden&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;My &lt;a href=&#34;https://www.youtube.com/watch?v=77gKSp8WoRg&#34;&gt;hometown&lt;/a&gt;!&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Super &lt;a href=&#34;https://www.youtube.com/watch?v=Jbix9y8iV38&#34;&gt;YT-Video&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Danke Statistik Austria für &lt;a href=&#34;&#34;&gt;das hier&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=77gKSp8WoRg&#34;&gt;🎵 My Hometown&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Erwin Koch&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -119,164 +149,103 @@ list_of_possible_domains = [
     </item>
     
     <item>
-      <title>how to get a nearly anonymous sim-card (in austria)</title>
-      <link>https://bresu.github.io/posts/2021-01-12-simsssss/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Schulen und Datenschutz vertragen sich nicht</title>
+      <link>https://bresu.github.io/posts/webuntis/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://bresu.github.io/posts/2021-01-12-simsssss/</guid>
-      <description>&lt;h1 id=&#34;how-to-get-a-nearly-anonymous-sim-card-in-austria&#34;&gt;how to get a nearly anonymous sim-card (in austria)
-&lt;span&gt;&lt;a href=&#34;#how-to-get-a-nearly-anonymous-sim-card-in-austria&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;created: 1.12.2021&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;disclaimer&lt;/strong&gt;
-&lt;em&gt;I do not advertise nor recommend using any method I mention in this post. I have never used and do not intend to use any method or concept described here.
-These are just hypothetical and purely based on my imagination.&lt;/em&gt;&lt;/p&gt;
-&lt;h1 id=&#34;lets-get-into-it&#34;&gt;let&amp;rsquo;s get into it
-&lt;span&gt;&lt;a href=&#34;#lets-get-into-it&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;A spectre is haunting europe, the spectre of mandatory sim-card registration. Against popular belief, this is not the work of our friends in Belgium, but rather every european state
-shares the same paranoia and compulsory urge to surveil their citizens even more. Even better: The EU came to the &lt;a href=&#34;https://netzpolitik.org/2013/vorratsdatenspeicherung-eu-kommission-legt-beweise-fuer-notwendigkeit-vor-beweist-aber-die-notwendigkeit-nicht/&#34;&gt;conclusion&lt;/a&gt; that sim-card registrations do &lt;strong&gt;not&lt;/strong&gt; help with combating crime, terrorism or other illegal activities. But the member states obviously don&amp;rsquo;t care.&lt;/p&gt;
-&lt;h1 id=&#34;so-how-do-we-work-around-this-bullshit&#34;&gt;so, how do we work around this bullshit?
-&lt;span&gt;&lt;a href=&#34;#so-how-do-we-work-around-this-bullshit&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;The first thing that comes to mind is &lt;em&gt;buying a card in one of the remaining member states, that do not require ID&lt;/em&gt;. So far so good.
-Question is: which states are not affected yet?
-Only few remain. E.g Serbia, Croatia and probably some other balkan states.&lt;/p&gt;
+      <guid>https://bresu.github.io/posts/webuntis/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/stundenplan.jpg&#34; alt=&#34;StundenplanFoto&#34; title=&#34;Stundenplan (meiner war in der Schule nie so schön)&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Wenn du in den letzten 10 Jahren eine österreichische Schule besucht hast, warst du ziemlich sicher schon in Kontakt mit den Produkten dieser Firma:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WebUntis&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das Unternehmen ist primär für ihre Online-Stundenplan-Software und diverse Sicherheits-Lücken&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; bekannt.
+Wenn man sich den Bug-Report genau anschaut, sieht man, dass deren Security-Management mit diesen Dingen eher leger umgeht: Fast ein halbes Jahr dauert es, bis eine einfache XSS-Attacke gefixt wird.&lt;/p&gt;
+&lt;p&gt;Doch trotz all dem ist WebUntis ein erfolgreiches Unternehmen, mit Sitz in der Gemeinde Stockerau und mehr als 100&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; Mitarbeiter*innen und Kunden aus aller Welt.&lt;/p&gt;
+&lt;p&gt;Dennoch gibt es ein paar Dinge, die mich an dieser monopolistischen Firma stören.&lt;/p&gt;
+&lt;h1 id=&#34;schul-administratorinnen-sind-auch-nur-menschen&#34;&gt;Schul-Administrator:innen sind auch nur Menschen
+&lt;span&gt;&lt;a href=&#34;#schul-administratorinnen-sind-auch-nur-menschen&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Schulen zu administrieren muss der Horror sein. Kolleg:innen vergessen ihre Passwörter andauernd, Daten müssen erfasst, bearbeitet oder gelöscht werden und man muss den ganzen Tag mit schrecklichen MS-Office Programmen wie &lt;strong&gt;Excel&lt;/strong&gt;(😔) oder &lt;strong&gt;Word&lt;/strong&gt;(🤮) arbeiten.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Dafür wirklich mein herzliches Beileid ❤️&lt;/p&gt;
+&lt;p&gt;Aber dennoch darf man gewisse Fehler einfach nicht machen!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich gehe davon aus, dass manche einfach die Manuals nicht gelesen haben, oder WebUntis nicht ausreichend auf die &lt;em&gt;gravierenden&lt;/em&gt; Konsequenzen mancher Setting-Einstellungen hingewiesen hat. WebUntis hat aber auf jeden Fall kein &amp;ldquo;Security by Design&amp;rdquo; aber dazu an späterer Stelle mehr.&lt;/p&gt;
+&lt;h1 id=&#34;was-ist-jetzt-das-problem&#34;&gt;Was ist jetzt das Problem?
+&lt;span&gt;&lt;a href=&#34;#was-ist-jetzt-das-problem&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Eine fälschlicherweise angeklickte Checkbox gefährdet den Datenschutz hunderter Minderjähriger massiv.&lt;/p&gt;
+&lt;p&gt;Betroffen sind meines Wissensstandes nach 3 Schulen in und im Umkreis von Wien.
+Es sind die Stundenpläne der Schüler:innen einsehbar und es können dadurch&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Klasse 🤨&lt;/li&gt;
+&lt;li&gt;Vor- und Nachname 🤨🤨&lt;/li&gt;
+&lt;li&gt;Schulzeiten und Wahlfächer 🤨🤨&lt;/li&gt;
+&lt;li&gt;Religionsbekenntnis (anhand des Religions-Unterrichts) 🤨🤨🤨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ausgelesen werden.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An dieser Stelle möchte ich erwähnen, dass ich hier keinen schicken &lt;code&gt;Code-Block&lt;/code&gt;
+einrücke und zeigen werde, wie ich es gemacht habe.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dafür habe ich verschiedene Gründe:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Der Fehler wurde bis heute (1.1.2021) &lt;strong&gt;nicht&lt;/strong&gt; behoben.&lt;/li&gt;
+&lt;li&gt;Es geht um Daten von ca. 1800 Schüler:innen.&lt;/li&gt;
+&lt;li&gt;Das ist kein &amp;ldquo;Ins-Gefängnis-kommen Speedrun&amp;rdquo;!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Gut, da jetzt alle Daten-Kraken weg sind:
+Ich werde aber schon zeigen, dass das Sicherheitskonzept von WebUntis einfach 💩 ist.&lt;/p&gt;
+&lt;p&gt;Enjoy! 😁&lt;/p&gt;
+&lt;h1 id=&#34;ich-seh-ich-seh-was-du-auch-siehst-&#34;&gt;Ich seh, ich seh, was du auch siehst 👁️
+&lt;span&gt;&lt;a href=&#34;#ich-seh-ich-seh-was-du-auch-siehst-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Bei meiner Schule war es so, dass wenn ein Nutzer sich in WebUntis eingeloggt hatte, dieser Nutzer auch die Stundenpläne aller anderen der selben Nutzergruppe sehen konnte. Ich dachte lange Zeit, dass ist nur auf die Inkompetenz unserer überarbeiteten Administration zurückzuführen - aber&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;anscheinend ist das bei fast jeder Schule so! &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das ist ist natürlich 💩-Design, weil es so Hacker:innen gelingen könnte, durch einen einzigen gehackten Account, an die Daten von allen anderen Nutzer:innen zu kommen.&lt;/p&gt;
+&lt;p&gt;Und da an vielen Schulen der Login meist wie folgt ausschaut, ist das gar kein so abwegiges Angriffsszenario:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
+    Username: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
+    Password: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Natürlich gibt es viele Variationen für diese Credentials, jedoch wird in manchen Elternbriefen zum Schulanfang ganz klar gezeigt, wie es geht:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.jpg&#34; alt=&#34;Ein wenig Google-Dorking und man findet die Dinger wie Sand am Meer&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;LOL. 😐&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Und ich bin mir sicher: es wird Schüler:innen geben, die ihr Standard-Passwort &lt;em&gt;nicht&lt;/em&gt; ändern.
+Mit ein wenig OSINT-Recherche&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; lässt sich da sicher ein gutes Opfer finden&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Jetzt ist es aber so:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Man sieht nur Nutzernamen, keine Klarnamen! 😮&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;doch-leider-hat-webuntis-hier-richtig-was-versemmelt&#34;&gt;Doch leider hat WebUntis hier richtig was versemmelt
+&lt;span&gt;&lt;a href=&#34;#doch-leider-hat-webuntis-hier-richtig-was-versemmelt&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Man kann nämlich bei jedem Stundenplan eine &lt;code&gt;print-Funktion&lt;/code&gt; aufrufen. An und für sich keine schlechte Sache:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34; alt=&#34;Ich liebe GIFs :)&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Wenn man draufdrückt, öffnet sich ein neues Browser-Fenster (nicht Tab -  &lt;strong&gt;Fenster&lt;/strong&gt;) und der Stundenplan wird anscheinend &amp;ldquo;druckbarer&amp;rdquo; gerendert. Ein PDF entsteht dabei tatsächlich nicht, das ist reines HTML.&lt;/p&gt;
+&lt;p&gt;Und siehe da, was ist denn das? &amp;hellip;Doch etwa kein&amp;hellip; Klarname?!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Ojeojeoje, wer macht denn sowas???&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Keine Pointe, WebUntis ist 1 Witz!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html&#34;&gt;Der Bug-Report&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Steht zumindest auf ihrer &lt;a href=&#34;https://www.untis.at/&#34;&gt;Website&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Hab ich mir von vielen Mitmenschen bestätigen lassen - not scientific!&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;strong&gt;O&lt;/strong&gt;pen-&lt;strong&gt;S&lt;/strong&gt;ource-&lt;strong&gt;INT&lt;/strong&gt;elligence - FBI für Arme!&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>influencing online polls like a pro</title>
-      <link>https://bresu.github.io/posts/2020-11-16-pingpoll/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://bresu.github.io/posts/2020-11-16-pingpoll/</guid>
-      <description>&lt;p&gt;[under construction]&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>jugendwort des jahres 2021 ;)</title>
-      <link>https://bresu.github.io/posts/2021-08-20-jugendwort_des_jahres_2021/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://bresu.github.io/posts/2021-08-20-jugendwort_des_jahres_2021/</guid>
-      <description>&lt;p&gt;[under construction]&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>nobody&#39;s perfect: a list of failed projects</title>
-      <link>https://bresu.github.io/posts/2020-06-09-failures/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://bresu.github.io/posts/2020-06-09-failures/</guid>
-      <description>&lt;h1 id=&#34;this-is-gonna-be-a-long-site&#34;&gt;this is gonna be a long site
-&lt;span&gt;&lt;a href=&#34;#this-is-gonna-be-a-long-site&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;created: 24.08.2021&lt;/p&gt;
-&lt;h1 id=&#34;failure-plays-a-crucial-part-in-the-learning-process&#34;&gt;failure plays a crucial part in the learning process
-&lt;span&gt;&lt;a href=&#34;#failure-plays-a-crucial-part-in-the-learning-process&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So in order to learn a lot you also have to &lt;strong&gt;fail&lt;/strong&gt; a lot. But I also think that not every failure is equally good/ bad. Some of my projects failed because of time-related parameters for example &lt;em&gt;deadlines&lt;/em&gt;. Others failed because at the time when I was approaching the project I simply lacked the knowledge to realize my ideas.
-And then there are projects that failed because I underestimated the amount of effort and/or resources it would take to realize them. Obviously some of these categories overlap, because if I had more knowledge I would have made progress quicker and the time-limits would not have been a problem.&lt;/p&gt;
-&lt;h1 id=&#34;so---lets-begin&#34;&gt;So - Let&amp;rsquo;s begin!
-&lt;span&gt;&lt;a href=&#34;#so---lets-begin&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;h1 id=&#34;victims-of-time&#34;&gt;victims of time
-&lt;span&gt;&lt;a href=&#34;#victims-of-time&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;em&gt;learning mapbox&lt;/em&gt;
-I only had a 1-month free trial and I didn&amp;rsquo;t know any javascript at the time&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(not yet a victim but soon to be: jugendwort des jahres 2021&lt;/em&gt;
-I simply do not have the time and resources right now to do that&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;pausebot&lt;/em&gt;
-I learned a lot and it was fun, but it was only trend that faded away&lt;/p&gt;
-&lt;h1 id=&#34;victims-of-lacking-knowledge&#34;&gt;victims of lacking knowledge
-&lt;span&gt;&lt;a href=&#34;#victims-of-lacking-knowledge&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;em&gt;further whatsapp analysis&lt;/em&gt;
-I need to know more data science techniques to realize that  !&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;scraping pdf tables&lt;/em&gt;
-It&amp;rsquo;s just fucking hard, definitely not impossible&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;don&amp;rsquo;t ask: mc donalds menu anaylsis&lt;/em&gt;
-My idea was to scrape all nutritional info about mcdo&amp;rsquo;s products and then do cool functions on it.&lt;/p&gt;
-&lt;h1 id=&#34;victims-of-being-naive&#34;&gt;victims of being naive
-&lt;span&gt;&lt;a href=&#34;#victims-of-being-naive&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;em&gt;scraping municipalities of switzerland&lt;/em&gt;
-I did Austria which was already pretty hard but Switzerland added a lot of MORE shit that was hard&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;scraping snapchat&lt;/em&gt;
-I don&amp;rsquo;t have the facilities for that &amp;amp; permutations are important&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;scraping oeamtc&lt;/em&gt;
-Again: calculate permutations for trying!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>quick analysis of my fellow applicants</title>
-      <link>https://bresu.github.io/posts/2021-07-28-tu_scraper/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://bresu.github.io/posts/2021-07-28-tu_scraper/</guid>
-      <description>&lt;h1 id=&#34;quick-analysis-of-my-fellow-applicants&#34;&gt;quick analysis of my fellow applicants
-&lt;span&gt;&lt;a href=&#34;#quick-analysis-of-my-fellow-applicants&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;created: 20.08.2021&lt;/p&gt;
-&lt;h1 id=&#34;context&#34;&gt;context
-&lt;span&gt;&lt;a href=&#34;#context&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So I am (hopefully) gonna be a Computer Science student at the Technical University of Vienna. Yesterday I did the entry exam and I will find out in a week or so if I am accepted or not. Weeks before the exam all applicants got an e-mail invitation to the &amp;ldquo;moodle&amp;rdquo; or &amp;ldquo;edu&amp;rdquo; platform, which is basically just the website where you submit your work and find learning resources.
-&lt;strong&gt;The site also had an interesting feature which might be privacy-law violating (maybe!)&lt;/strong&gt;
-In the navigation bar of the website there was a &amp;ldquo;participants&amp;rdquo;-tab. I clicked on it and to my surprise:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;You could look up fellow applicants by their first and last name!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;It also offered the option to show &lt;strong&gt;all (1000)&lt;/strong&gt; entries on a single page. Obviously I enabled that and wrote the simplest script to just download it and extract all names.
-Now I had a table to work with but the question was: what information can I squeeze out of only just the names?
-I quickly realized that first names are a VERY strong indicator of gender. (I know that this a very binary look at it, but the probability of non-binary people being present in this list of about 1000 people is negligible and all my results are just stupid estimations)
-So I did some research and it turns out that somebody had made a &lt;a href=&#34;https://pypi.org/project/gender-guesser/&#34;&gt;gender-guesser&lt;/a&gt;{:target=&amp;quot;&lt;em&gt;blank&lt;/em&gt;&amp;quot;} python module that uses data from the American Census and other sources to identify gender by name.
-&lt;em&gt;Pretty neat - Let&amp;rsquo;s get to work&lt;/em&gt;
-I let the program run over my data and these are the results (estimations!):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    male: 662
-    female: 200
-    unknown: 104
-    mostly male: 8
-    mostly female: 3
-    unisex: 2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;interesting&#34;&gt;interesting
-&lt;span&gt;&lt;a href=&#34;#interesting&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So we see that gender-equality still has a long way to go&amp;hellip;
-You might ask what &amp;ldquo;unknown&amp;rdquo; means. I checked some datapoints and it seems that the data model is very western-centered. So &amp;ldquo;exotic&amp;rdquo; (I hate this term) names are not registered in the model. But one can assume that the distribution of gender in the &amp;ldquo;unknown&amp;rdquo; category is also roughly 3:2.&lt;/p&gt;
-&lt;h1 id=&#34;weird-things-i-found&#34;&gt;weird things i found
-&lt;span&gt;&lt;a href=&#34;#weird-things-i-found&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So it turns out that some sick fucks (mostly American researchers) also made a &lt;strong&gt;race-guesser&lt;/strong&gt; which in my opinion is super problematic. As I said before about the gender-guesser: this is just an estimation and it excludes non-binary people or other members of the LGBTQIA+ community. But guessing race????
-There are so many factors that need to be taken into account. Just because someone&amp;rsquo;s name is Jack Smith doesn&amp;rsquo;t mean he&amp;rsquo;s white. Name changes happen all the time due to marriages etc. so I really have problems regarding the accuracy of modules like this.&lt;/p&gt;
-&lt;p&gt;[ WILL UPDATE AT BEGINNING OF NEW SEMESTER ]&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>schools and privacy: don&#39;t mix!</title>
-      <link>https://bresu.github.io/posts/2020-10-01-school_vulnerabilities/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://bresu.github.io/posts/2020-10-01-school_vulnerabilities/</guid>
-      <description>&lt;h1 id=&#34;schools-and-privacy-do-not-mix&#34;&gt;schools and privacy: do not mix!
-&lt;span&gt;&lt;a href=&#34;#schools-and-privacy-do-not-mix&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;created: 01.10.2020&lt;/p&gt;
-&lt;h1 id=&#34;webuntis-sucks---let-me-explain-why&#34;&gt;webuntis sucks - let me explain why
-&lt;span&gt;&lt;a href=&#34;#webuntis-sucks---let-me-explain-why&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;If you are/ were a student in Austria, you probably came into contact with the company WebUntis (WU) and it&amp;rsquo;s products, mostly known for their timetable manager tool and &lt;a href=&#34;https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html&#34;&gt;security flaws&lt;/a&gt;{:target=&amp;quot;&lt;em&gt;blank&lt;/em&gt;&amp;quot;}. So the company&amp;rsquo;s reputation really isn&amp;rsquo;t the best when it comes to security vulnerabilities and how they handle them. But for an austrian enterprise whose headquarters are located in Lower Austria they are actually doing pretty good.&lt;br&gt;
-Or so I thought.&lt;/p&gt;
-&lt;h1 id=&#34;most-school-administrators-are-ok-some-are-not&#34;&gt;most school administrators are ok. some are not
-&lt;span&gt;&lt;a href=&#34;#most-school-administrators-are-ok-some-are-not&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So it turns out that some administrators simply do not read manuals/ best practices or they simply missed to click on a checkbox (which would be a design error by WU). A minor mistake like this can be the reason why the data of 100s of students is publicly available.&lt;br&gt;
-As much as I would like to show you what I mean by that: I won&amp;rsquo;t.&lt;br&gt;
-Why? Because we are talking about data of MINORS, CHILDREN. And this is not a &amp;ldquo;how-to-get-arrested tutorial&amp;rdquo;. Let me simple say: I found some schools whose WU settings are not optimal for data security. But this factor alone would NOT be as big of a deal if WU didn&amp;rsquo;t implement a shitty way of handling things.&lt;/p&gt;
-&lt;h1 id=&#34;we-will-implement-some-privacy-features-not&#34;&gt;we will implement some privacy features. not.
-&lt;span&gt;&lt;a href=&#34;#we-will-implement-some-privacy-features-not&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;If you are logged into your WU account you can see your fellow student&amp;rsquo;s login names. So if someone could login with e.g. a hacked account they could start scraping full names of students. That is very bad. Hence WU recommends that the username should NOT plainly be the someone&amp;rsquo;s full name. Let&amp;rsquo;s take &lt;strong&gt;Maximillian Mustermann&lt;/strong&gt; as an example:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    username = maximillian.mustermann // bad
-    username = must.max // better
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;WU offers school admins tools to do exactly that. So even if someone hacked into a WU account the intruder would not be able to retrieve a list of fellow student&amp;rsquo;s full names. This is a very smart feature, especially when taking into account that most students use a very simple password for their login and therefore being easy targets for brute forcing. Good job WebUntis!&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;but&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I accidentally stumbled upon this stupid flaw while playing around with the WebUnits interface. WU has a button for printing out &lt;em&gt;any&lt;/em&gt; student&amp;rsquo;s timetable. It loads a new page with a more printable layout - all nice and neat - but it &lt;strong&gt;also&lt;/strong&gt;&lt;br&gt;
-displays the whole fucking name of the student.
-and their class (can be used to identify age)
-and their complete timetable (can be used for all sorts of harmful shit)&lt;/p&gt;
-&lt;h1 id=&#34;no-punchline-needed---fuck-webuntis&#34;&gt;no punchline needed - fuck webuntis!
-&lt;span&gt;&lt;a href=&#34;#no-punchline-needed---fuck-webuntis&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;</description>
     </item>
     
   </channel>
