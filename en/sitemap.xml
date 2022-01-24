@@ -41,6 +41,41 @@
                 href="https://bresu.github.io/en/posts/scraping_austria/"
                 />
   </url><url>
+    <loc>https://bresu.github.io/en/tags/privacy/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/en/tags/schools/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/en/posts/webuntis/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://bresu.github.io/posts/webuntis/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://bresu.github.io/en/posts/webuntis/"
+                />
+  </url><url>
+    <loc>https://bresu.github.io/en/tags/security/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/en/tags/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://bresu.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://bresu.github.io/en/tags/"
+                />
+  </url><url>
     <loc>https://bresu.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -62,29 +97,5 @@
     <loc>https://bresu.github.io/en/posts/2020-06-09-failures/</loc>
   </url><url>
     <loc>https://bresu.github.io/en/posts/2021-07-28-tu_scraper/</loc>
-  </url><url>
-    <loc>https://bresu.github.io/en/posts/webuntis/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://bresu.github.io/posts/webuntis/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://bresu.github.io/en/posts/webuntis/"
-                />
-  </url><url>
-    <loc>https://bresu.github.io/en/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://bresu.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://bresu.github.io/en/tags/"
-                />
   </url>
 </urlset>

@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bresu.github.io/posts/simkarten/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/anonymoit%C3%A4t/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://bresu.github.io/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +22,7 @@
                 />
   </url><url>
     <loc>https://bresu.github.io/posts/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -27,6 +33,25 @@
                 hreflang="de"
                 href="https://bresu.github.io/posts/"
                 />
+  </url><url>
+    <loc>https://bresu.github.io/tags/recht/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://bresu.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://bresu.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://bresu.github.io/tags/%C3%B6sterreich/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/tags/python/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
@@ -45,19 +70,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://bresu.github.io/posts/scraping_austria/"
-                />
-  </url><url>
-    <loc>https://bresu.github.io/tags/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://bresu.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://bresu.github.io/tags/"
                 />
   </url><url>
     <loc>https://bresu.github.io/tags/webcrawling/</loc>

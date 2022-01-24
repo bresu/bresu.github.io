@@ -12,8 +12,7 @@
 
 <title>schools and privacy: don&#39;t mix! - Bresu Blog</title>
 
-<meta name="description" content="schools and privacy: do not mix! # created: 01.10.2020
-webuntis sucks - let me explain why # If you are/ were a student in Austria, you probably came into contact with the company WebUntis (WU) and it&rsquo;s products, mostly known for their timetable manager tool and security flaws{:target=&quot;blank&quot;}. So the company&rsquo;s reputation really isn&rsquo;t the best when it comes to security vulnerabilities and how they handle them. But for an austrian enterprise whose headquarters are located in Lower Austria they are actually doing pretty good.">
+<meta name="description" content="Bullshit made in Austria">
 
 
 
@@ -44,18 +43,16 @@ webuntis sucks - let me explain why # If you are/ were a student in Austria, you
 
 
 <meta property="og:title" content="schools and privacy: don&#39;t mix!" />
-<meta property="og:description" content="schools and privacy: do not mix! # created: 01.10.2020
-webuntis sucks - let me explain why # If you are/ were a student in Austria, you probably came into contact with the company WebUntis (WU) and it&rsquo;s products, mostly known for their timetable manager tool and security flaws{:target=&quot;blank&quot;}. So the company&rsquo;s reputation really isn&rsquo;t the best when it comes to security vulnerabilities and how they handle them. But for an austrian enterprise whose headquarters are located in Lower Austria they are actually doing pretty good." />
+<meta property="og:description" content="Bullshit made in Austria" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://bresu.github.io/en/posts/webuntis/" /><meta property="article:section" content="posts" />
-
-
+<meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="schools and privacy: don&#39;t mix!"/>
-<meta name="twitter:description" content="schools and privacy: do not mix! # created: 01.10.2020
-webuntis sucks - let me explain why # If you are/ were a student in Austria, you probably came into contact with the company WebUntis (WU) and it&rsquo;s products, mostly known for their timetable manager tool and security flaws{:target=&quot;blank&quot;}. So the company&rsquo;s reputation really isn&rsquo;t the best when it comes to security vulnerabilities and how they handle them. But for an austrian enterprise whose headquarters are located in Lower Austria they are actually doing pretty good."/>
+<meta name="twitter:description" content="Bullshit made in Austria"/>
 
 
 
@@ -172,33 +169,79 @@ webuntis sucks - let me explain why # If you are/ were a student in Austria, you
             </header>
         </div>
         <div class="content e-content">
-            <h1 id="schools-and-privacy-do-not-mix">schools and privacy: do not mix!
-<span><a href="#schools-and-privacy-do-not-mix">#</a></span>
-</h1><p>created: 01.10.2020</p>
-<h1 id="webuntis-sucks---let-me-explain-why">webuntis sucks - let me explain why
-<span><a href="#webuntis-sucks---let-me-explain-why">#</a></span>
-</h1><p>If you are/ were a student in Austria, you probably came into contact with the company WebUntis (WU) and it&rsquo;s products, mostly known for their timetable manager tool and <a href="https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html">security flaws</a>{:target=&quot;<em>blank</em>&quot;}. So the company&rsquo;s reputation really isn&rsquo;t the best when it comes to security vulnerabilities and how they handle them. But for an austrian enterprise whose headquarters are located in Lower Austria they are actually doing pretty good.<br>
-Or so I thought.</p>
-<h1 id="most-school-administrators-are-ok-some-are-not">most school administrators are ok. some are not
-<span><a href="#most-school-administrators-are-ok-some-are-not">#</a></span>
-</h1><p>So it turns out that some administrators simply do not read manuals/ best practices or they simply missed to click on a checkbox (which would be a design error by WU). A minor mistake like this can be the reason why the data of 100s of students is publicly available.<br>
-As much as I would like to show you what I mean by that: I won&rsquo;t.<br>
-Why? Because we are talking about data of MINORS, CHILDREN. And this is not a &ldquo;how-to-get-arrested tutorial&rdquo;. Let me simple say: I found some schools whose WU settings are not optimal for data security. But this factor alone would NOT be as big of a deal if WU didn&rsquo;t implement a shitty way of handling things.</p>
-<h1 id="we-will-implement-some-privacy-features-not">we will implement some privacy features. not.
-<span><a href="#we-will-implement-some-privacy-features-not">#</a></span>
-</h1><p>If you are logged into your WU account you can see your fellow student&rsquo;s login names. So if someone could login with e.g. a hacked account they could start scraping full names of students. That is very bad. Hence WU recommends that the username should NOT plainly be the someone&rsquo;s full name. Let&rsquo;s take <strong>Maximillian Mustermann</strong> as an example:</p>
-<pre tabindex="0"><code>    username = maximillian.mustermann // bad
-    username = must.max // better
+            <p><img src="/pics/webuntis/stundenplan.jpg" alt="StundenplanFoto" title="Timetable"></p>
+<p>If you are/ were a student in Austria during thr last 10 years, you probably came into contact with the company WebUntis. Mostly known for their timetable manager tool and security flaws.</p>
+<p>So the company&rsquo;s reputation really isn&rsquo;t the best when it comes to security vulnerabilities and how they handle them. It took them allegedly 5 months to close a XSS-vulnerability on their site<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> But for an austrian enterprise whose headquarters are located in Lower Austria they are actually doing pretty good.</p>
+<p>Or so I thought.</p>
+<h1 id="school-admins-are-just-people-too">School-Admins are just people too
+<span><a href="#school-admins-are-just-people-too">#</a></span>
+</h1><p>Being responsible for the IT-System of a school must be horrible. Colleagues forget their passwords, the student-database needs to be constantly kept up-to-date and you have to work with horrible Software, such as <strong>Excel</strong>(😔), <strong>Word</strong>(🤮)</p>
+<blockquote>
+<p>Heartfelt condolences to you, admins ❤️</p>
+<p>But nevertheless: some mistakes can not be forgiven!</p>
+</blockquote>
+<p>So it turns out that most school administrators either did not read the WebUntis-Manuals carefully enough or they simply misunderstood the meaning of some website-settings. But these &ldquo;minor&rdquo; mistakes are the reason for why the data of 100s of students is freely accessible online.</p>
+<h1 id="so-whats-the-problem-now">So what&rsquo;s the problem now?
+<span><a href="#so-whats-the-problem-now">#</a></span>
+</h1><p>As much as I would like to show you what I mean by that: I won&rsquo;t.</p>
+<blockquote>
+<p>Why?</p>
+</blockquote>
+<p>Because we are talking about data of minors, children. And this is not a &ldquo;how-to-get-arrested tutorial&rdquo;.
+AFAIK 3 schools in and outside of Vienna are affected - roughly 1800 students total. The data you can access freely include:</p>
+<ul>
+<li>Class-Name 🤨</li>
+<li>First and Last name 🤨🤨</li>
+<li>Electives and schedule 🤨🤨</li>
+<li>Religious belief (can be deducted from religion-class) 🤨🤨🤨</li>
+</ul>
+<p>But what I can show you is how stupid some of WebUntis' design really is!</p>
+<p>Enjoy 😁</p>
+<h1 id="webuntis-security-bullshit">WebUntis <del>Security</del> <em>Bullshit</em>
+<span><a href="#webuntis-security-bullshit">#</a></span>
+</h1><p>When I went to school, our admin configured the timetable-accessibilty by groups. So if you were a student, you could see any other students timetable.</p>
+<blockquote>
+<p>For a long time, I thought only our admin did this bad practice</p>
+</blockquote>
+<p>Turns out: <em>This is pretty normal for most schools!</em></p>
+<p>This alone is a big security hazard. It only takes one students compromised account to get access to the whole network.</p>
+<blockquote>
+<p>But it even get&rsquo;s better!</p>
+</blockquote>
+<p>The default username and password can be configured and most of the time the login credentials look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#75715e"># Schüler: Maximilian Mustermann (10.10.2001)</span>
+    Username: <span style="color:#e6db74">&#34;must.max&#34;</span>
+    Password: <span style="color:#e6db74">&#34;20011010&#34;</span>
+</code></pre></div><p>Every admin has the possibility to customize these defaults, so every school does their own thing - which is good for security!</p>
+<p>But oh boy you gotta look at this:</p>
+<p><img src="/pics/webuntis/webuntisTutorial.jpg" alt="Oh no"></p>
+<blockquote>
+<p>😐</p>
+</blockquote>
+<p>Apparently, a lot of schools send out guides on how to use WebUntis. With a little bit of Google-Dorking<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> you will find most of them. Now you know the default credential sytle 🎉 And I am pretty sure that there will be some students that <em>don&rsquo;t</em> change their default password.</p>
+<p>But this alone is not yet the real problem!</p>
+<p>Once you are logged in, you can see your fellow students usernames. No fullnames?</p>
+<blockquote>
+<p>Great, so where do the fullnames come from then?</p>
+</blockquote>
+<p>Well, you can not only see everyones timetable, but you can also <em>print</em> them:</p>
+<p><img src="/pics/webuntis/webuntisPlease.gif" alt="I MADE THIS GIF WOOOO"></p>
+<p>Clicking on that will open a new <em>window</em> with the timetable being formatted in HTML (no PDFs are created)</p>
+<p>and what is that?</p>
+<p><img src="/pics/webuntis/webuntisFullname.jpg" alt="Oh no, our timetable - it&rsquo;s broken!"></p>
+<p>Stay safe y&rsquo;all</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html">Bug report</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>also called <a href="https://en.wikipedia.org/wiki/Google_hacking">Google-Hacking</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
-</code></pre><p>WU offers school admins tools to do exactly that. So even if someone hacked into a WU account the intruder would not be able to retrieve a list of fellow student&rsquo;s full names. This is a very smart feature, especially when taking into account that most students use a very simple password for their login and therefore being easy targets for brute forcing. Good job WebUntis!</p>
-<p><em>but</em></p>
-<p>I accidentally stumbled upon this stupid flaw while playing around with the WebUnits interface. WU has a button for printing out <em>any</em> student&rsquo;s timetable. It loads a new page with a more printable layout - all nice and neat - but it <strong>also</strong><br>
-displays the whole fucking name of the student.
-and their class (can be used to identify age)
-and their complete timetable (can be used for all sorts of harmful shit)</p>
-<h1 id="no-punchline-needed---fuck-webuntis">no punchline needed - fuck webuntis!
-<span><a href="#no-punchline-needed---fuck-webuntis">#</a></span>
-</h1>
         </div>
         
 
@@ -206,6 +249,8 @@ and their complete timetable (can be used for all sorts of harmful shit)</p>
 
 
 <div class="post-info">
+    
+        <div class="post-date dt-published">2020-01-10</div>
     
 
     <a class="post-hidden-url u-url" href="https://bresu.github.io/en/posts/webuntis/">https://bresu.github.io/en/posts/webuntis/</a>
@@ -215,6 +260,16 @@ and their complete timetable (can be used for all sorts of harmful shit)</p>
     <div class="post-taxonomies">
         
             
+                <ul class="post-tags">
+                    
+                        <li><a href="https://bresu.github.io/en/tags/privacy">#privacy</a></li>
+                    
+                        <li><a href="https://bresu.github.io/en/tags/schools">#schools</a></li>
+                    
+                        <li><a href="https://bresu.github.io/en/tags/security">#security</a></li>
+                    
+                </ul>
+        
     </div>
 </div>
 
@@ -225,10 +280,12 @@ and their complete timetable (can be used for all sorts of harmful shit)</p>
     <div class="pagination post-pagination">
         <div class="left pagination-item ">
             
-                <a href="/en/posts/2021-07-28-tu_scraper/">quick analysis of my fellow applicants</a>
+                <a href="/en/posts/scraping_austria/">scraping austria - a painful lesson in webscraping</a>
             
         </div>
-        <div class="right pagination-item disabled">
+        <div class="right pagination-item ">
+            
+                <a href="/en/posts/2021-01-12-simsssss/">how to get a nearly anonymous sim-card (in austria)</a>
             
         </div>
     </div>

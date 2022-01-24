@@ -119,6 +119,87 @@ list_of_possible_domains = [
     </item>
     
     <item>
+      <title>schools and privacy: don&#39;t mix!</title>
+      <link>https://bresu.github.io/en/posts/webuntis/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bresu.github.io/en/posts/webuntis/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/stundenplan.jpg&#34; alt=&#34;StundenplanFoto&#34; title=&#34;Timetable&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you are/ were a student in Austria during thr last 10 years, you probably came into contact with the company WebUntis. Mostly known for their timetable manager tool and security flaws.&lt;/p&gt;
+&lt;p&gt;So the company&amp;rsquo;s reputation really isn&amp;rsquo;t the best when it comes to security vulnerabilities and how they handle them. It took them allegedly 5 months to close a XSS-vulnerability on their site&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; But for an austrian enterprise whose headquarters are located in Lower Austria they are actually doing pretty good.&lt;/p&gt;
+&lt;p&gt;Or so I thought.&lt;/p&gt;
+&lt;h1 id=&#34;school-admins-are-just-people-too&#34;&gt;School-Admins are just people too
+&lt;span&gt;&lt;a href=&#34;#school-admins-are-just-people-too&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Being responsible for the IT-System of a school must be horrible. Colleagues forget their passwords, the student-database needs to be constantly kept up-to-date and you have to work with horrible Software, such as &lt;strong&gt;Excel&lt;/strong&gt;(😔), &lt;strong&gt;Word&lt;/strong&gt;(🤮)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Heartfelt condolences to you, admins ❤️&lt;/p&gt;
+&lt;p&gt;But nevertheless: some mistakes can not be forgiven!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So it turns out that most school administrators either did not read the WebUntis-Manuals carefully enough or they simply misunderstood the meaning of some website-settings. But these &amp;ldquo;minor&amp;rdquo; mistakes are the reason for why the data of 100s of students is freely accessible online.&lt;/p&gt;
+&lt;h1 id=&#34;so-whats-the-problem-now&#34;&gt;So what&amp;rsquo;s the problem now?
+&lt;span&gt;&lt;a href=&#34;#so-whats-the-problem-now&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;As much as I would like to show you what I mean by that: I won&amp;rsquo;t.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Why?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Because we are talking about data of minors, children. And this is not a &amp;ldquo;how-to-get-arrested tutorial&amp;rdquo;.
+AFAIK 3 schools in and outside of Vienna are affected - roughly 1800 students total. The data you can access freely include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Class-Name 🤨&lt;/li&gt;
+&lt;li&gt;First and Last name 🤨🤨&lt;/li&gt;
+&lt;li&gt;Electives and schedule 🤨🤨&lt;/li&gt;
+&lt;li&gt;Religious belief (can be deducted from religion-class) 🤨🤨🤨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But what I can show you is how stupid some of WebUntis&#39; design really is!&lt;/p&gt;
+&lt;p&gt;Enjoy 😁&lt;/p&gt;
+&lt;h1 id=&#34;webuntis-security-bullshit&#34;&gt;WebUntis &lt;del&gt;Security&lt;/del&gt; &lt;em&gt;Bullshit&lt;/em&gt;
+&lt;span&gt;&lt;a href=&#34;#webuntis-security-bullshit&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;When I went to school, our admin configured the timetable-accessibilty by groups. So if you were a student, you could see any other students timetable.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For a long time, I thought only our admin did this bad practice&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Turns out: &lt;em&gt;This is pretty normal for most schools!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This alone is a big security hazard. It only takes one students compromised account to get access to the whole network.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;But it even get&amp;rsquo;s better!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The default username and password can be configured and most of the time the login credentials look like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
+    Username: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
+    Password: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Every admin has the possibility to customize these defaults, so every school does their own thing - which is good for security!&lt;/p&gt;
+&lt;p&gt;But oh boy you gotta look at this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.jpg&#34; alt=&#34;Oh no&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;😐&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Apparently, a lot of schools send out guides on how to use WebUntis. With a little bit of Google-Dorking&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; you will find most of them. Now you know the default credential sytle 🎉 And I am pretty sure that there will be some students that &lt;em&gt;don&amp;rsquo;t&lt;/em&gt; change their default password.&lt;/p&gt;
+&lt;p&gt;But this alone is not yet the real problem!&lt;/p&gt;
+&lt;p&gt;Once you are logged in, you can see your fellow students usernames. No fullnames?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Great, so where do the fullnames come from then?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Well, you can not only see everyones timetable, but you can also &lt;em&gt;print&lt;/em&gt; them:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34; alt=&#34;I MADE THIS GIF WOOOO&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Clicking on that will open a new &lt;em&gt;window&lt;/em&gt; with the timetable being formatted in HTML (no PDFs are created)&lt;/p&gt;
+&lt;p&gt;and what is that?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Oh no, our timetable - it&amp;rsquo;s broken!&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Stay safe y&amp;rsquo;all&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html&#34;&gt;Bug report&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;also called &lt;a href=&#34;https://en.wikipedia.org/wiki/Google_hacking&#34;&gt;Google-Hacking&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+    <item>
       <title>how to get a nearly anonymous sim-card (in austria)</title>
       <link>https://bresu.github.io/en/posts/2021-01-12-simsssss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -242,41 +323,6 @@ You might ask what &amp;ldquo;unknown&amp;rdquo; means. I checked some datapoint
 There are so many factors that need to be taken into account. Just because someone&amp;rsquo;s name is Jack Smith doesn&amp;rsquo;t mean he&amp;rsquo;s white. Name changes happen all the time due to marriages etc. so I really have problems regarding the accuracy of modules like this.&lt;/p&gt;
 &lt;p&gt;[ WILL UPDATE AT BEGINNING OF NEW SEMESTER ]&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>schools and privacy: don&#39;t mix!</title>
-      <link>https://bresu.github.io/en/posts/webuntis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://bresu.github.io/en/posts/webuntis/</guid>
-      <description>&lt;h1 id=&#34;schools-and-privacy-do-not-mix&#34;&gt;schools and privacy: do not mix!
-&lt;span&gt;&lt;a href=&#34;#schools-and-privacy-do-not-mix&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;created: 01.10.2020&lt;/p&gt;
-&lt;h1 id=&#34;webuntis-sucks---let-me-explain-why&#34;&gt;webuntis sucks - let me explain why
-&lt;span&gt;&lt;a href=&#34;#webuntis-sucks---let-me-explain-why&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;If you are/ were a student in Austria, you probably came into contact with the company WebUntis (WU) and it&amp;rsquo;s products, mostly known for their timetable manager tool and &lt;a href=&#34;https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html&#34;&gt;security flaws&lt;/a&gt;{:target=&amp;quot;&lt;em&gt;blank&lt;/em&gt;&amp;quot;}. So the company&amp;rsquo;s reputation really isn&amp;rsquo;t the best when it comes to security vulnerabilities and how they handle them. But for an austrian enterprise whose headquarters are located in Lower Austria they are actually doing pretty good.&lt;br&gt;
-Or so I thought.&lt;/p&gt;
-&lt;h1 id=&#34;most-school-administrators-are-ok-some-are-not&#34;&gt;most school administrators are ok. some are not
-&lt;span&gt;&lt;a href=&#34;#most-school-administrators-are-ok-some-are-not&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;So it turns out that some administrators simply do not read manuals/ best practices or they simply missed to click on a checkbox (which would be a design error by WU). A minor mistake like this can be the reason why the data of 100s of students is publicly available.&lt;br&gt;
-As much as I would like to show you what I mean by that: I won&amp;rsquo;t.&lt;br&gt;
-Why? Because we are talking about data of MINORS, CHILDREN. And this is not a &amp;ldquo;how-to-get-arrested tutorial&amp;rdquo;. Let me simple say: I found some schools whose WU settings are not optimal for data security. But this factor alone would NOT be as big of a deal if WU didn&amp;rsquo;t implement a shitty way of handling things.&lt;/p&gt;
-&lt;h1 id=&#34;we-will-implement-some-privacy-features-not&#34;&gt;we will implement some privacy features. not.
-&lt;span&gt;&lt;a href=&#34;#we-will-implement-some-privacy-features-not&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;If you are logged into your WU account you can see your fellow student&amp;rsquo;s login names. So if someone could login with e.g. a hacked account they could start scraping full names of students. That is very bad. Hence WU recommends that the username should NOT plainly be the someone&amp;rsquo;s full name. Let&amp;rsquo;s take &lt;strong&gt;Maximillian Mustermann&lt;/strong&gt; as an example:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    username = maximillian.mustermann // bad
-    username = must.max // better
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;WU offers school admins tools to do exactly that. So even if someone hacked into a WU account the intruder would not be able to retrieve a list of fellow student&amp;rsquo;s full names. This is a very smart feature, especially when taking into account that most students use a very simple password for their login and therefore being easy targets for brute forcing. Good job WebUntis!&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;but&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I accidentally stumbled upon this stupid flaw while playing around with the WebUnits interface. WU has a button for printing out &lt;em&gt;any&lt;/em&gt; student&amp;rsquo;s timetable. It loads a new page with a more printable layout - all nice and neat - but it &lt;strong&gt;also&lt;/strong&gt;&lt;br&gt;
-displays the whole fucking name of the student.
-and their class (can be used to identify age)
-and their complete timetable (can be used for all sorts of harmful shit)&lt;/p&gt;
-&lt;h1 id=&#34;no-punchline-needed---fuck-webuntis&#34;&gt;no punchline needed - fuck webuntis!
-&lt;span&gt;&lt;a href=&#34;#no-punchline-needed---fuck-webuntis&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;</description>
     </item>
     
   </channel>

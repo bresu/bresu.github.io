@@ -79,7 +79,7 @@ zugehörige Postleitzahl(PLZ) und &lt;strong&gt;Gemeindekennziffer(GKZ)&lt;/stro
     &lt;span style=&#34;color:#75715e&#34;&gt;# Nicht jeder machts anscheinend offiziell&lt;/span&gt;
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
     
-    &lt;span style=&#34;color:#75715e&#34;&gt;# Super Patrioten haben noch(!) eine Domain-Ending [.tirol, .bgld und .ooe]&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]&lt;/span&gt;
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.tirol.gv.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
 
     &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter&lt;/span&gt;

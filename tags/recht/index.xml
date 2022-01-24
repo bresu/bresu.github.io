@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>recht on Bresu Blog</title>
+    <link>https://bresu.github.io/tags/recht/</link>
+    <description>Bresu Blog (recht)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Mon, 15 Nov 2021 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://bresu.github.io/tags/recht/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anonyme Simkarten in Österreich</title>
+      <link>https://bresu.github.io/posts/simkarten/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bresu.github.io/posts/simkarten/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/headerImage.jpg&#34; alt=&#34;Stock-Image of Sim-Card&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Praktisch jede Registrierung - sei es bei einem Corona-Test, Online-Shop oder einem anderen
+digitalen Service - verlangt heutzutage eine Angabe der Telefonnummer.&lt;/p&gt;
+&lt;p&gt;Früher war das nicht so
+😔&lt;/p&gt;
+&lt;p&gt;Ich gebe nicht gerne meine Nummer her, deswegen habe ich mich mit Wegwerf-Simkarten beschäftigt und die interessanten Findings meiner Recherche hier aufgeschrieben.&lt;/p&gt;
+&lt;h1 id=&#34;-disclaimer-&#34;&gt;🚨 DISCLAIMER 🚨
+&lt;span&gt;&lt;a href=&#34;#-disclaimer-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Der Inhalt dieses Blogs ist nur für Weiterbildungszwecke gedacht und soll niemanden
+zum Begehen von Straftaten aufrufen. Der Autor übernimmt keine Verantwortung für das möglicherweise strafbare Handeln von Leser:innen.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;the-good-ol-days&#34;&gt;The good ol&#39; days
+&lt;span&gt;&lt;a href=&#34;#the-good-ol-days&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;In den guten alten Zeiten des Internets hat man für eine Registrierung nur eine E-Mail gebraucht. Doch in Zeiten von Wegwerf-E-Mails und Angst vor Bots kommt man nicht drum rum:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Nummer her oder es geht nix! 🔫&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;An und für sich eine nachvollziehbare Aktion der Betreiber, ich hadere aber damit - sowie viele andere Menschen auch - wenn ich meine Nummer rausrücken soll, unter anderem weil:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Telefonnummern werden nur selten gewechselt.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ich vertraue den wenigsten Firmen, was ihre Datenschutz-Bestimmungen und ihre IT-Sicherheit angeht.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ist meine Nummer einmal irgendwo geleaked, muss ich entweder mit Spam leben oder eine neue beantragen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Interessant ist auch, dass es mittlerweile völlig normal ist, eine zweite und sogar dritte E-Mail-Adresse zu besitzen&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, aber uns bei jedem Service mit der gleichen Nummer anmelden.&lt;/p&gt;
+&lt;p&gt;Natürlich haben sich schon viele Menschen Gedanken dazu gemacht und die einfachste Lösung wäre, sich einfach eine Sim-Karte zu holen, die am besten&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;anonym&lt;/p&gt;
+&lt;p&gt;billig&lt;/p&gt;
+&lt;p&gt;lange gültig ist&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Es folgen ein paar Optionen die man hierfür hat.&lt;/p&gt;
+&lt;h1 id=&#34;-der-markt-regelt---anonyme-simkarten-de&#34;&gt;☎ Der Markt regelt - Anonyme Simkarten DE
+&lt;span&gt;&lt;a href=&#34;#-der-markt-regelt---anonyme-simkarten-de&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/boehmiCapitalism.gif&#34; alt=&#34;We love Böhmi&#34; title=&#34;Böhmermann ist Gif-Gott&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Wenn man 3 Sekunden zu &amp;ldquo;anonyme Sim-Karte Österreich&amp;rdquo; recherchiert hat, wird man auf
+diese Seite stoßen:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://anonyme-simkarte.de/&#34;&gt;anonyme-simkarte.de&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Der Shop schaut einigermaßen seriös aus, vielleicht auch, weil die Preise für die kleinen goldüberzogenen Chips eher hoch sind. Ich habe vor einiger Zeit mal probeweise zwei Sim-Karten um ca. 20€ bestellt. Ich habe sogar eine Trackingnummer erhalten und konnte live dabei zusehen, &lt;strong&gt;wie mein Paket verloren geht&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/anonymeEmail.jpg&#34; alt=&#34;Screenshot der Antwort&#34; title=&#34;Beste Antwort&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💩 - aber wenigstens ehrlich&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich vermute auch, dass das kein Einzelfall ist. Auf &lt;a href=&#34;https://at.trustpilot.com/review/anonyme-simkarte.de&#34;&gt;Trustpilot&lt;/a&gt;
+sind von 75 Reviews ca. ein Viertel mit der schlechtesten Bewertung abgegeben worden. Auch aus meinem Freundes/Kollegen/Bekanntenkreis höre ich von unterschiedlichsten Erfahrungen mit dem Shop.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; Die, die ihre bestellten Karten tatsächlich erhalten haben, sind sehr zufrieden.&lt;/p&gt;
+&lt;p&gt;Fazit:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ob die Karten ankommen, ist ungewiss.&lt;/p&gt;
+&lt;p&gt;Wenn sie aber ankommen, dann passt alles.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;warum-müssen-wir-überhaupt-registrieren&#34;&gt;Warum müssen wir überhaupt registrieren?
+&lt;span&gt;&lt;a href=&#34;#warum-m%c3%bcssen-wir-%c3%bcberhaupt-registrieren&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Seit dem 1. September 2019 muss jede österreichische Sim-Karte mittels Identitätsnachweis registriert werden. Basis hierfür bildet das 2018 beschlossene Sicherheitspaket,
+welches u.a. Änderungen im Polizeisicherheitsgesetz - &lt;em&gt;aka das schwammigst definierte Gesetz das wir haben&lt;/em&gt; - und im Telekommunikationsgesetz mit sich brachte. (Danke ÖVP und FPÖ)&lt;/p&gt;
+&lt;p&gt;Darin wurde unter anderem die Registrierungspflicht für Provider eingeführt, bei nicht Einhalten kann es zu einer Geldstrafe von bis zu 37.000 Euro kommen.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vielleicht schau ich mir in Zukunft mal die Registrierungs-Apps mancher Anbieter genauer an 😉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;ok-wie-komm-ich-jetzt-an-eine-anonyme-sim-karte&#34;&gt;Ok wie komm ich jetzt an eine anonyme Sim-Karte?
+&lt;span&gt;&lt;a href=&#34;#ok-wie-komm-ich-jetzt-an-eine-anonyme-sim-karte&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Also, die ehrliche Antwort: Anonyme österreichische Nummern gibt es de facto nicht
+😩&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/sadChild.webp&#34; alt=&#34;Mood 24/7&#34; title=&#34;My mood 24/7&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Auf irgendjemanden muss eine Nummer registriert sein. Wenn du jetzt nicht gerade einen Sim-Karten Mixer&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; baust / hast / betreibst oder jemanden findest, der für dich eine Karte kauft &amp;amp; registriert, wird es schwer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HIER ABER EINE &lt;em&gt;IDEE&lt;/em&gt; WIE MAN ES TROTZDEM SCHAFFEN KÖNNTE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🚨 Es sei nochmal erwähnt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Die folgenden Schritte stellen nach österreichischem Recht mehrere Straftaten dar, ich rate &lt;strong&gt;niemanden&lt;/strong&gt; diese zu befolgen, noch übernehme ich Verantwortung.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Jetzt geht&amp;rsquo;s ans Eingemachte&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;(Hypothetisch) benötigte Zutaten:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Fake Ausweis&lt;/p&gt;
+&lt;p&gt;Mut &amp;amp; Dreistigkeit&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;WikiHow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Geh zum Hofer deiner Wahl während der Rush-Hour&lt;/li&gt;
+&lt;li&gt;Hab eine Haube, Maske oder dergleichen auf (aka vermummt)&lt;/li&gt;
+&lt;li&gt;Den absolut überarbeitenden Angestellten sagen, dass man eine Sim-Karte registrieren möchte&lt;/li&gt;
+&lt;li&gt;Warten bis das Registrierungs-Handy (1 pro Filiale) endlich da ist&lt;/li&gt;
+&lt;li&gt;Mit einem Fake Ausweis deiner Wahl die Sim registrieren&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Voilà 📞&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Also so &lt;strong&gt;könnte&lt;/strong&gt; man es machen, ich empfehle niemanden, diesen Anweisungen zu folgen. Ich übernehme keine Haftung für etwaige Polizeibesuche und Wohnungsdurchsuchungen oder sämtlich andere rechtlichen Schritte.&lt;/p&gt;
+&lt;p&gt;Man kann auch Sim-Karten von zuhause mit den Apps einiger Anbieter registrieren, da kann man auch kreativ werden.&lt;/p&gt;
+&lt;h1 id=&#34;wie-hast-dus-mit-den-sim-karten&#34;&gt;Wie hast du&amp;rsquo;s mit den Sim-Karten?
+&lt;span&gt;&lt;a href=&#34;#wie-hast-dus-mit-den-sim-karten&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/dogDooinBusiness.gif&#34; alt=&#34;working Doggo&#34; title=&#34;Representation of me doing some research&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Ich persönlich lese mir immer als erstes die AGBs der Anbieter durch und suche nach &amp;ldquo;Beendigungsgründen&amp;rdquo; und anderen verwandten Begriffen.
+Mich interessiert nämlich, wie lange die Karte nach der ersten Aufladung noch aktiv ist.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Meist sind es 12 Monate, jedoch nicht immer!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dann kauf ich mir die Karte und lasse sie auf meinen echten Namen mit einem echten Ausweis registrieren, weil ich nichts zu verbergen habe 😉&lt;/p&gt;
+&lt;p&gt;Diese Nummer gilt ab dem Zeitpunkt für die angegebene Zeit in den AGBs. Ich beschrifte mir die Transportkarte mit dem Kauf- und Aktivierungsdatum und kann mich jetzt nach Herzenslust bei Tinder, WhatsApp etc. registrieren 😎&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Dieser &lt;a href=&#34;https://pitchfunnel.com/blog/email-usage-statistics/&#34;&gt;Overview&lt;/a&gt; ist sehr interessant, angeblich sinkt die Anzahl an Spam-E-Mails 🤨&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Source: Trust me bro&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Cryptocurrency_tumbler&#34;&gt;Was is 1 Mixer?&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
