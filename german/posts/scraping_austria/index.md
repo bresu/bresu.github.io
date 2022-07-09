@@ -85,7 +85,7 @@ Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor
     # Nicht jeder machts anscheinend offiziell
     "http://www.{gemeinde}.at".format(gemeinde=gemeinde_name)
     
-    # Super Patrioten haben noch(!) eine Domain-Ending [.tirol, .bgld und .ooe]
+    # Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]
     "http://www.{gemeinde}.tirol.gv.at".format(gemeinde=gemeinde_name)
 
     # und so weiter
