@@ -2,14 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bresu.github.io/posts/simkarten/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bresu.github.io/tags/anonymoit%C3%A4t/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://bresu.github.io/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -21,8 +15,17 @@
                 href="https://bresu.github.io/"
                 />
   </url><url>
+    <loc>https://bresu.github.io/tags/instagram/</loc>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/posts/bookexchange/</loc>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/phenomena/</loc>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://bresu.github.io/posts/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -34,11 +37,11 @@
                 href="https://bresu.github.io/posts/"
                 />
   </url><url>
-    <loc>https://bresu.github.io/tags/recht/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <loc>https://bresu.github.io/tags/scam/</loc>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/tags/</loc>
-    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -49,6 +52,15 @@
                 hreflang="de"
                 href="https://bresu.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://bresu.github.io/posts/simkarten/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/anonymoit%C3%A4t/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/recht/</loc>
+    <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/tags/%C3%B6sterreich/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
