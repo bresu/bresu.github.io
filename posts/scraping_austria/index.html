@@ -209,41 +209,42 @@ zugehörige Postleitzahl(PLZ) und <strong>Gemeindekennziffer(GKZ)</strong> beinh
 <h1 id="gkz-love-">GKZ love ❤️
 <span><a href="#gkz-love-">#</a></span>
 </h1><p>Die 5 Zahlen der GKZ funktionieren wie folgt:</p>
-<pre tabindex="0"><code>1. Stelle: Bundesland (Alphabetisch)
+<pre><code>1. Stelle: Bundesland (Alphabetisch)
 2 + 3. Stelle: Bezirk (Alphabetisch)
 4 + 5. Stelle: Gemeinde-Code (Alphabetisch)
-</code></pre><p>Zur Veranschaulichung, my hometown<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> <em>Bisamberg</em> mit der GKZ</p>
+</code></pre>
+<p>Zur Veranschaulichung, my hometown<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> <em>Bisamberg</em> mit der GKZ</p>
 <p><strong>3 12 01</strong></p>
-<ul>
-<li>3: Niederösterreich</li>
-<li>12: Bezirk Korneuburg</li>
-<li>01: Bisamberg</li>
-</ul>
+<pre><code>- 3: Niederösterreich
+- 12: Bezirk Korneuburg
+- 01: Bisamberg
+</code></pre>
 <p>Die PLZ kann einpacken gehen, GKZ ist der neue heiße Scheiß!</p>
 <h1 id="kombinatorik--permutation">Kombinatorik &amp; Permutation
 <span><a href="#kombinatorik--permutation">#</a></span>
 </h1><p>Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor allem wenn man pro Gemeinde mehrere Domains checken muss. Das schaut dann ungefähr so aus:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bisamberg&#34;</span><span style="color:#f92672">.</span>lower()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bisamberg&#34;</span><span style="color:#f92672">.</span>lower()
 
-    list_possible_domains <span style="color:#f92672">=</span> [
-    
+list_possible_domains <span style="color:#f92672">=</span> [
+
     <span style="color:#75715e"># Official Gov-Domain</span>
-    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.gv.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name)
-    
+    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.gv.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name),
+
     <span style="color:#75715e"># Nicht jeder machts anscheinend offiziell</span>
-    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name)
-    
+    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name),
+
     <span style="color:#75715e"># Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]</span>
     <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.tirol.gv.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name)
 
     <span style="color:#75715e"># und so weiter</span>
-    ]
-</code></pre></div><p>Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format <code>&quot;x an der y&quot;</code>, <code>&quot;x bei y&quot;</code> oder <code>&quot;St. x&quot;</code> wird&rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel <em>Krems an der Donau</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unschoener_gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Krems an der Donau&#34;</span><span style="color:#f92672">.</span>lower()
+]</code></pre></div>
+<p>Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format <code>&quot;x an der y&quot;</code>, <code>&quot;x bei y&quot;</code> oder <code>&quot;St. x&quot;</code> wird&rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel <em>Krems an der Donau</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">unschoener_gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Krems an der Donau&#34;</span><span style="color:#f92672">.</span>lower()
 splitted_gemeinde_name <span style="color:#f92672">=</span> unschoener_gemeinde_name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>) 
 <span style="color:#75715e"># [&#39;krems&#39;,&#39;an&#39;,&#39;der&#39;,&#39;donau&#39;] </span>
 
-<span style="color:#75715e"># Dann hab ich ein paar richtig unschöne Funktionen geschrieben um diese Liste zu permutieren</span>
+<span style="color:#75715e"># Dann hab ich ein paar richtig unschöne Funktionen geschrieben,</span>
+<span style="color:#75715e"># um diese Liste zu permutieren</span>
 <span style="color:#75715e"># Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus</span>
 
 list_possible_domains <span style="color:#f92672">=</span> [
@@ -255,11 +256,11 @@ list_possible_domains <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#34;http://www.krems-an-der-donau.at&#34;</span>
     <span style="color:#e6db74">&#34;http://www.krems-donau.at&#34;</span>
     <span style="color:#75715e"># und so weiter...</span>
-]
-</code></pre></div><h1 id="bist-du-da">Bist du da?!
+]</code></pre></div>
+<h1 id="bist-du-da">Bist du da?!
 <span><a href="#bist-du-da">#</a></span>
 </h1><p>Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">import</span> requests
 
 <span style="color:#66d9ef">for</span> domain <span style="color:#f92672">in</span> list_possible_domains:
     <span style="color:#66d9ef">try</span>:
@@ -267,8 +268,8 @@ list_possible_domains <span style="color:#f92672">=</span> [
         <span style="color:#66d9ef">if</span> rsp<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
             <span style="color:#75715e"># domain abspeichern</span>
     <span style="color:#66d9ef">except</span>:
-        <span style="color:#66d9ef">continue</span>
-</code></pre></div><h1 id="false-positives">False positives
+        <span style="color:#66d9ef">continue</span></code></pre></div>
+<h1 id="false-positives">False positives
 <span><a href="#false-positives">#</a></span>
 </h1><p>Nachdem ich so ca. 10.000 Domains auf ihre Existenz überprüft hatte, wurde es ernster.
 Es gab nämlich Websiten, die zwar existent waren, jedoch dann einer Firma (Meistens im Bereich Tourismus ansässig) gehörten, oder eben nur &ldquo;geparkt&rdquo; waren. Dann bin ich noch einmal alle existenten Sites durch gegangen und habe währenddessen nach Keywords wie &ldquo;Rathaus&rdquo; oder &ldquo;Gemeindeamt&rdquo; Ausschau gehalten. Aber auch nach all diesen Checks wird es mit ziemlicher Sicherheit noch immer falsche Einträge in dem Datensatz geben.</p>

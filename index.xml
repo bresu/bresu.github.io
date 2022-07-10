@@ -359,41 +359,42 @@ zugehörige Postleitzahl(PLZ) und &lt;strong&gt;Gemeindekennziffer(GKZ)&lt;/stro
 &lt;h1 id=&#34;gkz-love-&#34;&gt;GKZ love ❤️
 &lt;span&gt;&lt;a href=&#34;#gkz-love-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Die 5 Zahlen der GKZ funktionieren wie folgt:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1. Stelle: Bundesland (Alphabetisch)
+&lt;pre&gt;&lt;code&gt;1. Stelle: Bundesland (Alphabetisch)
 2 + 3. Stelle: Bezirk (Alphabetisch)
 4 + 5. Stelle: Gemeinde-Code (Alphabetisch)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Zur Veranschaulichung, my hometown&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;Bisamberg&lt;/em&gt; mit der GKZ&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Zur Veranschaulichung, my hometown&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;em&gt;Bisamberg&lt;/em&gt; mit der GKZ&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3 12 01&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;3: Niederösterreich&lt;/li&gt;
-&lt;li&gt;12: Bezirk Korneuburg&lt;/li&gt;
-&lt;li&gt;01: Bisamberg&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;- 3: Niederösterreich
+- 12: Bezirk Korneuburg
+- 01: Bisamberg
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Die PLZ kann einpacken gehen, GKZ ist der neue heiße Scheiß!&lt;/p&gt;
 &lt;h1 id=&#34;kombinatorik--permutation&#34;&gt;Kombinatorik &amp;amp; Permutation
 &lt;span&gt;&lt;a href=&#34;#kombinatorik--permutation&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor allem wenn man pro Gemeinde mehrere Domains checken muss. Das schaut dann ungefähr so aus:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Bisamberg&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Bisamberg&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
 
-    list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
-    
+list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+
     &lt;span style=&#34;color:#75715e&#34;&gt;# Official Gov-Domain&lt;/span&gt;
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.gv.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
-    
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.gv.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name),
+
     &lt;span style=&#34;color:#75715e&#34;&gt;# Nicht jeder machts anscheinend offiziell&lt;/span&gt;
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
-    
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name),
+
     &lt;span style=&#34;color:#75715e&#34;&gt;# Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]&lt;/span&gt;
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;.tirol.gv.at&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(gemeinde&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gemeinde_name)
 
     &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter&lt;/span&gt;
-    ]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format &lt;code&gt;&amp;quot;x an der y&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;x bei y&amp;quot;&lt;/code&gt; oder &lt;code&gt;&amp;quot;St. x&amp;quot;&lt;/code&gt; wird&amp;rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel &lt;em&gt;Krems an der Donau&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;unschoener_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Krems an der Donau&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
+]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format &lt;code&gt;&amp;quot;x an der y&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;x bei y&amp;quot;&lt;/code&gt; oder &lt;code&gt;&amp;quot;St. x&amp;quot;&lt;/code&gt; wird&amp;rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel &lt;em&gt;Krems an der Donau&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;unschoener_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Krems an der Donau&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
 splitted_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; unschoener_gemeinde_name&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;) 
 &lt;span style=&#34;color:#75715e&#34;&gt;# [&amp;#39;krems&amp;#39;,&amp;#39;an&amp;#39;,&amp;#39;der&amp;#39;,&amp;#39;donau&amp;#39;] &lt;/span&gt;
 
-&lt;span style=&#34;color:#75715e&#34;&gt;# Dann hab ich ein paar richtig unschöne Funktionen geschrieben um diese Liste zu permutieren&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Dann hab ich ein paar richtig unschöne Funktionen geschrieben,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# um diese Liste zu permutieren&lt;/span&gt;
 &lt;span style=&#34;color:#75715e&#34;&gt;# Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus&lt;/span&gt;
 
 list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
@@ -405,11 +406,11 @@ list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-an-der-donau.at&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-donau.at&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter...&lt;/span&gt;
-]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;bist-du-da&#34;&gt;Bist du da?!
+]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;bist-du-da&#34;&gt;Bist du da?!
 &lt;span&gt;&lt;a href=&#34;#bist-du-da&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests
 
 &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; domain &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; list_possible_domains:
     &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
@@ -417,8 +418,8 @@ list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
         &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; rsp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;status_code &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;:
             &lt;span style=&#34;color:#75715e&#34;&gt;# domain abspeichern&lt;/span&gt;
     &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt;:
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;false-positives&#34;&gt;False positives
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;false-positives&#34;&gt;False positives
 &lt;span&gt;&lt;a href=&#34;#false-positives&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Nachdem ich so ca. 10.000 Domains auf ihre Existenz überprüft hatte, wurde es ernster.
 Es gab nämlich Websiten, die zwar existent waren, jedoch dann einer Firma (Meistens im Bereich Tourismus ansässig) gehörten, oder eben nur &amp;ldquo;geparkt&amp;rdquo; waren. Dann bin ich noch einmal alle existenten Sites durch gegangen und habe währenddessen nach Keywords wie &amp;ldquo;Rathaus&amp;rdquo; oder &amp;ldquo;Gemeindeamt&amp;rdquo; Ausschau gehalten. Aber auch nach all diesen Checks wird es mit ziemlicher Sicherheit noch immer falsche Einträge in dem Datensatz geben.&lt;/p&gt;
