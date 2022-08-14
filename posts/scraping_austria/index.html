@@ -196,7 +196,7 @@ aufzufinden - aber im Gegenteil! Statistik Austria hat halt wirklich ALLES (Man 
 gründlich suchen!). So bin ich dann auf diese Tabellen<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> gestoßen, die jede Gemeinde und deren
 zugehörige Postleitzahl(PLZ) und <strong>Gemeindekennziffer(GKZ)</strong> beinhaltet.</p>
 <p>🧐 <em>Was zum F*ck ist eine Gemeindekennziffer?</em></p>
-<p><img src="/pics/scraping_austria/confusedDoggo.webp" alt="Confused Dog"></p>
+<p><img src="/pics/scraping_austria/confusedDoggo.webp" alt="Confused Dog" title="Mood"></p>
 <p>Gute Frage! Es handelt sich dabei um eine eindeutige Nummer, die jeder Gemeinde zugeordnet wird, sehr ähnlich wie eine PLZ - aber eben keine PLZ. Die GKZ besteht aus 5 Ziffern, die PLZ bekanntlich nur aus 4. PLZs sind alt und nicht sehr schön, man kann aus ihnen nicht eindeutig ablesen, in welchem Bundesland die Gemeinde liegt.</p>
 <p>Ein Beispiel:</p>
 <ul>
@@ -237,7 +237,7 @@ list_possible_domains <span style="color:#f92672">=</span> [
 
     <span style="color:#75715e"># und so weiter</span>
 ]</code></pre></div>
-<p>Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format <code>&quot;x an der y&quot;</code>, <code>&quot;x bei y&quot;</code> oder <code>&quot;St. x&quot;</code> wird&rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel <em>Krems an der Donau</em></p>
+<p>Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format <code>&quot;x an der y&quot;</code>, <code>&quot;x bei y&quot;</code> wird&rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel <em>Krems an der Donau</em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">unschoener_gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Krems an der Donau&#34;</span><span style="color:#f92672">.</span>lower()
 splitted_gemeinde_name <span style="color:#f92672">=</span> unschoener_gemeinde_name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>) 
 <span style="color:#75715e"># [&#39;krems&#39;,&#39;an&#39;,&#39;der&#39;,&#39;donau&#39;] </span>
@@ -256,9 +256,11 @@ list_possible_domains <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#34;http://www.krems-donau.at&#34;</span>
     <span style="color:#75715e"># und so weiter...</span>
 ]</code></pre></div>
+<p>Darüber hinaus gibt es auch Gemeinden mit <code>&quot;St.&quot;</code> und <code>&quot;Sankt&quot;</code> in ihrem Name, das kann auch wiederum zu Problemen bzw. noch mehr Permutationen führen.</p>
 <h1 id="bist-du-da">Bist du da?!
 <span><a href="#bist-du-da">#</a></span>
-</h1><p>Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.</p>
+</h1><p><img src="/pics/scraping_austria/youThere.gif" alt="" title="r u there?"></p>
+<p>Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">import</span> requests
 
 <span style="color:#66d9ef">for</span> domain <span style="color:#f92672">in</span> list_possible_domains:
@@ -274,14 +276,17 @@ list_possible_domains <span style="color:#f92672">=</span> [
 Es gab nämlich Websiten, die zwar existent waren, jedoch dann einer Firma (Meistens im Bereich Tourismus ansässig) gehörten, oder eben nur &ldquo;geparkt&rdquo; waren. Dann bin ich noch einmal alle existenten Sites durch gegangen und habe währenddessen nach Keywords wie &ldquo;Rathaus&rdquo; oder &ldquo;Gemeindeamt&rdquo; Ausschau gehalten. Aber auch nach all diesen Checks wird es mit ziemlicher Sicherheit noch immer falsche Einträge in dem Datensatz geben.</p>
 <blockquote>
 <p>Ohne E-Mail, ohne Liebe,
-ist das Leben wirklich trübe 📧  <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+ist das Leben wirklich trübe 📧 <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 </blockquote>
 <p>Als ich dann endlich eine vollständige Liste mit den richtigen Domains hatte, ging das Spiel von vorne los. Anstatt jedoch nach Keywords zu suchen, war ich jetzt auf der Jagd nach E-Mailadressen. Dazu musste ich meistens die &ldquo;Kontakt&rdquo;-oder &ldquo;Impressum&rdquo;-Seite finden. Dafür habe ich dann im Endeffekt Selenium<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> verwendet, da viele Seiten nur mit Javascript-Rendering ihre E-Mail preisgeben.
 Dank Selenium war dieser ganze Prozess recht schnell gecodet, dafür musste aber auch mehr rechenpower fürs Rendern der Website her.</p>
 <p>Nachdem ich alle E-Mails gescraped hatte, schaute ich nochmal schnell über den Datensatz drüber (zB ob E-Mails doppelt vorgekommen sind weil Webmaster etc.) und musste noch ein bisschen mit Encodings rumschustern.
 Dann war ich endlich fertig!</p>
 <p>Ich habe durch dieses Projekt einiges über das Web-Scraping gelernt und es hat auch wirklich Spaß gemacht!</p>
-<p>Den Datensatz gibt&rsquo;s als CSV, JSON und XLSX auf meinem <a href="https://github.com/bresu/oe_gemeinden">Github</a></p>
+<p>Den Datensatz gibt&rsquo;s als CSV, JSON und XLSX auf meinem <a href="https://github.com/bresu/oe_gemeinden">Github</a>.</p>
+<h1 id="edit-14082022">EDIT 14.08.2022
+<span><a href="#edit-14082022">#</a></span>
+</h1><p>Der Datensatz wird vom C3Wien<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> für das <a href="https://luftfilterbegehren.at/">Luftfilterbegehren</a> verwendet. Open-Source ist geil!</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -289,7 +294,7 @@ Dann war ich endlich fertig!</p>
 <p>Super <a href="https://www.youtube.com/watch?v=Jbix9y8iV38">YT-Video</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Danke Statistik Austria für <a href="">das hier</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Danke Statistik Austria.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p><a href="https://www.youtube.com/watch?v=77gKSp8WoRg">🎵 My Hometown</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -299,6 +304,9 @@ Dann war ich endlich fertig!</p>
 </li>
 <li id="fn:5" role="doc-endnote">
 <p>Mit Selenium lassen sich Browser-Aktionen automatisieren. <a href="https://www.selenium.dev/documentation/webdriver/">Mehr dazu hier</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>Richtig geile Leute, <a href="https://c3w.at/">CCC WIEN</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

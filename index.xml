@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>API und Lebensmittel</title>
-      <link>https://bresu.github.io/posts/supermarkt_scraping/</link>
-      <pubDate>Thu, 04 Aug 2022 18:50:17 +0200</pubDate>
-      
-      <guid>https://bresu.github.io/posts/supermarkt_scraping/</guid>
-      <description>&lt;p&gt;Ich habe mir vor einiger Zeit vorgenommen, die österreichischen Lebensmittelanbieter und ihre Online-Shops genauer unter die Lupe zu nehmen. Dabei bin ich auf verschiedene interessante Erkenntnisse gestoßen.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Datenschutzerklärung</title>
       <link>https://bresu.github.io/dsgvo/</link>
       <pubDate>Sat, 09 Jul 2022 21:29:30 +0200</pubDate>
@@ -353,7 +344,7 @@ aufzufinden - aber im Gegenteil! Statistik Austria hat halt wirklich ALLES (Man 
 gründlich suchen!). So bin ich dann auf diese Tabellen&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; gestoßen, die jede Gemeinde und deren
 zugehörige Postleitzahl(PLZ) und &lt;strong&gt;Gemeindekennziffer(GKZ)&lt;/strong&gt; beinhaltet.&lt;/p&gt;
 &lt;p&gt;🧐 &lt;em&gt;Was zum F*ck ist eine Gemeindekennziffer?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.webp&#34; alt=&#34;Confused Dog&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.webp&#34; alt=&#34;Confused Dog&#34; title=&#34;Mood&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Gute Frage! Es handelt sich dabei um eine eindeutige Nummer, die jeder Gemeinde zugeordnet wird, sehr ähnlich wie eine PLZ - aber eben keine PLZ. Die GKZ besteht aus 5 Ziffern, die PLZ bekanntlich nur aus 4. PLZs sind alt und nicht sehr schön, man kann aus ihnen nicht eindeutig ablesen, in welchem Bundesland die Gemeinde liegt.&lt;/p&gt;
 &lt;p&gt;Ein Beispiel:&lt;/p&gt;
 &lt;ul&gt;
@@ -394,7 +385,7 @@ list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
 
     &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter&lt;/span&gt;
 ]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format &lt;code&gt;&amp;quot;x an der y&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;x bei y&amp;quot;&lt;/code&gt; oder &lt;code&gt;&amp;quot;St. x&amp;quot;&lt;/code&gt; wird&amp;rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel &lt;em&gt;Krems an der Donau&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format &lt;code&gt;&amp;quot;x an der y&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;x bei y&amp;quot;&lt;/code&gt; wird&amp;rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel &lt;em&gt;Krems an der Donau&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;unschoener_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Krems an der Donau&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;lower()
 splitted_gemeinde_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; unschoener_gemeinde_name&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;) 
 &lt;span style=&#34;color:#75715e&#34;&gt;# [&amp;#39;krems&amp;#39;,&amp;#39;an&amp;#39;,&amp;#39;der&amp;#39;,&amp;#39;donau&amp;#39;] &lt;/span&gt;
@@ -413,9 +404,11 @@ list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://www.krems-donau.at&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#75715e&#34;&gt;# und so weiter...&lt;/span&gt;
 ]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Darüber hinaus gibt es auch Gemeinden mit &lt;code&gt;&amp;quot;St.&amp;quot;&lt;/code&gt; und &lt;code&gt;&amp;quot;Sankt&amp;quot;&lt;/code&gt; in ihrem Name, das kann auch wiederum zu Problemen bzw. noch mehr Permutationen führen.&lt;/p&gt;
 &lt;h1 id=&#34;bist-du-da&#34;&gt;Bist du da?!
 &lt;span&gt;&lt;a href=&#34;#bist-du-da&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/youThere.gif&#34; alt=&#34;&#34; title=&#34;r u there?&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests
 
 &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; domain &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; list_possible_domains:
@@ -431,14 +424,17 @@ list_possible_domains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
 Es gab nämlich Websiten, die zwar existent waren, jedoch dann einer Firma (Meistens im Bereich Tourismus ansässig) gehörten, oder eben nur &amp;ldquo;geparkt&amp;rdquo; waren. Dann bin ich noch einmal alle existenten Sites durch gegangen und habe währenddessen nach Keywords wie &amp;ldquo;Rathaus&amp;rdquo; oder &amp;ldquo;Gemeindeamt&amp;rdquo; Ausschau gehalten. Aber auch nach all diesen Checks wird es mit ziemlicher Sicherheit noch immer falsche Einträge in dem Datensatz geben.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Ohne E-Mail, ohne Liebe,
-ist das Leben wirklich trübe 📧  &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+ist das Leben wirklich trübe 📧 &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Als ich dann endlich eine vollständige Liste mit den richtigen Domains hatte, ging das Spiel von vorne los. Anstatt jedoch nach Keywords zu suchen, war ich jetzt auf der Jagd nach E-Mailadressen. Dazu musste ich meistens die &amp;ldquo;Kontakt&amp;rdquo;-oder &amp;ldquo;Impressum&amp;rdquo;-Seite finden. Dafür habe ich dann im Endeffekt Selenium&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; verwendet, da viele Seiten nur mit Javascript-Rendering ihre E-Mail preisgeben.
 Dank Selenium war dieser ganze Prozess recht schnell gecodet, dafür musste aber auch mehr rechenpower fürs Rendern der Website her.&lt;/p&gt;
 &lt;p&gt;Nachdem ich alle E-Mails gescraped hatte, schaute ich nochmal schnell über den Datensatz drüber (zB ob E-Mails doppelt vorgekommen sind weil Webmaster etc.) und musste noch ein bisschen mit Encodings rumschustern.
 Dann war ich endlich fertig!&lt;/p&gt;
 &lt;p&gt;Ich habe durch dieses Projekt einiges über das Web-Scraping gelernt und es hat auch wirklich Spaß gemacht!&lt;/p&gt;
-&lt;p&gt;Den Datensatz gibt&amp;rsquo;s als CSV, JSON und XLSX auf meinem &lt;a href=&#34;https://github.com/bresu/oe_gemeinden&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Den Datensatz gibt&amp;rsquo;s als CSV, JSON und XLSX auf meinem &lt;a href=&#34;https://github.com/bresu/oe_gemeinden&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;edit-14082022&#34;&gt;EDIT 14.08.2022
+&lt;span&gt;&lt;a href=&#34;#edit-14082022&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Der Datensatz wird vom C3Wien&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; für das &lt;a href=&#34;https://luftfilterbegehren.at/&#34;&gt;Luftfilterbegehren&lt;/a&gt; verwendet. Open-Source ist geil!&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -446,7 +442,7 @@ Dann war ich endlich fertig!&lt;/p&gt;
 &lt;p&gt;Super &lt;a href=&#34;https://www.youtube.com/watch?v=Jbix9y8iV38&#34;&gt;YT-Video&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Danke Statistik Austria für &lt;a href=&#34;&#34;&gt;das hier&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Danke Statistik Austria.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=77gKSp8WoRg&#34;&gt;🎵 My Hometown&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -456,6 +452,9 @@ Dann war ich endlich fertig!&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;Mit Selenium lassen sich Browser-Aktionen automatisieren. &lt;a href=&#34;https://www.selenium.dev/documentation/webdriver/&#34;&gt;Mehr dazu hier&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Richtig geile Leute, &lt;a href=&#34;https://c3w.at/&#34;&gt;CCC WIEN&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>
