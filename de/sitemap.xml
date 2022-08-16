@@ -18,6 +18,9 @@
                 href="https://bresu.github.io/"
                 />
   </url><url>
+    <loc>https://bresu.github.io/tags/db/</loc>
+    <lastmod>2022-08-04T18:50:17+02:00</lastmod>
+  </url><url>
     <loc>https://bresu.github.io/posts/</loc>
     <lastmod>2022-08-04T18:50:17+02:00</lastmod>
     <xhtml:link
@@ -29,6 +32,28 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://bresu.github.io/posts/"
+                />
+  </url><url>
+    <loc>https://bresu.github.io/tags/python/</loc>
+    <lastmod>2022-08-04T18:50:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/scraping/</loc>
+    <lastmod>2022-08-04T18:50:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/sql/</loc>
+    <lastmod>2022-08-04T18:50:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/</loc>
+    <lastmod>2022-08-04T18:50:17+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://bresu.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://bresu.github.io/tags/"
                 />
   </url><url>
     <loc>https://bresu.github.io/dsgvo/</loc>
@@ -49,19 +74,6 @@
     <loc>https://bresu.github.io/tags/scam/</loc>
     <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bresu.github.io/tags/</loc>
-    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://bresu.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://bresu.github.io/tags/"
-                />
-  </url><url>
     <loc>https://bresu.github.io/posts/simkarten/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -73,12 +85,6 @@
   </url><url>
     <loc>https://bresu.github.io/tags/%C3%B6sterreich/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bresu.github.io/tags/python/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://bresu.github.io/tags/scraping/</loc>
-    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/posts/scraping_austria/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
