@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bresu Blog</title>
+    <title>Bresu&#39;s Blog</title>
     <link>https://bresu.github.io/</link>
-    <description>Bresu Blog</description>
+    <description>Bresu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Thu, 04 Aug 2022 18:50:17 +0200</lastBuildDate>
@@ -13,11 +13,12 @@
     
     <item>
       <title>Datenschutzerklärung</title>
-      <link>https://bresu.github.io/dsgvo/</link>
+      <link>https://bresu.github.io/privacy/</link>
       <pubDate>Sat, 09 Jul 2022 21:29:30 +0200</pubDate>
       
-      <guid>https://bresu.github.io/dsgvo/</guid>
+      <guid>https://bresu.github.io/privacy/</guid>
       <description>&lt;p&gt;Da diese Seite auf github.io gehostet wird, gilt die &lt;a href=&#34;https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement&#34;&gt;Datenschutzbestimmung von Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Darüber hinaus nutze ich den &lt;a href=&#34;https://www.goatcounter.com/help/privacy&#34;&gt;Goat-Counter&lt;/a&gt; um zu sehen, wieviele Menschen sich auf diesen Blog verirren. Keine personenbezogenen Daten werden gespeichert, keine Daten an Dritte weitergegeben. &lt;a href=&#34;https://www.goatcounter.com/help/privacy&#34;&gt;Weitere Informationen.&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -28,7 +29,7 @@
       
       <guid>https://bresu.github.io/about/</guid>
       <description>&lt;p&gt;Inhaber: Leander Götz&lt;/p&gt;
-&lt;p&gt;Anschrift: nicht vorhanden&lt;/p&gt;
+&lt;p&gt;Anschrift: Liechtensteinstraße 157&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/general/disappear.gif&#34; alt=&#34;&#34; title=&#34;Bye&#34;&gt;&lt;/p&gt;
 </description>
     </item>
