@@ -6,10 +6,171 @@
     <description>Bresu&#39;s Blog (scraping)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 04 Aug 2022 18:50:17 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 14 Oct 2022 09:36:08 +0200</lastBuildDate>
     
     <atom:link href="https://bresu.github.io/tags/scraping/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>When life gives you Lime, make a Datenschutzauskunft</title>
+      <link>https://bresu.github.io/posts/lime_dsgvo/</link>
+      <pubDate>Fri, 14 Oct 2022 09:36:08 +0200</pubDate>
+      
+      <guid>https://bresu.github.io/posts/lime_dsgvo/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;🚨 &lt;strong&gt;Achtung&lt;/strong&gt; 🚨&lt;/p&gt;
+&lt;p&gt;🚧 &lt;em&gt;Dieser Artikel ist noch nicht fertig!&lt;/em&gt; 🚧&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich bin das letzte halbe Jahr viel E-Scooter gefahren. Mein Hauptanbieter war &lt;a href=&#34;https://www.li.me/&#34;&gt;Lime&lt;/a&gt;.
+Da kam mir eines Tages beim Prokrastinieren folgende Idee: Wieviel speichert Lime über mich ab und was wissen diese irischen E-Mobilitäts-Pioniere noch über meine nächtlichen Odyssen? Das und ein paar lustige Fotos habe ich in diesem Blog zusammengetragen.&lt;/p&gt;
+&lt;h1 id=&#34;aller-anfang-ist-die-dsgvo-15&#34;&gt;Aller Anfang ist die DSGVO §15
+&lt;span&gt;&lt;a href=&#34;#aller-anfang-ist-die-dsgvo-15&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Ich habe mit dem Online-Tool &lt;a href=&#34;https://www.mydatadoneright.eu/&#34;&gt;MyDataDoneRight&lt;/a&gt; von &lt;a href=&#34;https://noyb.eu/de&#34;&gt;NOYB&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; mein Auskunftsschreiben &amp;ldquo;erstellt&amp;rdquo;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Das Tool kann ich nur weiterempfehlen, wer weiß, was so manch andere Firma noch über dich gespeichert hat?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Für meine Auskunft musste ich folgendes im weiten, weiten Internet finden:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firmenname&lt;/li&gt;
+&lt;li&gt;Firmensitz 🏢&lt;/li&gt;
+&lt;li&gt;E-Mail-Adresse der lime&amp;rsquo;schen Datenschutzabteilung 📧&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Den fertigen Text habe ich mir als PDF runtergeladen und noch schnell Handy-signiert, dann ging es auch schon in den irischen Posteingang.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/lime_dsgvo/limeReaction.gif&#34; alt=&#34;&#34; title=&#34;LIME headquarters ~ 2022 colorized&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;die-mühlen-der-irischen-datenschutzabteilungen-mahlen-langsam&#34;&gt;Die Mühlen der irischen Datenschutzabteilungen mahlen langsam
+&lt;span&gt;&lt;a href=&#34;#die-m%c3%bchlen-der-irischen-datenschutzabteilungen-mahlen-langsam&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Ich habe meine Anfrage am 11. September 2022 abgeschickt 😄&lt;/p&gt;
+&lt;p&gt;Antwort kam am 11. Oktober 😔&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das lag aber vielleicht auch daran, das ich (als echter Patriot 😉🇦🇹) in meiner Anfrage &lt;strong&gt;betont&lt;/strong&gt; hatte, dass ich das Antwortschreiben gerne auch auf DEUTSCH hätte.&lt;/p&gt;
+&lt;p&gt;Das Lime Legal Team hat dann in der Antwort-E-Mail etwas gemacht, was man in der Informatik einen Hotfix&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; nennt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🗿 Sie haben die Mail einfach mit Google-Translate übersetzt (stand dabei) 🗿&lt;/p&gt;
+&lt;p&gt;Das eigentliche Antwortschreiben hoffentlich nicht tho 🤕&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Lime hat sich anscheinend auch schon mit Nachhaltigkeit im Büro auseinandergesetzt und interessante Denkanstöße geschaffen, z.B: Wieviele Tonnen Druckerfarbe werden jährlich für das Drucken von Umlaut-Punkten (ä,ö,ü) verschwendet?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vielleicht haben Sie deswegen konsequent statt &lt;strong&gt;Götz&lt;/strong&gt; nur &lt;strong&gt;Gotz&lt;/strong&gt; geschrieben - oder der arme Praktikant wird nicht genug fürs Umlaut-Copy-Pasten bezahlt 🤔&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;anyways-was-war-drinnen-in-der-antwort&#34;&gt;Anyways, was war drinnen in der Antwort?
+&lt;span&gt;&lt;a href=&#34;#anyways-was-war-drinnen-in-der-antwort&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Neben dem &amp;ldquo;Letter to Mr Gotz.pdf&amp;rdquo; waren auch noch 4 passwortgeschützte Excel-Files in der Antwort-E-Mail.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Die habe ich dann sofort in LibreOffice Calc geöffnet - Microsoft kann mich mal 😄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/lime_dsgvo/excelSucks.jpg&#34; alt=&#34;&#34; title=&#34;ratio + free + didn&#39;t ask&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;lets-do-statistics-&#34;&gt;Let&amp;rsquo;s do statistics 📊
+&lt;span&gt;&lt;a href=&#34;#lets-do-statistics-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Die vier Dateien im Anhang hießen so:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;TRIPS.xlsx
+PAYMENTS.xslx
+USER EVENTS.xsls
+PROFILE.xsls
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Die Dateinamen erklären den Inhalt sehr gut, ich habe mir vor allem &lt;code&gt;TRIPS&lt;/code&gt; und &lt;code&gt;USER EVENTS&lt;/code&gt; angeschaut.&lt;/p&gt;
+&lt;p&gt;Ich habe dann ein wenig Statistik-Dings-Bums drüber laufen lassen und das ganze zusammengefasst à la &lt;a href=&#34;https://i.redd.it/evmprgltvfp51.jpg&#34;&gt;Galileo-Style&lt;/a&gt; x Spotify Wrapped:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/lime_dsgvo/embedded.png&#34; alt=&#34;&#34; title=&#34;Made with Photoshop, danke TU Wien für die cheape Lizenz&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;lets-leave-the-boring-stuff-behind-&#34;&gt;Let&amp;rsquo;s leave the boring stuff behind 🥱
+&lt;span&gt;&lt;a href=&#34;#lets-leave-the-boring-stuff-behind-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Der eigentlich Grund, wieso ich diese Auskunft gemacht habe, ist nämlich folgender:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Man muss am Ende JEDER Fahrt ein Foto von seinem (hoffentlich richtig) geparkten E-Scooter knipsen 📸&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich wollte wissen, ob Lime die Bilder wirklich aufhebt&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;they-do-&#34;&gt;They do! 🤩
+&lt;span&gt;&lt;a href=&#34;#they-do-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# die urls schauen ungefähr so aus&lt;/span&gt;
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://limebike-api.s3.us-west-2.amazonaws.com/trip/end_trip_bike_image/b27241b2-***************************.jpeg&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://limebike-api.s3.us-west-2.amazonaws.com/trip/end_trip_bike_image/65a56883-***************************.jpeg&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In null Komma nichts war mein Download-Script schon fertig und ich wurde mit &lt;strong&gt;89&lt;/strong&gt; Fotos belohnt.&lt;/p&gt;
+&lt;p&gt;Diese kannst du hier anschauen ⬇️&lt;/p&gt;
+&lt;style&gt;
+  @font-face {
+    font-family: &#39;Circular&#39;;
+    font-weight: normal;
+	  font-style: bold;
+    src: url(&#39;/fonts/Circular.woff&#39;) format(&#39;woff&#39;);
+  }
+
+  .centerMe {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .myButton {
+    font-family: &#34;Circular&#34;;
+    font-size: 40px;
+    margin:auto;
+    transition-duration: 0.35s;
+    padding: 15px 30px;
+    background-color: #23d000;
+    border: none;
+    border-radius: 10px;
+  }
+ 
+  .myButton:hover {
+    background-color: #21880c;
+    color: white
+  }
+  .myButton:active{
+    transition-duration: 100ms;
+    background-color: white;
+    color: black;
+    border: black;
+    border-width: 5px;
+  }
+  
+  #myImage {
+    margin-top: 20px;
+    display: none;
+    border-radius: 5%;
+    width: 500px;
+    height: auto;
+  }
+
+&lt;/style&gt;
+
+&lt;script&gt;
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomPic(){
+  var randomNumber = getRandomInt(0,88)
+  var url = &#34;/pics/lime_dsgvo/randomImages/&#34; + randomNumber + &#34;.jpg&#34;
+  document.getElementById(&#39;myImage&#39;).src = url
+  document.getElementById(&#39;myImage&#39;).style.display = &#34;block&#34;;
+}
+
+&lt;/script&gt;
+&lt;div class=&#34;centerMe&#34;&gt;
+  &lt;button type=&#34;button&#34; class=&#34;myButton&#34; onclick=&#34;getRandomPic()&#34;&gt;Where was Leander?&lt;/button&gt;
+  &lt;div id=&#34;smallify&#34;&gt;
+    &lt;img id=&#34;myImage&#34; src=&#34;https://bresu.github.io/pics/lime_dsgvo/titleImage.png&#34;  alt=&#34;Me on my way to your mum&#34;&gt;
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+&lt;p&gt;KFZ-Kennzeichen stellen tatsächlich ein personenbezogenes Datum dar&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, daher die Zensierung&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;NOYB = &lt;strong&gt;N&lt;/strong&gt;one &lt;strong&gt;O&lt;/strong&gt;f &lt;strong&gt;Y&lt;/strong&gt;our &lt;strong&gt;B&lt;/strong&gt;usiness (genialer Name!)&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://de.wikipedia.org/wiki/Hotfix&#34;&gt;Wikipedia sagt dir, was ein Hotfix ist&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.usp.gv.at/it-geistiges-eigentum/datenschutz/begriffsbestimmungen.html&#34;&gt;Unternehmensservice hat gesprochen&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+    </item>
     
     <item>
       <title>Scraping Austria - Eine Sisyphus-Aufgabe</title>
