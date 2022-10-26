@@ -17,11 +17,7 @@
       <pubDate>Fri, 14 Oct 2022 09:36:08 +0200</pubDate>
       
       <guid>https://bresu.github.io/posts/lime_dsgvo/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;🚨 &lt;strong&gt;Achtung&lt;/strong&gt; 🚨&lt;/p&gt;
-&lt;p&gt;🚧 &lt;em&gt;Dieser Artikel ist noch nicht fertig!&lt;/em&gt; 🚧&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ich bin das letzte halbe Jahr viel E-Scooter gefahren. Mein Hauptanbieter war &lt;a href=&#34;https://www.li.me/&#34;&gt;Lime&lt;/a&gt;.
+      <description>&lt;p&gt;Ich bin das letzte halbe Jahr viel E-Scooter gefahren. Mein Hauptanbieter war &lt;a href=&#34;https://www.li.me/&#34;&gt;Lime&lt;/a&gt;.
 Da kam mir eines Tages beim Prokrastinieren folgende Idee: Wieviel speichert Lime über mich ab und was wissen diese irischen E-Mobilitäts-Pioniere noch über meine nächtlichen Odyssen? Das und ein paar lustige Fotos habe ich in diesem Blog zusammengetragen.&lt;/p&gt;
 &lt;h1 id=&#34;aller-anfang-ist-die-dsgvo-15&#34;&gt;Aller Anfang ist die DSGVO §15
 &lt;span&gt;&lt;a href=&#34;#aller-anfang-ist-die-dsgvo-15&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -106,7 +102,7 @@ PROFILE.xsls
     padding: 15px 30px;
     background-color: #23d000;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
   }
  
   .myButton:hover {
@@ -124,7 +120,7 @@ PROFILE.xsls
   #myImage {
     margin-top: 20px;
     display: none;
-    border-radius: 5%;
+    border-radius: 15px;
     width: 500px;
     height: auto;
   }
@@ -148,11 +144,12 @@ function getRandomPic(){
 
 &lt;/script&gt;
 &lt;div class=&#34;centerMe&#34;&gt;
-  &lt;button type=&#34;button&#34; class=&#34;myButton&#34; onclick=&#34;getRandomPic()&#34;&gt;Where was Leander?&lt;/button&gt;
+  &lt;a href=&#34;#jump&#34;&gt; 
+    &lt;button type=&#34;button&#34; class=&#34;myButton&#34; onclick=&#34;getRandomPic()&#34; &gt;Where was Leander?&lt;/button&gt;
+  &lt;/a&gt;
   &lt;div id=&#34;smallify&#34;&gt;
     &lt;img id=&#34;myImage&#34; src=&#34;https://bresu.github.io/pics/lime_dsgvo/titleImage.png&#34;  alt=&#34;Me on my way to your mum&#34;&gt;
   &lt;/div&gt;
-  
 &lt;/div&gt;
 
 &lt;p&gt;KFZ-Kennzeichen stellen tatsächlich ein personenbezogenes Datum dar&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, daher die Zensierung&lt;/p&gt;
