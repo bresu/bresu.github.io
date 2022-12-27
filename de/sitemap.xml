@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://bresu.github.io/tags/auskunft/</loc>
+    <lastmod>2022-12-22T12:40:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/datenschutz/</loc>
+    <lastmod>2022-12-22T12:40:12+01:00</lastmod>
+  </url><url>
     <loc>https://bresu.github.io/</loc>
     <lastmod>2022-12-22T12:40:12+01:00</lastmod>
     <xhtml:link
@@ -28,20 +34,8 @@
                 href="https://bresu.github.io/posts/"
                 />
   </url><url>
-    <loc>https://bresu.github.io/posts/christmas/</loc>
-    <lastmod>2022-12-22T12:40:12+01:00</lastmod>
-  </url><url>
-    <loc>https://bresu.github.io/tags/datenschutz/</loc>
-    <lastmod>2022-10-14T09:36:08+02:00</lastmod>
-  </url><url>
-    <loc>https://bresu.github.io/tags/mobilit%C3%A4t/</loc>
-    <lastmod>2022-10-14T09:36:08+02:00</lastmod>
-  </url><url>
-    <loc>https://bresu.github.io/tags/scraping/</loc>
-    <lastmod>2022-10-14T09:36:08+02:00</lastmod>
-  </url><url>
     <loc>https://bresu.github.io/tags/</loc>
-    <lastmod>2022-10-14T09:36:08+02:00</lastmod>
+    <lastmod>2022-12-22T12:40:12+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -53,6 +47,15 @@
                 href="https://bresu.github.io/tags/"
                 />
   </url><url>
+    <loc>https://bresu.github.io/tags/weihnachten/</loc>
+    <lastmod>2022-12-22T12:40:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/posts/christmas/</loc>
+    <lastmod>2022-12-22T12:40:12+01:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/mobilit%C3%A4t/</loc>
+    <lastmod>2022-10-14T09:36:08+02:00</lastmod>
+  </url><url>
     <loc>https://bresu.github.io/posts/lime_dsgvo/</loc>
     <lastmod>2022-10-14T09:36:08+02:00</lastmod>
   </url><url>
@@ -63,6 +66,9 @@
     <lastmod>2022-08-04T18:50:17+02:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/tags/python/</loc>
+    <lastmod>2022-08-04T18:50:17+02:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/scraping/</loc>
     <lastmod>2022-08-04T18:50:17+02:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/tags/sql/</loc>
@@ -89,7 +95,7 @@
     <loc>https://bresu.github.io/posts/simkarten/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bresu.github.io/tags/anonymoit%C3%A4t/</loc>
+    <loc>https://bresu.github.io/tags/anonymit%C3%A4t/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/tags/recht/</loc>

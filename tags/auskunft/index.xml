@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>datenschutz on Leander&#39;s Blog</title>
-    <link>https://bresu.github.io/tags/datenschutz/</link>
-    <description>Leander&#39;s Blog (datenschutz)</description>
+    <title>auskunft on Leander&#39;s Blog</title>
+    <link>https://bresu.github.io/tags/auskunft/</link>
+    <description>Leander&#39;s Blog (auskunft)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Thu, 22 Dec 2022 12:40:12 +0100</lastBuildDate>
     
-    <atom:link href="https://bresu.github.io/tags/datenschutz/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bresu.github.io/tags/auskunft/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -204,105 +204,6 @@ function getRandomPic(){
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.usp.gv.at/it-geistiges-eigentum/datenschutz/begriffsbestimmungen.html&#34;&gt;Unternehmensservice hat gesprochen&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;</description>
-    </item>
-    
-    <item>
-      <title>Schulen und Datenschutz vertragen sich nicht</title>
-      <link>https://bresu.github.io/posts/webuntis/</link>
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://bresu.github.io/posts/webuntis/</guid>
-      <description>&lt;p&gt;Wenn du in den letzten 10 Jahren eine österreichische Schule besucht hast, warst du ziemlich sicher schon in Kontakt mit den Produkten dieser Firma:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;WebUntis&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Das Unternehmen ist primär für ihre Online-Stundenplan-Software und diverse Sicherheits-Lücken&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; bekannt.
-Wenn man sich den Bug-Report genau anschaut, sieht man, dass deren Security-Management mit diesen Dingen eher leger umgeht: Fast ein halbes Jahr dauert es, bis eine einfache XSS-Attacke gefixt wird.&lt;/p&gt;
-&lt;p&gt;Doch trotz all dem ist WebUntis ein erfolgreiches Unternehmen, mit Sitz in der Gemeinde Stockerau und mehr als 100&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; Mitarbeiter*innen und Kunden aus aller Welt.&lt;/p&gt;
-&lt;p&gt;Dennoch gibt es ein paar Dinge, die mich an dieser monopolistischen Firma stören.&lt;/p&gt;
-&lt;h1 id=&#34;schul-administratorinnen-sind-auch-nur-menschen&#34;&gt;Schul-Administrator:innen sind auch nur Menschen
-&lt;span&gt;&lt;a href=&#34;#schul-administratorinnen-sind-auch-nur-menschen&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Schulen zu administrieren muss der Horror sein. Kolleg:innen vergessen ihre Passwörter andauernd, Daten müssen erfasst, bearbeitet oder gelöscht werden und man muss den ganzen Tag mit schrecklichen MS-Office Programmen wie &lt;strong&gt;Excel&lt;/strong&gt;(😔) oder &lt;strong&gt;Word&lt;/strong&gt;(🤮) arbeiten.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Dafür wirklich mein herzliches Beileid ❤️&lt;/p&gt;
-&lt;p&gt;Aber dennoch darf man gewisse Fehler einfach nicht machen!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ich gehe davon aus, dass manche einfach die Manuals nicht gelesen haben, oder WebUntis nicht ausreichend auf die &lt;em&gt;gravierenden&lt;/em&gt; Konsequenzen mancher Setting-Einstellungen hingewiesen hat. WebUntis hat aber auf jeden Fall kein &amp;ldquo;Security by Design&amp;rdquo; aber dazu an späterer Stelle mehr.&lt;/p&gt;
-&lt;h1 id=&#34;was-ist-jetzt-das-problem&#34;&gt;Was ist jetzt das Problem?
-&lt;span&gt;&lt;a href=&#34;#was-ist-jetzt-das-problem&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Eine fälschlicherweise angeklickte Checkbox gefährdet den Datenschutz hunderter Minderjähriger massiv.&lt;/p&gt;
-&lt;p&gt;Betroffen sind meines Wissensstandes nach 3 Schulen in und im Umkreis von Wien.
-Es sind die Stundenpläne der Schüler:innen einsehbar und es können dadurch&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Klasse 🤨&lt;/li&gt;
-&lt;li&gt;Vor- und Nachname 🤨🤨&lt;/li&gt;
-&lt;li&gt;Schulzeiten und Wahlfächer 🤨🤨&lt;/li&gt;
-&lt;li&gt;Religionsbekenntnis (anhand des Religions-Unterrichts) 🤨🤨🤨&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;ausgelesen werden.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/gordonRamsay.webp&#34; alt=&#34;Feel You Gordon&#34;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;An dieser Stelle möchte ich erwähnen, dass ich hier keinen schicken &lt;code&gt;Code-Block&lt;/code&gt;
-einrücke und zeigen werde, wie ich es gemacht habe.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Dafür habe ich verschiedene Gründe:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Der Fehler wurde bis heute (1.1.2022) &lt;strong&gt;nicht&lt;/strong&gt; behoben.&lt;/li&gt;
-&lt;li&gt;Es geht um Daten von ca. 1800 Schüler:innen.&lt;/li&gt;
-&lt;li&gt;Das ist kein &amp;ldquo;Ins-Gefängnis-kommen Speedrun&amp;rdquo;!&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Gut, da jetzt alle Daten-Kraken weg sind:
-Ich werde aber schon zeigen, dass das Sicherheitskonzept von WebUntis einfach 💩 ist.&lt;/p&gt;
-&lt;p&gt;Enjoy! 😁&lt;/p&gt;
-&lt;h1 id=&#34;ich-seh-ich-seh-was-du-auch-siehst-&#34;&gt;Ich seh, ich seh, was du auch siehst 👁️
-&lt;span&gt;&lt;a href=&#34;#ich-seh-ich-seh-was-du-auch-siehst-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Bei meiner Schule war es so, dass wenn ein Nutzer sich in WebUntis eingeloggt hatte, dieser Nutzer auch die Stundenpläne aller anderen der selben Nutzergruppe sehen konnte. Ich dachte lange Zeit, dass ist nur auf die Inkompetenz unserer überarbeiteten Administration zurückzuführen - aber&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;anscheinend ist das bei fast jeder Schule so! &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Das ist ist natürlich 💩-Design, weil es so Hacker:innen gelingen könnte, durch einen einzigen gehackten Account, an die Daten von allen anderen Nutzer:innen zu kommen.&lt;/p&gt;
-&lt;p&gt;Und da an vielen Schulen der Login meist wie folgt ausschaut, ist das gar kein so abwegiges Angriffsszenario:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
-    Username: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
-    Password: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Natürlich gibt es viele Variationen für diese Credentials, jedoch wird in manchen Elternbriefen zum Schulanfang ganz klar gezeigt, wie es geht:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.jpg&#34; alt=&#34;Ein wenig Google-Dorking und man findet die Dinger wie Sand am Meer&#34;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;LOL. 😐&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Und ich bin mir sicher: es wird Schüler:innen geben, die ihr Standard-Passwort &lt;em&gt;nicht&lt;/em&gt; ändern.
-Mit ein wenig OSINT-Recherche&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; lässt sich da sicher ein gutes Opfer finden&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Jetzt ist es aber so:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Man sieht nur Nutzernamen, keine Klarnamen! 😮&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;doch-leider-hat-webuntis-hier-richtig-was-versemmelt&#34;&gt;Doch leider hat WebUntis hier richtig was versemmelt
-&lt;span&gt;&lt;a href=&#34;#doch-leider-hat-webuntis-hier-richtig-was-versemmelt&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Man kann nämlich bei jedem Stundenplan eine &lt;code&gt;print-Funktion&lt;/code&gt; aufrufen. An und für sich keine schlechte Sache:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34; alt=&#34;Ich liebe GIFs :)&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Wenn man draufdrückt, öffnet sich ein neues Browser-Fenster (nicht Tab -  &lt;strong&gt;Fenster&lt;/strong&gt;) und der Stundenplan wird anscheinend &amp;ldquo;druckbarer&amp;rdquo; gerendert. Ein PDF entsteht dabei tatsächlich nicht, das ist reines HTML.&lt;/p&gt;
-&lt;p&gt;Und siehe da, was ist denn das? &amp;hellip;Doch etwa kein&amp;hellip; Klarname?!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Ojeojeoje, wer macht denn sowas???&#34;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Keine Pointe, WebUntis ist 1 Witz!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html&#34;&gt;Der Bug-Report&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Steht zumindest auf ihrer &lt;a href=&#34;https://www.untis.at/&#34;&gt;Website&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Hab ich mir von vielen Mitmenschen bestätigen lassen - not scientific!&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;strong&gt;O&lt;/strong&gt;pen-&lt;strong&gt;S&lt;/strong&gt;ource-&lt;strong&gt;INT&lt;/strong&gt;elligence - FBI für Arme!&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;</description>
