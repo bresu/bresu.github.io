@@ -67,11 +67,11 @@ Ich werde aber schon zeigen, dass das Sicherheitskonzept von WebUntis einfach �
 &lt;/blockquote&gt;
 &lt;p&gt;Das ist ist natürlich 💩-Design, weil es so Hacker:innen gelingen könnte, durch einen einzigen gehackten Account, an die Daten von allen anderen Nutzer:innen zu kommen.&lt;/p&gt;
 &lt;p&gt;Und da an vielen Schulen der Login meist wie folgt ausschaut, ist das gar kein so abwegiges Angriffsszenario:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
-    Username: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
-    Password: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;Username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;Password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Natürlich gibt es viele Variationen für diese Credentials, jedoch wird in manchen Elternbriefen zum Schulanfang ganz klar gezeigt, wie es geht:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.jpg&#34; alt=&#34;Ein wenig Google-Dorking und man findet die Dinger wie Sand am Meer&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.webp&#34; alt=&#34;Ein wenig Google-Dorking und man findet die Dinger wie Sand am Meer&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;LOL. 😐&lt;/p&gt;
 &lt;/blockquote&gt;

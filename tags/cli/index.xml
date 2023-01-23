@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cli on Leander&#39;s Blog</title>
+    <link>https://bresu.github.io/tags/cli/</link>
+    <description>Leander&#39;s Blog (cli)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Thu, 19 Jan 2023 19:41:59 +0100</lastBuildDate>
+    
+    <atom:link href="https://bresu.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tipps und Tricks für den Uni-Alltag</title>
+      <link>https://bresu.github.io/posts/unihacks/</link>
+      <pubDate>Thu, 19 Jan 2023 19:41:59 +0100</pubDate>
+      
+      <guid>https://bresu.github.io/posts/unihacks/</guid>
+      <description>&lt;p&gt;Studieren beginnt mit Organisation.&lt;/p&gt;
+&lt;p&gt;Wenn man ein wenig Ahnung von Computern hat, dann kann man sich während dem Studium sehr viel Zeit und Nerven sparen.&lt;/p&gt;
+&lt;p&gt;Die Tools die ich hier vorstelle, sollten alle auf UNIX-Systemen funktionieren (also sowohl MacOS als auch Linux), mit Windows habe ich nicht viel zu tun, aber es sollte auch dort funktionieren. Falls nicht: einfach nach &lt;strong&gt;&amp;laquo;Befehl&amp;raquo; on Windows&lt;/strong&gt; im Internet suchen.&lt;/p&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+    &lt;p&gt;zum Beispiel: &lt;strong&gt;ls -tr on Windows&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;inhalt&#34;&gt;Inhalt:
+&lt;span&gt;&lt;a href=&#34;#inhalt&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#grundlegendes&#34;&gt;Grundlegendes&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#mit-einem-computer-via-kommandozeile-interagieren-&#34;&gt;Mit einem Computer via Kommandozeile interagieren 👀&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#terminal-finden&#34;&gt;Terminal finden&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#befehle-cd---ls---man-basic&#34;&gt;Befehle: cd - ls - man (basic)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#cd-change-directory&#34;&gt;cd: change directory&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ls-list&#34;&gt;ls: list&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#man-pre-google-%C3%A4ra&#34;&gt;man: Pre-Google-Ära&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#befehle-mkdir---mv---rm-intermediate&#34;&gt;Befehle: mkdir - mv - rm (intermediate)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#mkdir-make-directory-&#34;&gt;mkdir: make directory 📁&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mv-move&#34;&gt;mv: move!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rm-remove&#34;&gt;rm: remove&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#befehle-curl-and-brew&#34;&gt;Befehle: curl and brew&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#curl-lets-go-to-the-internet-&#34;&gt;curl: lets go to the internet 🌐&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#brew-der-einzige-nicht-beste-package-manager-f%C3%BCr-mac-&#34;&gt;brew: der einzige (nicht beste!) package manager für mac 🍺&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#die-kommandozeile-effektiv-verwenden&#34;&gt;Die Kommandozeile effektiv verwenden&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#find&#34;&gt;find&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#grep&#34;&gt;grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mv-mit-mehr-funktionalit%C3%A4t&#34;&gt;mv mit mehr Funktionalität&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pdfs&#34;&gt;PDFs&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#tools&#34;&gt;Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#bilder-zu-pdf&#34;&gt;Bilder zu PDF&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#how-its-done&#34;&gt;How it&amp;rsquo;s done&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mehrere-pdfs-zu-einem-pdf-zusammenf%C3%BCgen&#34;&gt;Mehrere PDFs zu einem PDF zusammenfügen&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#how-its-done-1&#34;&gt;How it&amp;rsquo;s done&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aus-einem-pdf-einzelne-seiten-exportieren&#34;&gt;Aus einem PDF einzelne Seiten exportieren&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#how-its-done-2&#34;&gt;How it&amp;rsquo;s done&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mehrere-seiten-auf-einer-seite-drucken&#34;&gt;Mehrere Seiten auf einer Seite drucken&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#fazit-und-ausblicke&#34;&gt;Fazit und Ausblicke&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;grundlegendes&#34;&gt;Grundlegendes
+&lt;span&gt;&lt;a href=&#34;#grundlegendes&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Bevor du PDFs manipulieren willst, solltest du dich ein wenig mit der Abreitsweise und Logik deines Computers vertraut machen.&lt;/p&gt;
+&lt;h2 id=&#34;mit-einem-computer-via-kommandozeile-interagieren-&#34;&gt;Mit einem Computer via Kommandozeile interagieren 👀
+&lt;span&gt;&lt;a href=&#34;#mit-einem-computer-via-kommandozeile-interagieren-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;blockquote class=&#34;block-yellow&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;DISCLAIMER&lt;/strong&gt; -  Diese Befehle sind UNIX-eigen&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;terminal-finden&#34;&gt;Terminal finden
+&lt;span&gt;&lt;a href=&#34;#terminal-finden&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Zuerst müssen wir die Kommandozeile finden. Am besten suchst du dafür mit Spotlight &lt;code&gt;⌘ + Leertaste&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Dann suchst du nach &lt;strong&gt;&amp;ldquo;Terminal&amp;rdquo;&lt;/strong&gt; und hittest &lt;code&gt;ENTER ↵&lt;/code&gt;&lt;/p&gt;
+&lt;!--TODO: hier ein Gif von Spotlight suche--&gt;
+&lt;p&gt;Geschafft!&lt;/p&gt;
+&lt;h3 id=&#34;befehle-cd---ls---man-basic&#34;&gt;Befehle: cd - ls - man (basic)
+&lt;span&gt;&lt;a href=&#34;#befehle-cd---ls---man-basic&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;cd-change-directory&#34;&gt;cd: change directory
+&lt;span&gt;&lt;a href=&#34;#cd-change-directory&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;Du kannst dir einen Computer als eine Verschachtelung von Ordnern vorstellen, ca. so:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;home
+├── Desktop
+│   └── uni
+│       └── ausarbeitung.pdf
+├── Documents
+│   └── aufgabe1.pdf
+└── Downloads
+    └── exmatrikulation_muster.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+    &lt;p&gt;&lt;p&gt;Normalerweise kannst du einfach in einen Ordner reingehen, in dem du darauf doppelklickst.&lt;/p&gt;
+&lt;p&gt;Das Terminal-Äquvivalent dazu is &lt;strong&gt;cd&lt;/strong&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Du befindest dich standardmäßig in &lt;code&gt;/Users/&amp;lt;deinUser&amp;gt;/&lt;/code&gt; wenn du das Terminal startest.&lt;/p&gt;
+&lt;p&gt;Das kannst du auch überprüfen in dem du einfach &lt;code&gt;pwd&lt;/code&gt; (path 2 working directory) in dein Terminal mal eingibst.&lt;/p&gt;
+&lt;p&gt;Jetzt sind wir also in der Ebene des Users - nice. Aber eigentlich wollen wir oft in den Desktop bzw. Documents Ordner, weil dort die interessanten Files sind.&lt;/p&gt;
+&lt;p&gt;Dorthin komm man ganz einfach mit:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class=&#34;block-turquois&#34;&gt;
+    &lt;p&gt;&lt;p&gt;Es gibt im Terminal eine Auto-Vervollständigung: zB sollte bei&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;cd Deskto ⇥ Tab-Taste&lt;/strong&gt; zu &lt;strong&gt;cd Desktop&lt;/strong&gt; vervollständigen.&lt;/p&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!--TODO: gif von autovervollständigung--&gt;
+&lt;p&gt;Wenn du wieder in die Ebene &lt;strong&gt;über&lt;/strong&gt; dem Desktop (also in meinem Fall wieder zu &lt;code&gt;home&lt;/code&gt;) möchtest, schreib einfach:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Wenn du gleich auf einmal in eine tiefer-gelegene Directory (richtiger Ausdruck für Ordner) gehen möchtest:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Der &lt;strong&gt;/&lt;/strong&gt; ist hier essentiell!&lt;/p&gt;
+&lt;blockquote class=&#34;block-red&#34;&gt;
+    &lt;p&gt;&lt;p&gt;&lt;strong&gt;ACHTUNG: Zurück zur ursprünglichen Ebene nicht mit &amp;ldquo;..&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Wenn du beispielsweise mit einem cd-Befehl tief hineingehst, z.B bei mir mit&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;und dann wieder auf deine ursprüngliche Position zurück möchest (bei mir &lt;strong&gt;home&lt;/strong&gt;) wirst du mit&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; nur auf die *Desktop*, nicht auf die *home*-Ebene zurückkommen. Um wieder zu deiner Startposition zurück zu kommen, schreibe:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;ls-list&#34;&gt;ls: list
+&lt;span&gt;&lt;a href=&#34;#ls-list&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;Jetzt wissen wir, wie man mit &lt;strong&gt;cd&lt;/strong&gt; sich durch seine ganzen Computer bewegen kann. Jetzt wissen wir aber nicht unbedingt, was in diesen Directories drinnen ist.&lt;/p&gt;
+&lt;p&gt;Um das zu sehen, verwendet man den Befehl &lt;strong&gt;ls&lt;/strong&gt; (ls steht für list)&lt;/p&gt;
+&lt;p&gt;Hier nochmal eine Beispiel Ordnerstruktur:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;home
+└── Desktop
+    └── uni
+        └── aufgabe1
+            ├── ausarbeitung.pdf
+            ├── ausarbeitung1.pdf
+            ├── ausarbeitung1_final.pdf
+            └── ausarbeitung1_final_v2.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Jetzt gehen wir mal in &lt;em&gt;aufgabe1&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni/aufgabe1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Um uns jetzt den Inhalt anzeigen zu lassen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ls
+&lt;span class=&#34;c1&#34;&gt;#Ausgabe im Terminal (nicht unbedingt untereinander):&lt;/span&gt;
+ausarbeitung.pdf
+ausarbeitung1.pdf
+ausarbeitung1_final.pdf
+ausarbeitung1_final_v2.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Man kann mithilfe von &lt;strong&gt;flags&lt;/strong&gt; 🏳️ sehr viel an der Ausgabe ändern, z.B die Art der Sortierung der Ausgabe.
+Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
+&lt;h4 id=&#34;man-pre-google-ära&#34;&gt;man: Pre-Google-Ära
+&lt;span&gt;&lt;a href=&#34;#man-pre-google-%c3%a4ra&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;Als &lt;em&gt;cd, ls&lt;/em&gt; und viele weitere Befehle entwickelt und geschrieben wurde, gab es noch keine Tutorials wie dieses hier, wie man sie verwenden kann bzw. was sie überhaupt machen. Die Developer haben deswegen sogenannte &lt;em&gt;man&lt;/em&gt;-pages verfasst (&lt;strong&gt;man&lt;/strong&gt;uals)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;man ls&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Das Ergebnis schaut dann ungefähr so aus:&lt;/p&gt;
+&lt;!--TODO: gif von man page--&gt;
+&lt;p&gt;Um diese man-page&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;zu verlassen drücke &lt;strong&gt;q&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;nach oben zu navigieren &lt;strong&gt;k&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;nach unten mit &lt;strong&gt;j&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+    &lt;p&gt;&lt;p&gt;Du kannst auch lustig sein und das manual von &lt;em&gt;man&lt;/em&gt; selbst aufrufen - es geht!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;man cd&lt;/strong&gt; geht allerdings nicht, das hat einen technischen Grund&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;help cd&lt;/strong&gt; ist hierfür zu wählen&lt;/p&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;befehle-mkdir---mv---rm-intermediate&#34;&gt;Befehle: mkdir - mv - rm (intermediate)
+&lt;span&gt;&lt;a href=&#34;#befehle-mkdir---mv---rm-intermediate&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Jetzt kommen wir zu mächtigeren, aber auch &amp;ldquo;gefährlicheren&amp;rdquo; Befehlen.&lt;/p&gt;
+&lt;h4 id=&#34;mkdir-make-directory-&#34;&gt;mkdir: make directory 📁
+&lt;span&gt;&lt;a href=&#34;#mkdir-make-directory-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;mkdir&lt;/em&gt; steht für &lt;em&gt;make directory&lt;/em&gt; - es erstellt uns also einen Ordner!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir meinOrdner&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&#34;mv-move&#34;&gt;mv: move!
+&lt;span&gt;&lt;a href=&#34;#mv-move&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;mv&lt;/em&gt; steht für &lt;em&gt;move&lt;/em&gt; - damit können files oder auch ganze ordner verschoben werden.&lt;/p&gt;
+&lt;p&gt;Verschieben heißt auch umbennen - schauen wir uns das mal. Struktur:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;home
+└── Desktop
+    └── uni
+        └── aufgabe1
+            ├── ausarbeitung.pdf
+            ├── ausarbeitung1.pdf
+            ├── ausarbeitung1_final.pdf
+            └── ausarbeitung1_final_v2.pdf
+
+&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;
+/Users/&amp;lt;DeinUser&amp;gt;/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Jetzt wollen wir die letzte Version der Ausarbeitung aus dem Uni-Ordner raus auf den Desktop ziehen und gleichzeitig umbennen.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv Desktop/uni/aufgabe1/ausarbeitung_final_v2.pdf Desktop/sendToProf.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Das Ergebnis in unserer File-Structure&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;home
+└── Desktop
+    └── sendToProf.pdf
+    └── uni
+        └── aufgabe1
+            ├── ausarbeitung.pdf
+            ├── ausarbeitung1.pdf
+            └── ausarbeitung1_final.pdf            &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class=&#34;block-red&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;ACHTUNG:&lt;/strong&gt; wenn du zB &lt;em&gt;test.pdf&lt;/em&gt; schon in deinem Ziel Ordner hast, und du &lt;em&gt;mv&lt;/em&gt;-st ein anderes &lt;em&gt;test.pdf&lt;/em&gt; dorthin, dann wird das ursprüngliche File
+&lt;u&gt;&lt;strong&gt;überschrieben!&lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;rm-remove&#34;&gt;rm: remove
+&lt;span&gt;&lt;a href=&#34;#rm-remove&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;rm&lt;/em&gt; steht für remove - damit löscht man files&lt;/p&gt;
+&lt;blockquote class=&#34;block-red&#34;&gt;
+    &lt;p&gt;&lt;em&gt;rm&lt;/em&gt; sorgt dafür, dass die Dateien &lt;u&gt;&lt;strong&gt;wirklich gelöscht&lt;/strong&gt;&lt;/u&gt; sind - du wirst sie nicht im Papierkorb finden - sie sind weg!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;um ganze Ordner zu löschen, musst du die Flag &lt;strong&gt;-r&lt;/strong&gt; setzen.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;rm file.pdf &lt;span class=&#34;c1&#34;&gt;#löscht file&lt;/span&gt;
+rm -r directory &lt;span class=&#34;c1&#34;&gt;#löscht Ordner samt Inhalt&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;befehle-curl-and-brew&#34;&gt;Befehle: curl and brew
+&lt;span&gt;&lt;a href=&#34;#befehle-curl-and-brew&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;curl-lets-go-to-the-internet-&#34;&gt;curl: lets go to the internet 🌐
+&lt;span&gt;&lt;a href=&#34;#curl-lets-go-to-the-internet-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;curl kann alles, was dein Browser auch kann: du kannst auf Webseiten zugreifen, Dinge downloaden etc.&lt;/p&gt;
+&lt;h4 id=&#34;brew-der-einzige-nicht-beste-package-manager-für-mac-&#34;&gt;brew: der einzige (nicht beste!) package manager für mac 🍺
+&lt;span&gt;&lt;a href=&#34;#brew-der-einzige-nicht-beste-package-manager-f%c3%bcr-mac-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;Die Standard-Befehle auf MacOS sind zwar ganz nett, aber oft möchte man mehr Funktionalität.
+Es gibt viele externe Programme, die genau das tun, was du möchtest bzw. brauchst.
+Um diese runterzuladen brauchst du einen sogenannten package-manager.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;brew&lt;/strong&gt; ist
+ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; kannst du alle weiter unten angegebenen programme installieren.&lt;/p&gt;
+&lt;p&gt;Wie du brew installierst, kannst du am besten auf &lt;a href=&#34;https://brew.sh/&#34;&gt;ihrer Homepage nachlesen.&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;die-kommandozeile-effektiv-verwenden&#34;&gt;Die Kommandozeile effektiv verwenden
+&lt;span&gt;&lt;a href=&#34;#die-kommandozeile-effektiv-verwenden&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Nachdem du die oberen Befehle verinnerlicht hast, nun zu interessanten, mächtigeren Befehlen&lt;/p&gt;
+&lt;h3 id=&#34;find&#34;&gt;find
+&lt;span&gt;&lt;a href=&#34;#find&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Macht was es soll, &lt;strong&gt;es findet Dinge.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Dieser Befehl listet alle PDFs in dem Ordner &lt;em&gt;Desktop&lt;/em&gt; auf (nicht aber in darunter liegenden Ordnern):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;find Desktop -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.pdf&amp;#39;&lt;/span&gt; -maxdepth &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Jetzt möchten wir alle PDFs die sich maximal 3 Ebenen unter &lt;em&gt;Desktop&lt;/em&gt; befinden anzeigen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;find Desktop -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.pdf&amp;#39;&lt;/span&gt; -maxdepth &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class=&#34;block-turquois&#34;&gt;
+    &lt;p&gt;&lt;p&gt;Der Stern ist ein Placeholder, d.h es kann alles vor &lt;strong&gt;.pdf&lt;/strong&gt; stehen. Wenn zB direkt davor eine Zahl stehen sollte:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[0-9].pdf&lt;/strong&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Diese Placeholder sind äußerst mächtig. Wenn du mehr darüber lesen möchtest, suche im Internet nach &lt;strong&gt;regex&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;oder ließ offline nach:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-dracula&#34; data-lang=&#34;dracula&#34;&gt;man re_format&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;grep&#34;&gt;grep
+&lt;span&gt;&lt;a href=&#34;#grep&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;blockquote class=&#34;block-orange&#34;&gt;
+    &lt;p&gt;&lt;p&gt;&lt;em&gt;grep&lt;/em&gt; ist so etwas wie &lt;em&gt;find&lt;/em&gt;, nur für den &lt;strong&gt;Inhalt&lt;/strong&gt; von &lt;a href=&#34;https://de.wikipedia.org/wiki/Plain_text&#34;&gt;Plain Text Dateien&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ich wollte hier nur darauf hinweisen, dass &lt;em&gt;grep&lt;/em&gt; existiert.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;grep&lt;/em&gt; ist nicht Inhalt dieses Tutorials.&lt;/p&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;mv-mit-mehr-funktionalität&#34;&gt;mv mit mehr Funktionalität
+&lt;span&gt;&lt;a href=&#34;#mv-mit-mehr-funktionalit%c3%a4t&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;mv&lt;/strong&gt; - einer der häufigsten Befehle, die ich verwende. Vor allem wenn ich nur eine bestimmte Art von Datei (und davon sehr viele) in einen Ordner verfrachten möchte.&lt;/p&gt;
+&lt;p&gt;Wanna move all the JPEGs to a specific directory (myFolder)? Easy:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv *.jpeg myFolder&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Die selbe Syntax funktioniert auch mit &lt;em&gt;rm&lt;/em&gt;, bitte beachte dabei nur den &lt;a href=&#34;#rm-remove&#34;&gt;obigen Hinweis.&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;pdfs&#34;&gt;PDFs
+&lt;span&gt;&lt;a href=&#34;#pdfs&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Wer lernt, hat viel mit Dokumenten zu tun. PDFs sind dafür das Standard-Format.&lt;/p&gt;
+&lt;p&gt;Oft möchte man aus PDFs einzelne Seiten extrahieren, mehrere PDFs zu einem zusammenfügen etc.&lt;/p&gt;
+&lt;p&gt;Hierfür gibt es einige Tools:&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools
+&lt;span&gt;&lt;a href=&#34;#tools&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;pdfjam (im texlive paket enthalten)&lt;/li&gt;
+&lt;li&gt;qpdf&lt;/li&gt;
+&lt;li&gt;ghostscript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Diese kann man alle mittels &lt;em&gt;brew&lt;/em&gt; installieren:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install qpdf
+brew install ghostscript
+brew install texlive &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;bilder-zu-pdf&#34;&gt;Bilder zu PDF
+&lt;span&gt;&lt;a href=&#34;#bilder-zu-pdf&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Jeder kennt es: Altfragen, Fotos von Slides oder auch einfach Fotos von handgeschriebenen Mitschriften werden in Uni-WhatsApp-Gruppen herumgeschickt als gäbe es kein morgen. Spätestens in der Prüfungsphase kann man da schon mal den Überblick verlieren.&lt;/p&gt;
+&lt;p&gt;Die Lösung:&lt;/p&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+    &lt;p&gt;Die ganzen Bilder zu einem PDF zusammenfügen! 📈📈📈&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Standardmäßig sollte &lt;em&gt;convert&lt;/em&gt; schon auf deiner Maschine installiert sein, überprüfen kannst du das, indem du &lt;em&gt;convert&lt;/em&gt; in dein terminal eingibst.&lt;/p&gt;
+&lt;blockquote class=&#34;block-yellow&#34;&gt;
+    &lt;p&gt;Wenn &lt;code&gt;command not found&lt;/code&gt; zurückkommt, musst du vorher noch das Paket dafür installieren:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install imagemagick&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;how-its-done&#34;&gt;How it&amp;rsquo;s done
+&lt;span&gt;&lt;a href=&#34;#how-its-done&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Angenommen, wir haben folgende Ordnerstruktur:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;altfragen
+├── 01.jpg
+├── 02.jpg
+├── 03.jpg
+├── 04.jpg
+├── 05.jpg
+├── 06.jpg
+├── 07.jpg
+├── 08.jpg
+├── 09.jpg
+├── 10.jpg
+├── 11.jpg
+├── 12.jpg
+├── 13.jpg
+└── otherFile.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Wir wollen also alle &lt;em&gt;jpg&lt;/em&gt; zu einem &lt;em&gt;altfragen.pdf&lt;/em&gt; zusammenfügen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;convert *.jpg altfragen.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class=&#34;block-blue&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;Good-2-Know:&lt;/strong&gt; Die original jpg-Files bleiben erhalten!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;mehrere-pdfs-zu-einem-pdf-zusammenfügen&#34;&gt;Mehrere PDFs zu einem PDF zusammenfügen
+&lt;span&gt;&lt;a href=&#34;#mehrere-pdfs-zu-einem-pdf-zusammenf%c3%bcgen&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Hierfür benötigen wir &lt;em&gt;ghostscript&lt;/em&gt; aka &lt;strong&gt;gs&lt;/strong&gt;. &lt;a href=&#34;#tools&#34;&gt;Weiter oben&lt;/a&gt; findest du den Installationsbefehl.&lt;/p&gt;
+&lt;p&gt;Jetzt haben wir beispielsweise zwei PDFs in unserem Ordner, die wir miteinander mergen wollen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;altfragen
+├── stupidPhoto.jpg
+├── altfragen.pdf
+└── otherFile.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dabei soll &lt;em&gt;otherFile&lt;/em&gt; &lt;strong&gt;vor&lt;/strong&gt; den &lt;em&gt;altfragen&lt;/em&gt; stehen und das ganze in &lt;em&gt;out.pdf&lt;/em&gt; gespeichert werden. Der Befehl:&lt;/p&gt;
+&lt;h3 id=&#34;how-its-done-1&#34;&gt;How it&amp;rsquo;s done
+&lt;span&gt;&lt;a href=&#34;#how-its-done-1&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;gs -dNOPAUSE -dBATCH -sDEVICE&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;pdfwrite -sOutputFile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;out.pdf otherFile.pdf altfragen.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+    &lt;p&gt;Du kannst selbstverständlich auch mit &lt;strong&gt;*.pdf&lt;/strong&gt; hier arbeiten, allerdings ist die Sortierung standardmäßig &lt;strong&gt;alphabetisch&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;aus-einem-pdf-einzelne-seiten-exportieren&#34;&gt;Aus einem PDF einzelne Seiten exportieren
+&lt;span&gt;&lt;a href=&#34;#aus-einem-pdf-einzelne-seiten-exportieren&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Kann man mit der Preview (dt. Vorschau) machen, aber wir verwenden jetzt &lt;em&gt;pdfjam&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Installationsanleitung siehe &lt;a href=&#34;#tools&#34;&gt;oben&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;how-its-done-2&#34;&gt;How it&amp;rsquo;s done
+&lt;span&gt;&lt;a href=&#34;#how-its-done-2&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Angenommen wir haben ein PDF namens &lt;em&gt;langesPDF.pdf&lt;/em&gt; mit 10 Seiten und wollen nur Seite 3, 5 und 7,8,9,10 in &lt;em&gt;clean.pdf&lt;/em&gt; abspeichern:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pdfjam langespdf.pdf 3,5,7-10 -o clean.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;mehrere-seiten-auf-einer-seite-drucken&#34;&gt;Mehrere Seiten auf einer Seite drucken
+&lt;span&gt;&lt;a href=&#34;#mehrere-seiten-auf-einer-seite-drucken&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Ein Life-Saver wenn man eine Open-Book Prüfung hat und Papier, Druckerfarbe, Zeit und Geld sparen möchte:&lt;/p&gt;
+&lt;p&gt;Mehrere Vorlesungs-Slides auf eine Seite zusammenfassen, zB immer vier Folien auf eine Seite&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/unihacks/421.webp&#34; alt=&#34;Vier Seiten auf eine Seite&#34; title=&#34;Vier getrennte horizontal-orinetierte Slides werden auf eine Seite zusammengefügt &#34;&gt;&lt;/p&gt;
+&lt;p&gt;Auch dafür kann man wieder &lt;em&gt;pdfjam&lt;/em&gt; verwenden.&lt;/p&gt;
+&lt;p&gt;Angenommen du möchtest von &lt;em&gt;slides.pdf&lt;/em&gt; die Folien sowie in der oberen Abbildung in &lt;em&gt;savePaper.pdf&lt;/em&gt; zusammenfassen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pdfjam --nup 2x2 slides.pdf --landscape --a4paper --outfile savePaper.pdf &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;fazit-und-ausblicke&#34;&gt;Fazit und Ausblicke
+&lt;span&gt;&lt;a href=&#34;#fazit-und-ausblicke&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Ich hoffe, dir hat irgendetwas in diesem Artikel geholfen. Ein Teil zwei ist derzeit geplant, nämlich wie&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

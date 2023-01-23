@@ -34,7 +34,7 @@
     
 
     
-        <link rel="stylesheet" href="https://bresu.github.io/css/style.min.d92fe2fe5fe7f51f0a4c2fe2f550968e8059d71df55d7e76368db8b415dfea08.css" integrity="sha256-2S/i/l/n9R8KTC/i9VCWjoBZ1x31XX52No24tBXf6gg=">
+        <link rel="stylesheet" href="https://bresu.github.io/css/style.min.6aae6882d20e322363f4e7fe1f518d1d87fa2d3d7db7c7b35ca263f14aca3b23.css" integrity="sha256-aq5ogtIOMiNj9Of&#43;H1GNHYf6LT19t8ezXKJj8UrKOyM=">
     
 
 
@@ -122,8 +122,94 @@
         </li>
     
 
-</ul>
 
+
+
+    
+
+
+
+
+<style>
+.theme-switcher {
+    border-radius: 40px;
+    background: #212121;
+    font-size: 1.15rem;
+    padding: 0.1em 0.5em;
+    margin: 0px;
+}
+
+</style>
+
+    <button class="theme-switcher" title= Anzeigemodus>
+        🌙
+    </button>
+
+    <script>
+    const STORAGE_KEY = 'user-color-scheme'
+    const defaultTheme = "light"
+
+    let currentTheme
+    let switchButton
+    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const autoChangeScheme = e => {
+        currentTheme = e.matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', currentTheme)
+        changeButtonText()
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        switchButton = document.querySelector('.theme-switcher')
+        currentTheme = detectCurrentScheme()
+        if (currentTheme == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        if (currentTheme == 'auto') {
+            autoChangeScheme(autoDefinedScheme);
+            autoDefinedScheme.addListener(autoChangeScheme);
+        }
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    })
+
+    function detectCurrentScheme() {
+        if (localStorage.getItem(STORAGE_KEY)) {
+            return localStorage.getItem(STORAGE_KEY)
+        } 
+        if (defaultTheme) {
+            return defaultTheme
+        } 
+        if (!window.matchMedia) {
+            return 'light'
+        } 
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+        return 'light'
+    }
+
+    function changeButtonText()
+    {   
+        switchButton.textContent = currentTheme == 'dark' ?  "☀️" : "🌙"
+    }
+
+    function switchTheme(e) {
+        if (currentTheme == 'dark') {
+            localStorage.setItem(STORAGE_KEY, 'light')
+            document.documentElement.setAttribute('data-theme', 'light')
+            currentTheme = 'light'
+        } else {
+            localStorage.setItem(STORAGE_KEY, 'dark')
+            document.documentElement.setAttribute('data-theme', 'dark')
+            currentTheme = 'dark'
+        }
+        changeButtonText()
+    }
+    </script>
+  
+</ul>
+ 
 </div>
 
     <nav>
@@ -136,6 +222,7 @@
         <a class="" href="https://bresu.github.io/about/" title="Impressum">Impressum</a>
         
     </nav>
+
 
 
 
@@ -186,7 +273,15 @@
 
     
 
-<img src="/pics/scraping_austria/titleImage.png" alt=".Title">
+
+
+<style>
+.titleImage {
+border-radius: 12px;
+}
+</style>
+
+<img class="titleImage" src="/pics/scraping_austria/titleImage.png" alt="Scraping Austria - Eine Sisyphus-Aufgabe" width="" height="">
 
             <p>Servus! Die Inspiration für dieses Projekt kommt von diesem Youtube-Video<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Darin zeigt ein sehr
 sympathischer Typ, wie er mit ein wenig Aufwand tausende E-Mails an zig Botschaften in der ganzen
@@ -239,54 +334,54 @@ zugehörige Postleitzahl(PLZ) und <strong>Gemeindekennziffer(GKZ)</strong> beinh
 <h1 id="kombinatorik--permutation">Kombinatorik &amp; Permutation
 <span><a href="#kombinatorik--permutation">#</a></span>
 </h1><p>Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor allem wenn man pro Gemeinde mehrere Domains checken muss. Das schaut dann ungefähr so aus:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bisamberg&#34;</span><span style="color:#f92672">.</span>lower()
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="n">gemeinde_name</span> <span class="o">=</span> <span class="s2">&#34;Bisamberg&#34;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
-list_possible_domains <span style="color:#f92672">=</span> [
+<span class="n">list_possible_domains</span> <span class="o">=</span> <span class="p">[</span>
 
-    <span style="color:#75715e"># Official Gov-Domain</span>
-    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.gv.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name),
+    <span class="c1"># Official Gov-Domain</span>
+    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.gv.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">),</span>
 
-    <span style="color:#75715e"># Nicht jeder machts anscheinend offiziell</span>
-    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name),
+    <span class="c1"># Nicht jeder machts anscheinend offiziell</span>
+    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">),</span>
 
-    <span style="color:#75715e"># Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]</span>
-    <span style="color:#e6db74">&#34;http://www.</span><span style="color:#e6db74">{gemeinde}</span><span style="color:#e6db74">.tirol.gv.at&#34;</span><span style="color:#f92672">.</span>format(gemeinde<span style="color:#f92672">=</span>gemeinde_name)
+    <span class="c1"># Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]</span>
+    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.tirol.gv.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">)</span>
 
-    <span style="color:#75715e"># und so weiter</span>
-]</code></pre></div>
+    <span class="c1"># und so weiter</span>
+<span class="p">]</span></code></pre></div>
 <p>Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format <code>&quot;x an der y&quot;</code>, <code>&quot;x bei y&quot;</code> wird&rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel <em>Krems an der Donau</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">unschoener_gemeinde_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Krems an der Donau&#34;</span><span style="color:#f92672">.</span>lower()
-splitted_gemeinde_name <span style="color:#f92672">=</span> unschoener_gemeinde_name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>) 
-<span style="color:#75715e"># [&#39;krems&#39;,&#39;an&#39;,&#39;der&#39;,&#39;donau&#39;] </span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="n">unschoener_gemeinde_name</span> <span class="o">=</span> <span class="s2">&#34;Krems an der Donau&#34;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">splitted_gemeinde_name</span> <span class="o">=</span> <span class="n">unschoener_gemeinde_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span> 
+<span class="c1"># [&#39;krems&#39;,&#39;an&#39;,&#39;der&#39;,&#39;donau&#39;] </span>
 
-<span style="color:#75715e"># Dann hab ich ein paar richtig unschöne Funktionen geschrieben,</span>
-<span style="color:#75715e"># um diese Liste zu permutieren</span>
-<span style="color:#75715e"># Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus</span>
+<span class="c1"># Dann hab ich ein paar richtig unschöne Funktionen geschrieben,</span>
+<span class="c1"># um diese Liste zu permutieren</span>
+<span class="c1"># Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus</span>
 
-list_possible_domains <span style="color:#f92672">=</span> [
+<span class="n">list_possible_domains</span> <span class="o">=</span> <span class="p">[</span>
 
-    <span style="color:#e6db74">&#34;http://www.krems.gv.at&#34;</span>
-    <span style="color:#e6db74">&#34;http://www.krems-an-der-donau.gv.at&#34;</span>
-    <span style="color:#e6db74">&#34;http://www.krems-donau.gv.at&#34;</span>
-    <span style="color:#e6db74">&#34;http://www.krems.at&#34;</span>
-    <span style="color:#e6db74">&#34;http://www.krems-an-der-donau.at&#34;</span>
-    <span style="color:#e6db74">&#34;http://www.krems-donau.at&#34;</span>
-    <span style="color:#75715e"># und so weiter...</span>
-]</code></pre></div>
+    <span class="s2">&#34;http://www.krems.gv.at&#34;</span>
+    <span class="s2">&#34;http://www.krems-an-der-donau.gv.at&#34;</span>
+    <span class="s2">&#34;http://www.krems-donau.gv.at&#34;</span>
+    <span class="s2">&#34;http://www.krems.at&#34;</span>
+    <span class="s2">&#34;http://www.krems-an-der-donau.at&#34;</span>
+    <span class="s2">&#34;http://www.krems-donau.at&#34;</span>
+    <span class="c1"># und so weiter...</span>
+<span class="p">]</span></code></pre></div>
 <p>Darüber hinaus gibt es auch Gemeinden mit <code>&quot;St.&quot;</code> und <code>&quot;Sankt&quot;</code> in ihrem Name, das kann auch wiederum zu Problemen bzw. noch mehr Permutationen führen.</p>
 <h1 id="bist-du-da">Bist du da?!
 <span><a href="#bist-du-da">#</a></span>
 </h1><p><img src="/pics/scraping_austria/youThere.gif" alt="" title="r u there?"></p>
 <p>Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="color:#f92672">import</span> requests
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="kn">import</span> <span class="nn">requests</span>
 
-<span style="color:#66d9ef">for</span> domain <span style="color:#f92672">in</span> list_possible_domains:
-    <span style="color:#66d9ef">try</span>:
-        rsp <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(domain)
-        <span style="color:#66d9ef">if</span> rsp<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
-            <span style="color:#75715e"># domain abspeichern</span>
-    <span style="color:#66d9ef">except</span>:
-        <span style="color:#66d9ef">continue</span></code></pre></div>
+<span class="k">for</span> <span class="n">domain</span> <span class="ow">in</span> <span class="n">list_possible_domains</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">rsp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rsp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="c1"># domain abspeichern</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">continue</span></code></pre></div>
 <h1 id="false-positives">False positives
 <span><a href="#false-positives">#</a></span>
 </h1><p>Nachdem ich so ca. 10.000 Domains auf ihre Existenz überprüft hatte, wurde es ernster.
@@ -413,16 +508,26 @@ Dann war ich endlich fertig!</p>
         </main>
         
             <footer class="common-footer">
-    
-    
-        <ul class="language-select">
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Leander - 2023<br>
+            
+            
+            </p>  
+        </div> 
+
+        
+        
+            <ul class="language-select">
     
     
     
 
     
         
-            <li>German</li>
+            <li>Deutsch</li>
         
     
         
@@ -431,96 +536,16 @@ Dann war ich endlich fertig!</p>
     
 </ul>
 
-    
-
-    <div class="common-footer-bottom">
-        
-        <div class="copyright">
-            <p>© Bresu, 2022<br>
-            Erstellt mit <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, Theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
-            
-            </p>  
-        </div> 
-
         
 
-    
-
-
-
-    <button class="theme-switcher">
-        Dunkles theme
-    </button>
-
-    <script>
-    const STORAGE_KEY = 'user-color-scheme'
-    const defaultTheme = "light"
-
-    let currentTheme
-    let switchButton
-    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
-
-    const autoChangeScheme = e => {
-        currentTheme = e.matches ? 'dark' : 'light'
-        document.documentElement.setAttribute('data-theme', currentTheme)
-        changeButtonText()
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        switchButton = document.querySelector('.theme-switcher')
-        currentTheme = detectCurrentScheme()
-        if (currentTheme == 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark')
-        }
-        if (currentTheme == 'auto') {
-            autoChangeScheme(autoDefinedScheme);
-            autoDefinedScheme.addListener(autoChangeScheme);
-        }
-        changeButtonText()
-        switchButton.addEventListener('click', switchTheme, false)
-    })
-
-    function detectCurrentScheme() {
-        if (localStorage.getItem(STORAGE_KEY)) {
-            return localStorage.getItem(STORAGE_KEY)
-        } 
-        if (defaultTheme) {
-            return defaultTheme
-        } 
-        if (!window.matchMedia) {
-            return 'light'
-        } 
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark'
-        }
-        return 'light'
-    }
-
-    function changeButtonText()
-    {   
-        switchButton.textContent = currentTheme == 'dark' ?  "Helles theme" : "Dunkles theme"
-    }
-
-    function switchTheme(e) {
-        if (currentTheme == 'dark') {
-            localStorage.setItem(STORAGE_KEY, 'light')
-            document.documentElement.setAttribute('data-theme', 'light')
-            currentTheme = 'light'
-        } else {
-            localStorage.setItem(STORAGE_KEY, 'dark')
-            document.documentElement.setAttribute('data-theme', 'dark')
-            currentTheme = 'dark'
-        }
-        changeButtonText()
-    }
-    </script>
-   
     </div>
-
     <p class="h-card vcard">
 
-    <a href=https://bresu.github.io/ class="p-name u-url url fn" rel="me">Bresu</a> 
+    <a href=https://bresu.github.io/ class="p-name u-url url fn" rel="me">Leander</a> 
 
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:post@leandergoetz.eu">post@leandergoetz.eu</a>
     
 
     

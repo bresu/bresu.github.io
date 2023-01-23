@@ -13,7 +13,7 @@
 
 <title>Leander&#39;s Blog</title>
 
-<meta name="description" content="Mein persönlicher Blog">
+<meta name="description" content="My personal Blog">
 
 
 
@@ -36,7 +36,7 @@
     
 
     
-        <link rel="stylesheet" href="https://bresu.github.io/css/style.min.d92fe2fe5fe7f51f0a4c2fe2f550968e8059d71df55d7e76368db8b415dfea08.css" integrity="sha256-2S/i/l/n9R8KTC/i9VCWjoBZ1x31XX52No24tBXf6gg=">
+        <link rel="stylesheet" href="https://bresu.github.io/css/style.min.6aae6882d20e322363f4e7fe1f518d1d87fa2d3d7db7c7b35ca263f14aca3b23.css" integrity="sha256-aq5ogtIOMiNj9Of&#43;H1GNHYf6LT19t8ezXKJj8UrKOyM=">
     
 
 
@@ -45,14 +45,14 @@
 
 
 <meta property="og:title" content="Leander&#39;s Blog" />
-<meta property="og:description" content="Mein persönlicher Blog" />
+<meta property="og:description" content="My personal Blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://bresu.github.io/" />
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Leander&#39;s Blog"/>
-<meta name="twitter:description" content="Mein persönlicher Blog"/>
+<meta name="twitter:description" content="My personal Blog"/>
 
 
 
@@ -122,8 +122,94 @@
         </li>
     
 
-</ul>
 
+
+
+    
+
+
+
+
+<style>
+.theme-switcher {
+    border-radius: 40px;
+    background: #212121;
+    font-size: 1.15rem;
+    padding: 0.1em 0.5em;
+    margin: 0px;
+}
+
+</style>
+
+    <button class="theme-switcher" title= Anzeigemodus>
+        🌙
+    </button>
+
+    <script>
+    const STORAGE_KEY = 'user-color-scheme'
+    const defaultTheme = "light"
+
+    let currentTheme
+    let switchButton
+    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const autoChangeScheme = e => {
+        currentTheme = e.matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', currentTheme)
+        changeButtonText()
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        switchButton = document.querySelector('.theme-switcher')
+        currentTheme = detectCurrentScheme()
+        if (currentTheme == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        if (currentTheme == 'auto') {
+            autoChangeScheme(autoDefinedScheme);
+            autoDefinedScheme.addListener(autoChangeScheme);
+        }
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    })
+
+    function detectCurrentScheme() {
+        if (localStorage.getItem(STORAGE_KEY)) {
+            return localStorage.getItem(STORAGE_KEY)
+        } 
+        if (defaultTheme) {
+            return defaultTheme
+        } 
+        if (!window.matchMedia) {
+            return 'light'
+        } 
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+        return 'light'
+    }
+
+    function changeButtonText()
+    {   
+        switchButton.textContent = currentTheme == 'dark' ?  "☀️" : "🌙"
+    }
+
+    function switchTheme(e) {
+        if (currentTheme == 'dark') {
+            localStorage.setItem(STORAGE_KEY, 'light')
+            document.documentElement.setAttribute('data-theme', 'light')
+            currentTheme = 'light'
+        } else {
+            localStorage.setItem(STORAGE_KEY, 'dark')
+            document.documentElement.setAttribute('data-theme', 'dark')
+            currentTheme = 'dark'
+        }
+        changeButtonText()
+    }
+    </script>
+  
+</ul>
+ 
 </div>
 
     <nav>
@@ -140,6 +226,7 @@
 
 
 
+
             
         </header>
         <main id="main" tabindex="-1"> 
@@ -150,6 +237,82 @@
 
     <div class="articles h-feed">
         
+        
+            <article class="post-list h-feed">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title"><a class="u-url" href="/posts/unihacks/">Tipps und Tricks für den Uni-Alltag</a></h1>
+        </header>
+        
+    </div>
+
+    
+    <a href="/posts/unihacks/">
+        
+        
+
+
+
+
+
+
+
+
+   
+
+
+<style>
+.titleImage {
+border-radius: 12px;
+}
+</style>
+
+<img class="titleImage" src="/pics/unihacks/titleImage.webp" alt="Tipps und Tricks für den Uni-Alltag" width="" height="">
+  
+        </a>
+            <div class="content post-summary p-summary">
+                Studieren beginnt mit Organisation.
+Wenn man ein wenig Ahnung von Computern hat, dann kann man sich während dem Studium sehr viel Zeit und Nerven sparen.
+Die Tools die ich hier vorstelle, sollten alle auf UNIX-Systemen funktionieren (also sowohl MacOS als auch Linux), mit Windows habe ich nicht viel zu tun, aber es sollte auch dort funktionieren.
+            </div>
+    
+    
+        <div class="read-more">
+            <a class="u-url" href="/posts/unihacks/">Weiterlesen</a>
+        </div>
+    
+    
+    
+
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">01-19-2023</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://bresu.github.io/posts/unihacks/">https://bresu.github.io/posts/unihacks/</a>
+    <a href="https://bresu.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Leander</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://bresu.github.io/tags/cli">#cli</a></li>
+                    
+                        <li><a href="https://bresu.github.io/tags/open-source">#open-source</a></li>
+                    
+                        <li><a href="https://bresu.github.io/tags/unix">#unix</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
         
             <article class="post-list h-feed">
     <div class="post-header">
@@ -171,7 +334,14 @@
 
 
 
-<img src="/pics/default.png" alt=".Title">
+
+<style>
+.titleImage {
+border-radius: 12px;
+}
+</style>
+
+<img class="titleImage" src="/pics/default.png" alt="🎄Ich hab Ferien, die Datenschutzabteilungen aber nicht!🎄" width="" height="">
   
         </a>
             <div class="content post-summary p-summary">
@@ -196,7 +366,7 @@ Eigentlich hatte ich für diesen Advent geplant, jeden Tag eine Auskunftsanfrage
     
 
     <a class="post-hidden-url u-url" href="https://bresu.github.io/posts/christmas/">https://bresu.github.io/posts/christmas/</a>
-    <a href="https://bresu.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Bresu</a>
+    <a href="https://bresu.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Leander</a>
 
 
     <div class="post-taxonomies">
@@ -239,7 +409,15 @@ Eigentlich hatte ich für diesen Advent geplant, jeden Tag eine Auskunftsanfrage
 
     
 
-<img src="/pics/lime_dsgvo/titleImage.png" alt=".Title">
+
+
+<style>
+.titleImage {
+border-radius: 12px;
+}
+</style>
+
+<img class="titleImage" src="/pics/lime_dsgvo/titleImage.png" alt="When life gives you Lime, make a Datenschutzauskunft" width="" height="">
   
         </a>
             <div class="content post-summary p-summary">
@@ -264,7 +442,7 @@ Da kam mir eines Tages beim Prokrastinieren folgende Idee: Wieviel speichert Lim
     
 
     <a class="post-hidden-url u-url" href="https://bresu.github.io/posts/lime_dsgvo/">https://bresu.github.io/posts/lime_dsgvo/</a>
-    <a href="https://bresu.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Bresu</a>
+    <a href="https://bresu.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Leander</a>
 
 
     <div class="post-taxonomies">
@@ -307,7 +485,15 @@ Da kam mir eines Tages beim Prokrastinieren folgende Idee: Wieviel speichert Lim
 
     
 
-<img src="/pics/bookexchange/titleImage.png" alt=".Title">
+
+
+<style>
+.titleImage {
+border-radius: 12px;
+}
+</style>
+
+<img class="titleImage" src="/pics/bookexchange/titleImage.png" alt="Instagram Global Book-Exchange" width="" height="">
   
         </a>
             <div class="content post-summary p-summary">
@@ -377,7 +563,14 @@ Das und vieles mehr habe ich in diesem Artikel recherchiert und zusammengetragen
     
 
 
-<img src="/pics/simkarten/titleImage.jpg" alt=".Title">
+
+<style>
+.titleImage {
+border-radius: 12px;
+}
+</style>
+
+<img class="titleImage" src="/pics/simkarten/titleImage.jpg" alt="Anonyme Simkarten in Österreich" width="" height="">
   
         </a>
             <div class="content post-summary p-summary">
@@ -467,7 +660,15 @@ digitalen Service - verlangt heutzutage eine Angabe der Telefonnummer.</p>
 
     
 
-<img src="/pics/scraping_austria/titleImage.png" alt=".Title">
+
+
+<style>
+.titleImage {
+border-radius: 12px;
+}
+</style>
+
+<img class="titleImage" src="/pics/scraping_austria/titleImage.png" alt="Scraping Austria - Eine Sisyphus-Aufgabe" width="" height="">
   
         </a>
             <div class="content post-summary p-summary">
@@ -515,118 +716,47 @@ Das Video hat mir dann so gut gefallen, dass ich mich dazu entschlossen habe, au
 
 </article>
         
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/webuntis/">Schulen und Datenschutz vertragen sich nicht</a></h1>
-        </header>
         
     
-    <span>
-        <ul class="post-translations">
+    
+    <div class="pagination">
+        <div class="left pagination-item disabled">
             
-                
-                    <li>
-                        DE
-                    </li>
-                
-            
-                
-                    <li>
-                        <a href="https://bresu.github.io/en/posts/webuntis/">EN</a>
-                    </li>
-                
-            
-        </ul>
-    </span>
-
-    </div>
-
-    
-    <a href="/posts/webuntis/">
-        
-        
-
-
-
-
-
-
-
-
-    
-
-
-<img src="/pics/webuntis/titleImage.jpg" alt=".Title">
-  
-        </a>
-            <div class="content post-summary p-summary">
-                <p>Wenn du in den letzten 10 Jahren eine österreichische Schule besucht hast, warst du ziemlich sicher schon in Kontakt mit den Produkten dieser Firma:</p>
-<blockquote>
-<p>WebUntis</p>
-</blockquote>
-<p>Das Unternehmen ist primär für ihre Online-Stundenplan-Software und diverse Sicherheits-Lücken<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> bekannt.
-Wenn man sich den Bug-Report genau anschaut, sieht man, dass deren Security-Management mit diesen Dingen eher leger umgeht: Fast ein halbes Jahr dauert es, bis eine einfache XSS-Attacke gefixt wird.</p>
-<p>Doch trotz all dem ist WebUntis ein erfolgreiches Unternehmen, mit Sitz in der Gemeinde Stockerau und mehr als 100<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> Mitarbeiter*innen und Kunden aus aller Welt.</p>
-<p>Dennoch gibt es ein paar Dinge, die mich an dieser monopolistischen Firma stören.</p>
-            </div>
-    
-    
-        <div class="read-more">
-            <a class="u-url" href="/posts/webuntis/">Weiterlesen</a>
         </div>
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">01-10-2020</div>
-    
-
-    <a class="post-hidden-url u-url" href="https://bresu.github.io/posts/webuntis/">https://bresu.github.io/posts/webuntis/</a>
-    <a href="https://bresu.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Bresu</a>
-
-
-    <div class="post-taxonomies">
-        
+        <div class="right pagination-item ">
             
-                <ul class="post-tags">
-                    
-                        <li><a href="https://bresu.github.io/tags/datenschutz">#datenschutz</a></li>
-                    
-                        <li><a href="https://bresu.github.io/tags/schulen">#schulen</a></li>
-                    
-                        <li><a href="https://bresu.github.io/tags/sicherheit">#sicherheit</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-        
-        
-
+                <a href="/page/2/">Zu älteren Beiträgen</a>
+            
+        </div>
     </div>
 
+
+        
+    </div>
 
         </main>
         
             <footer class="common-footer">
-    
-    
-        <ul class="language-select">
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Leander - 2023<br>
+            
+            
+            </p>  
+        </div> 
+
+        
+        
+            <ul class="language-select">
     
     
     
 
     
         
-            <li>German</li>
+            <li>Deutsch</li>
         
     
         
@@ -635,96 +765,16 @@ Wenn man sich den Bug-Report genau anschaut, sieht man, dass deren Security-Mana
     
 </ul>
 
-    
-
-    <div class="common-footer-bottom">
-        
-        <div class="copyright">
-            <p>© Bresu, 2022<br>
-            Erstellt mit <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, Theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
-            
-            </p>  
-        </div> 
-
         
 
-    
-
-
-
-    <button class="theme-switcher">
-        Dunkles theme
-    </button>
-
-    <script>
-    const STORAGE_KEY = 'user-color-scheme'
-    const defaultTheme = "light"
-
-    let currentTheme
-    let switchButton
-    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
-
-    const autoChangeScheme = e => {
-        currentTheme = e.matches ? 'dark' : 'light'
-        document.documentElement.setAttribute('data-theme', currentTheme)
-        changeButtonText()
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        switchButton = document.querySelector('.theme-switcher')
-        currentTheme = detectCurrentScheme()
-        if (currentTheme == 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark')
-        }
-        if (currentTheme == 'auto') {
-            autoChangeScheme(autoDefinedScheme);
-            autoDefinedScheme.addListener(autoChangeScheme);
-        }
-        changeButtonText()
-        switchButton.addEventListener('click', switchTheme, false)
-    })
-
-    function detectCurrentScheme() {
-        if (localStorage.getItem(STORAGE_KEY)) {
-            return localStorage.getItem(STORAGE_KEY)
-        } 
-        if (defaultTheme) {
-            return defaultTheme
-        } 
-        if (!window.matchMedia) {
-            return 'light'
-        } 
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark'
-        }
-        return 'light'
-    }
-
-    function changeButtonText()
-    {   
-        switchButton.textContent = currentTheme == 'dark' ?  "Helles theme" : "Dunkles theme"
-    }
-
-    function switchTheme(e) {
-        if (currentTheme == 'dark') {
-            localStorage.setItem(STORAGE_KEY, 'light')
-            document.documentElement.setAttribute('data-theme', 'light')
-            currentTheme = 'light'
-        } else {
-            localStorage.setItem(STORAGE_KEY, 'dark')
-            document.documentElement.setAttribute('data-theme', 'dark')
-            currentTheme = 'dark'
-        }
-        changeButtonText()
-    }
-    </script>
-   
     </div>
-
     <p class="h-card vcard">
 
-    <a href=https://bresu.github.io/ class="p-name u-url url fn" rel="me">Bresu</a> 
+    <a href=https://bresu.github.io/ class="p-name u-url url fn" rel="me">Leander</a> 
 
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:post@leandergoetz.eu">post@leandergoetz.eu</a>
     
 
     
