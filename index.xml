@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Tipps und Tricks für den Uni-Alltag</title>
+      <title>Uni Hacks - Work smarter not harder 🧠</title>
       <link>https://bresu.github.io/posts/unihacks/</link>
       <pubDate>Thu, 19 Jan 2023 19:41:59 +0100</pubDate>
       
@@ -20,6 +20,8 @@
       <description>&lt;p&gt;Studieren beginnt mit Organisation.&lt;/p&gt;
 &lt;p&gt;Wenn man ein wenig Ahnung von Computern hat, dann kann man sich während dem Studium sehr viel Zeit und Nerven sparen.&lt;/p&gt;
 &lt;p&gt;Die Tools die ich hier vorstelle, sollten alle auf UNIX-Systemen funktionieren (also sowohl MacOS als auch Linux), mit Windows habe ich nicht viel zu tun, aber es sollte auch dort funktionieren. Falls nicht: einfach nach &lt;strong&gt;&amp;laquo;Befehl&amp;raquo; on Windows&lt;/strong&gt; im Internet suchen.&lt;/p&gt;
+
+
 &lt;blockquote class=&#34;block-green&#34;&gt;
     &lt;p&gt;zum Beispiel: &lt;strong&gt;ls -tr on Windows&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -35,7 +37,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#cd-change-directory&#34;&gt;cd: change directory&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ls-list&#34;&gt;ls: list&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#man-pre-google-%C3%A4ra&#34;&gt;man: Pre-Google-Ära&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#man-pre-google-%C3%A4ra-&#34;&gt;man: Pre-Google-Ära 😲&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#befehle-mkdir---mv---rm-intermediate&#34;&gt;Befehle: mkdir - mv - rm (intermediate)&lt;/a&gt;
@@ -90,28 +92,53 @@
 &lt;/h1&gt;&lt;p&gt;Bevor du PDFs manipulieren willst, solltest du dich ein wenig mit der Abreitsweise und Logik deines Computers vertraut machen.&lt;/p&gt;
 &lt;h2 id=&#34;mit-einem-computer-via-kommandozeile-interagieren-&#34;&gt;Mit einem Computer via Kommandozeile interagieren 👀
 &lt;span&gt;&lt;a href=&#34;#mit-einem-computer-via-kommandozeile-interagieren-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h2&gt;&lt;blockquote class=&#34;block-yellow&#34;&gt;
+&lt;/h2&gt;
+
+&lt;blockquote class=&#34;block-yellow&#34;&gt;
     &lt;p&gt;&lt;strong&gt;DISCLAIMER&lt;/strong&gt; -  Diese Befehle sind UNIX-eigen&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;terminal-finden&#34;&gt;Terminal finden
 &lt;span&gt;&lt;a href=&#34;#terminal-finden&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;Zuerst müssen wir die Kommandozeile finden. Am besten suchst du dafür mit Spotlight &lt;code&gt;⌘ + Leertaste&lt;/code&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;Zuerst müssen wir die Kommandozeile finden 🔎 Am besten suchst du dafür mit Spotlight &lt;code&gt;⌘ + Leertaste&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Dann suchst du nach &lt;strong&gt;&amp;ldquo;Terminal&amp;rdquo;&lt;/strong&gt; und hittest &lt;code&gt;ENTER ↵&lt;/code&gt;&lt;/p&gt;
-&lt;!--TODO: hier ein Gif von Spotlight suche--&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/spotlight.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/spotlight.gif&#34;&gt;
+    &lt;img title=Spotlight-Suche&amp;#32;nach&amp;#32;Terminal src=&#34;https://bresu.github.io/pics/unihacks/spotlight.gif&#34; alt=&#34;Bewegte Bildaufnahme einer Spotlight-Suche. Suchwort: Terminal&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Geschafft!&lt;/p&gt;
 &lt;h3 id=&#34;befehle-cd---ls---man-basic&#34;&gt;Befehle: cd - ls - man (basic)
 &lt;span&gt;&lt;a href=&#34;#befehle-cd---ls---man-basic&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;cd-change-directory&#34;&gt;cd: change directory
 &lt;span&gt;&lt;a href=&#34;#cd-change-directory&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h4&gt;&lt;p&gt;Du kannst dir einen Computer als eine Verschachtelung von Ordnern vorstellen, ca. so:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;home
-├── Desktop
-│   └── uni
-│       └── ausarbeitung.pdf
-├── Documents
-│   └── aufgabe1.pdf
-└── Downloads
-    └── exmatrikulation_muster.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;home
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Desktop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── uni
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│       └── ausarbeitung.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── Documents
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── aufgabe1.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── Downloads
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    └── exmatrikulation_muster.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;blockquote class=&#34;block-green&#34;&gt;
     &lt;p&gt;&lt;p&gt;Normalerweise kannst du einfach in einen Ordner reingehen, in dem du darauf doppelklickst.&lt;/p&gt;
 &lt;p&gt;Das Terminal-Äquvivalent dazu is &lt;strong&gt;cd&lt;/strong&gt;&lt;/p&gt;
@@ -121,25 +148,51 @@
 &lt;p&gt;Das kannst du auch überprüfen in dem du einfach &lt;code&gt;pwd&lt;/code&gt; (path 2 working directory) in dein Terminal mal eingibst.&lt;/p&gt;
 &lt;p&gt;Jetzt sind wir also in der Ebene des Users - nice. Aber eigentlich wollen wir oft in den Desktop bzw. Documents Ordner, weil dort die interessanten Files sind.&lt;/p&gt;
 &lt;p&gt;Dorthin komm man ganz einfach mit:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;blockquote class=&#34;block-turquois&#34;&gt;
     &lt;p&gt;&lt;p&gt;Es gibt im Terminal eine Auto-Vervollständigung: zB sollte bei&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;cd Deskto ⇥ Tab-Taste&lt;/strong&gt; zu &lt;strong&gt;cd Desktop&lt;/strong&gt; vervollständigen.&lt;/p&gt;
 &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;!--TODO: gif von autovervollständigung--&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/autoTab.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/autoTab.gif&#34;&gt;
+    &lt;img title=Autovervollständigung src=&#34;https://bresu.github.io/pics/unihacks/autoTab.gif&#34; alt=&#34;Bewegte Bildaufnahme eines Terminals. Der Befehl &amp;#39;cd Desk&amp;#39; wir eingegben, daneben ist ein kleines Fenster, dass zeigt welche Tasten gedrückt werden. Das Fenster zeigt Tab an und der Befehl wir auf &amp;#39;cd Desktop&amp;#39; vervollständigt&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Wenn du wieder in die Ebene &lt;strong&gt;über&lt;/strong&gt; dem Desktop (also in meinem Fall wieder zu &lt;code&gt;home&lt;/code&gt;) möchtest, schreib einfach:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Wenn du gleich auf einmal in eine tiefer-gelegene Directory (richtiger Ausdruck für Ordner) gehen möchtest:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Der &lt;strong&gt;/&lt;/strong&gt; ist hier essentiell!&lt;/p&gt;
+
+
 &lt;blockquote class=&#34;block-red&#34;&gt;
-    &lt;p&gt;&lt;p&gt;&lt;strong&gt;ACHTUNG: Zurück zur ursprünglichen Ebene nicht mit &amp;ldquo;..&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;p&gt;&lt;strong&gt;ACHTUNG: Zurück zur ursprünglichen Ebene nicht mit &amp;ldquo;..&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Wenn du beispielsweise mit einem cd-Befehl tief hineingehst, z.B bei mir mit&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;und dann wieder auf deine ursprüngliche Position zurück möchest (bei mir &lt;strong&gt;home&lt;/strong&gt;) wirst du mit&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; nur auf die *Desktop*, nicht auf die *home*-Ebene zurückkommen. Um wieder zu deiner Startposition zurück zu kommen, schreibe:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; nur auf die *Desktop*, nicht auf die *home*-Ebene zurückkommen. Um wieder zu deiner Startposition zurück zu kommen, schreibe:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; -&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;ls-list&#34;&gt;ls: list
@@ -147,37 +200,61 @@
 &lt;/h4&gt;&lt;p&gt;Jetzt wissen wir, wie man mit &lt;strong&gt;cd&lt;/strong&gt; sich durch seine ganzen Computer bewegen kann. Jetzt wissen wir aber nicht unbedingt, was in diesen Directories drinnen ist.&lt;/p&gt;
 &lt;p&gt;Um das zu sehen, verwendet man den Befehl &lt;strong&gt;ls&lt;/strong&gt; (ls steht für list)&lt;/p&gt;
 &lt;p&gt;Hier nochmal eine Beispiel Ordnerstruktur:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;home
-└── Desktop
-    └── uni
-        └── aufgabe1
-            ├── ausarbeitung.pdf
-            ├── ausarbeitung1.pdf
-            ├── ausarbeitung1_final.pdf
-            └── ausarbeitung1_final_v2.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;home
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── Desktop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    └── uni
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        └── aufgabe1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung1.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung1_final.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            └── ausarbeitung1_final_v2.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Jetzt gehen wir mal in &lt;em&gt;aufgabe1&lt;/em&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni/aufgabe1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni/aufgabe1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Um uns jetzt den Inhalt anzeigen zu lassen:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ls
-&lt;span class=&#34;c1&#34;&gt;#Ausgabe im Terminal (nicht unbedingt untereinander):&lt;/span&gt;
-ausarbeitung.pdf
-ausarbeitung1.pdf
-ausarbeitung1_final.pdf
-ausarbeitung1_final_v2.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#Ausgabe im Terminal (nicht unbedingt untereinander):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ausarbeitung.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ausarbeitung1.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ausarbeitung1_final.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ausarbeitung1_final_v2.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Man kann mithilfe von &lt;strong&gt;flags&lt;/strong&gt; 🏳️ sehr viel an der Ausgabe ändern, z.B die Art der Sortierung der Ausgabe.
 Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
-&lt;h4 id=&#34;man-pre-google-ära&#34;&gt;man: Pre-Google-Ära
-&lt;span&gt;&lt;a href=&#34;#man-pre-google-%c3%a4ra&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;h4 id=&#34;man-pre-google-ära-&#34;&gt;man: Pre-Google-Ära 😲
+&lt;span&gt;&lt;a href=&#34;#man-pre-google-%c3%a4ra-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h4&gt;&lt;p&gt;Als &lt;em&gt;cd, ls&lt;/em&gt; und viele weitere Befehle entwickelt und geschrieben wurde, gab es noch keine Tutorials wie dieses hier, wie man sie verwenden kann bzw. was sie überhaupt machen. Die Developer haben deswegen sogenannte &lt;em&gt;man&lt;/em&gt;-pages verfasst (&lt;strong&gt;man&lt;/strong&gt;uals)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;man ls&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man ls&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Das Ergebnis schaut dann ungefähr so aus:&lt;/p&gt;
-&lt;!--TODO: gif von man page--&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/manPageEx.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/png&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/manPageEx.png&#34;&gt;
+    &lt;img title=Screenshot&amp;#32;einer&amp;#32;Man-Page src=&#34;https://bresu.github.io/pics/unihacks/manPageEx.png&#34; alt=&#34;Screenshot von der Man-Page von dem Befehl &amp;#39;man&amp;#39;&#34;&gt;
+
+
+
+&lt;/picture&gt;
 &lt;p&gt;Um diese man-page&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;zu verlassen drücke &lt;strong&gt;q&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;nach oben zu navigieren &lt;strong&gt;k&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;nach unten mit &lt;strong&gt;j&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+
 &lt;blockquote class=&#34;block-green&#34;&gt;
     &lt;p&gt;&lt;p&gt;Du kannst auch lustig sein und das manual von &lt;em&gt;man&lt;/em&gt; selbst aufrufen - es geht!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;man cd&lt;/strong&gt; geht allerdings nicht, das hat einen technischen Grund&lt;/p&gt;
@@ -190,33 +267,35 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
 &lt;h4 id=&#34;mkdir-make-directory-&#34;&gt;mkdir: make directory 📁
 &lt;span&gt;&lt;a href=&#34;#mkdir-make-directory-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h4&gt;&lt;p&gt;&lt;em&gt;mkdir&lt;/em&gt; steht für &lt;em&gt;make directory&lt;/em&gt; - es erstellt uns also einen Ordner!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir meinOrdner&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir meinOrdner&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4 id=&#34;mv-move&#34;&gt;mv: move!
 &lt;span&gt;&lt;a href=&#34;#mv-move&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h4&gt;&lt;p&gt;&lt;em&gt;mv&lt;/em&gt; steht für &lt;em&gt;move&lt;/em&gt; - damit können files oder auch ganze ordner verschoben werden.&lt;/p&gt;
 &lt;p&gt;Verschieben heißt auch umbennen - schauen wir uns das mal. Struktur:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;home
-└── Desktop
-    └── uni
-        └── aufgabe1
-            ├── ausarbeitung.pdf
-            ├── ausarbeitung1.pdf
-            ├── ausarbeitung1_final.pdf
-            └── ausarbeitung1_final_v2.pdf
-
-&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;
-/Users/&amp;lt;DeinUser&amp;gt;/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;home
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── Desktop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    └── uni
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        └── aufgabe1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung1.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung1_final.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            └── ausarbeitung1_final_v2.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/&amp;lt;DeinUser&amp;gt;/&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Jetzt wollen wir die letzte Version der Ausarbeitung aus dem Uni-Ordner raus auf den Desktop ziehen und gleichzeitig umbennen.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv Desktop/uni/aufgabe1/ausarbeitung_final_v2.pdf Desktop/sendToProf.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv Desktop/uni/aufgabe1/ausarbeitung_final_v2.pdf Desktop/sendToProf.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Das Ergebnis in unserer File-Structure&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;home
-└── Desktop
-    └── sendToProf.pdf
-    └── uni
-        └── aufgabe1
-            ├── ausarbeitung.pdf
-            ├── ausarbeitung1.pdf
-            └── ausarbeitung1_final.pdf            &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;home
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── Desktop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    └── sendToProf.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    └── uni
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        └── aufgabe1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung1.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            └── ausarbeitung1_final.pdf            &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;blockquote class=&#34;block-red&#34;&gt;
     &lt;p&gt;&lt;strong&gt;ACHTUNG:&lt;/strong&gt; wenn du zB &lt;em&gt;test.pdf&lt;/em&gt; schon in deinem Ziel Ordner hast, und du &lt;em&gt;mv&lt;/em&gt;-st ein anderes &lt;em&gt;test.pdf&lt;/em&gt; dorthin, dann wird das ursprüngliche File
 &lt;u&gt;&lt;strong&gt;überschrieben!&lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;
@@ -224,12 +303,14 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
 &lt;h4 id=&#34;rm-remove&#34;&gt;rm: remove
 &lt;span&gt;&lt;a href=&#34;#rm-remove&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h4&gt;&lt;p&gt;&lt;em&gt;rm&lt;/em&gt; steht für remove - damit löscht man files&lt;/p&gt;
+
+
 &lt;blockquote class=&#34;block-red&#34;&gt;
     &lt;p&gt;&lt;em&gt;rm&lt;/em&gt; sorgt dafür, dass die Dateien &lt;u&gt;&lt;strong&gt;wirklich gelöscht&lt;/strong&gt;&lt;/u&gt; sind - du wirst sie nicht im Papierkorb finden - sie sind weg!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;um ganze Ordner zu löschen, musst du die Flag &lt;strong&gt;-r&lt;/strong&gt; setzen.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;rm file.pdf &lt;span class=&#34;c1&#34;&gt;#löscht file&lt;/span&gt;
-rm -r directory &lt;span class=&#34;c1&#34;&gt;#löscht Ordner samt Inhalt&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm file.pdf &lt;span class=&#34;c1&#34;&gt;#löscht file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm -r directory &lt;span class=&#34;c1&#34;&gt;#löscht Ordner samt Inhalt&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;befehle-curl-and-brew&#34;&gt;Befehle: curl and brew
 &lt;span&gt;&lt;a href=&#34;#befehle-curl-and-brew&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;curl-lets-go-to-the-internet-&#34;&gt;curl: lets go to the internet 🌐
@@ -250,9 +331,11 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;span&gt;&lt;a href=&#34;#find&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Macht was es soll, &lt;strong&gt;es findet Dinge.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Dieser Befehl listet alle PDFs in dem Ordner &lt;em&gt;Desktop&lt;/em&gt; auf (nicht aber in darunter liegenden Ordnern):&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;find Desktop -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.pdf&amp;#39;&lt;/span&gt; -maxdepth &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find Desktop -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.pdf&amp;#39;&lt;/span&gt; -maxdepth &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Jetzt möchten wir alle PDFs die sich maximal 3 Ebenen unter &lt;em&gt;Desktop&lt;/em&gt; befinden anzeigen:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;find Desktop -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.pdf&amp;#39;&lt;/span&gt; -maxdepth &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find Desktop -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.pdf&amp;#39;&lt;/span&gt; -maxdepth &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;blockquote class=&#34;block-turquois&#34;&gt;
     &lt;p&gt;&lt;p&gt;Der Stern ist ein Placeholder, d.h es kann alles vor &lt;strong&gt;.pdf&lt;/strong&gt; stehen. Wenn zB direkt davor eine Zahl stehen sollte:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;[0-9].pdf&lt;/strong&gt;&lt;/p&gt;
@@ -263,7 +346,9 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-dracula&#34; data-lang=&#34;dracula&#34;&gt;man re_format&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;grep&#34;&gt;grep
 &lt;span&gt;&lt;a href=&#34;#grep&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h3&gt;&lt;blockquote class=&#34;block-orange&#34;&gt;
+&lt;/h3&gt;
+
+&lt;blockquote class=&#34;block-orange&#34;&gt;
     &lt;p&gt;&lt;p&gt;&lt;em&gt;grep&lt;/em&gt; ist so etwas wie &lt;em&gt;find&lt;/em&gt;, nur für den &lt;strong&gt;Inhalt&lt;/strong&gt; von &lt;a href=&#34;https://de.wikipedia.org/wiki/Plain_text&#34;&gt;Plain Text Dateien&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Ich wollte hier nur darauf hinweisen, dass &lt;em&gt;grep&lt;/em&gt; existiert.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;grep&lt;/em&gt; ist nicht Inhalt dieses Tutorials.&lt;/p&gt;
@@ -273,7 +358,7 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;span&gt;&lt;a href=&#34;#mv-mit-mehr-funktionalit%c3%a4t&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;mv&lt;/strong&gt; - einer der häufigsten Befehle, die ich verwende. Vor allem wenn ich nur eine bestimmte Art von Datei (und davon sehr viele) in einen Ordner verfrachten möchte.&lt;/p&gt;
 &lt;p&gt;Wanna move all the JPEGs to a specific directory (myFolder)? Easy:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv *.jpeg myFolder&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv *.jpeg myFolder&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Die selbe Syntax funktioniert auch mit &lt;em&gt;rm&lt;/em&gt;, bitte beachte dabei nur den &lt;a href=&#34;#rm-remove&#34;&gt;obigen Hinweis.&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;pdfs&#34;&gt;PDFs
 &lt;span&gt;&lt;a href=&#34;#pdfs&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -288,41 +373,47 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;li&gt;ghostscript&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Diese kann man alle mittels &lt;em&gt;brew&lt;/em&gt; installieren:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install qpdf
-brew install ghostscript
-brew install texlive &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install qpdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install ghostscript
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install texlive &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;bilder-zu-pdf&#34;&gt;Bilder zu PDF
 &lt;span&gt;&lt;a href=&#34;#bilder-zu-pdf&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Jeder kennt es: Altfragen, Fotos von Slides oder auch einfach Fotos von handgeschriebenen Mitschriften werden in Uni-WhatsApp-Gruppen herumgeschickt als gäbe es kein morgen. Spätestens in der Prüfungsphase kann man da schon mal den Überblick verlieren.&lt;/p&gt;
 &lt;p&gt;Die Lösung:&lt;/p&gt;
+
+
 &lt;blockquote class=&#34;block-green&#34;&gt;
     &lt;p&gt;Die ganzen Bilder zu einem PDF zusammenfügen! 📈📈📈&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Standardmäßig sollte &lt;em&gt;convert&lt;/em&gt; schon auf deiner Maschine installiert sein, überprüfen kannst du das, indem du &lt;em&gt;convert&lt;/em&gt; in dein terminal eingibst.&lt;/p&gt;
+
+
 &lt;blockquote class=&#34;block-yellow&#34;&gt;
     &lt;p&gt;Wenn &lt;code&gt;command not found&lt;/code&gt; zurückkommt, musst du vorher noch das Paket dafür installieren:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;brew install imagemagick&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install imagemagick&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;how-its-done&#34;&gt;How it&amp;rsquo;s done
 &lt;span&gt;&lt;a href=&#34;#how-its-done&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Angenommen, wir haben folgende Ordnerstruktur:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;altfragen
-├── 01.jpg
-├── 02.jpg
-├── 03.jpg
-├── 04.jpg
-├── 05.jpg
-├── 06.jpg
-├── 07.jpg
-├── 08.jpg
-├── 09.jpg
-├── 10.jpg
-├── 11.jpg
-├── 12.jpg
-├── 13.jpg
-└── otherFile.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;altfragen
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 01.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 02.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 03.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 04.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 05.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 06.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 07.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 08.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 09.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 10.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 11.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 12.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── 13.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── otherFile.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Wir wollen also alle &lt;em&gt;jpg&lt;/em&gt; zu einem &lt;em&gt;altfragen.pdf&lt;/em&gt; zusammenfügen:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;convert *.jpg altfragen.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;convert *.jpg altfragen.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;blockquote class=&#34;block-blue&#34;&gt;
     &lt;p&gt;&lt;strong&gt;Good-2-Know:&lt;/strong&gt; Die original jpg-Files bleiben erhalten!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -330,14 +421,16 @@ brew install texlive &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;span&gt;&lt;a href=&#34;#mehrere-pdfs-zu-einem-pdf-zusammenf%c3%bcgen&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Hierfür benötigen wir &lt;em&gt;ghostscript&lt;/em&gt; aka &lt;strong&gt;gs&lt;/strong&gt;. &lt;a href=&#34;#tools&#34;&gt;Weiter oben&lt;/a&gt; findest du den Installationsbefehl.&lt;/p&gt;
 &lt;p&gt;Jetzt haben wir beispielsweise zwei PDFs in unserem Ordner, die wir miteinander mergen wollen:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;altfragen
-├── stupidPhoto.jpg
-├── altfragen.pdf
-└── otherFile.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;altfragen
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── stupidPhoto.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── altfragen.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── otherFile.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Dabei soll &lt;em&gt;otherFile&lt;/em&gt; &lt;strong&gt;vor&lt;/strong&gt; den &lt;em&gt;altfragen&lt;/em&gt; stehen und das ganze in &lt;em&gt;out.pdf&lt;/em&gt; gespeichert werden. Der Befehl:&lt;/p&gt;
 &lt;h3 id=&#34;how-its-done-1&#34;&gt;How it&amp;rsquo;s done
 &lt;span&gt;&lt;a href=&#34;#how-its-done-1&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;gs -dNOPAUSE -dBATCH -sDEVICE&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;pdfwrite -sOutputFile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;out.pdf otherFile.pdf altfragen.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gs -dNOPAUSE -dBATCH -sDEVICE&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;pdfwrite -sOutputFile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;out.pdf otherFile.pdf altfragen.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;blockquote class=&#34;block-green&#34;&gt;
     &lt;p&gt;Du kannst selbstverständlich auch mit &lt;strong&gt;*.pdf&lt;/strong&gt; hier arbeiten, allerdings ist die Sortierung standardmäßig &lt;strong&gt;alphabetisch&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -348,18 +441,41 @@ brew install texlive &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;how-its-done-2&#34;&gt;How it&amp;rsquo;s done
 &lt;span&gt;&lt;a href=&#34;#how-its-done-2&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Angenommen wir haben ein PDF namens &lt;em&gt;langesPDF.pdf&lt;/em&gt; mit 10 Seiten und wollen nur Seite 3, 5 und 7,8,9,10 in &lt;em&gt;clean.pdf&lt;/em&gt; abspeichern:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pdfjam langespdf.pdf 3,5,7-10 -o clean.pdf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pdfjam langespdf.pdf 3,5,7-10 -o clean.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;mehrere-seiten-auf-einer-seite-drucken&#34;&gt;Mehrere Seiten auf einer Seite drucken
 &lt;span&gt;&lt;a href=&#34;#mehrere-seiten-auf-einer-seite-drucken&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Ein Life-Saver wenn man eine Open-Book Prüfung hat und Papier, Druckerfarbe, Zeit und Geld sparen möchte:&lt;/p&gt;
 &lt;p&gt;Mehrere Vorlesungs-Slides auf eine Seite zusammenfassen, zB immer vier Folien auf eine Seite&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/unihacks/421.webp&#34; alt=&#34;Vier Seiten auf eine Seite&#34; title=&#34;Vier getrennte horizontal-orinetierte Slides werden auf eine Seite zusammengefügt &#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/421.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/png&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/421.png&#34;&gt;
+    &lt;img title=Vier&amp;#32;Slides&amp;#32;auf&amp;#32;einer&amp;#32;Seite src=&#34;https://bresu.github.io/pics/unihacks/421.png&#34; alt=&#34;Auf der linken Seite sind 4 vertikal angeordnete, einzelen Folien. Rechts davon ist ein Pfeil, der zeigt, dass diese 4 einzelnen Slides nun auf einer einzigen Seite sind&#34;&gt;
+
+
+
+&lt;/picture&gt;
 &lt;p&gt;Auch dafür kann man wieder &lt;em&gt;pdfjam&lt;/em&gt; verwenden.&lt;/p&gt;
 &lt;p&gt;Angenommen du möchtest von &lt;em&gt;slides.pdf&lt;/em&gt; die Folien sowie in der oberen Abbildung in &lt;em&gt;savePaper.pdf&lt;/em&gt; zusammenfassen:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pdfjam --nup 2x2 slides.pdf --landscape --a4paper --outfile savePaper.pdf &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pdfjam --nup 2x2 slides.pdf --landscape --a4paper --outfile savePaper.pdf &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&#34;fazit-und-ausblicke&#34;&gt;Fazit und Ausblicke
 &lt;span&gt;&lt;a href=&#34;#fazit-und-ausblicke&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Ich hoffe, dir hat irgendetwas in diesem Artikel geholfen. Ein Teil zwei ist derzeit geplant, nämlich wie&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;Ich hoffe, dir hat irgendetwas in diesem Artikel geholfen. Ein Teil zwei ist derzeit geplant, nämlich:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://bresu.github.io/posts/ocrmylife/&#34;&gt;Bilder und PDFs durchsuchbar machen (ft. Tesseract)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -424,7 +540,28 @@ Da kam mir eines Tages beim Prokrastinieren folgende Idee: Wieviel speichert Lim
 &lt;li&gt;E-Mail-Adresse der lime&amp;rsquo;schen Datenschutzabteilung 📧&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Den fertigen Text habe ich mir als PDF runtergeladen und noch schnell Handy-signiert, dann ging es auch schon in den irischen Posteingang.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/lime_dsgvo/limeReaction.gif&#34; alt=&#34;&#34; title=&#34;LIME headquarters ~ 2022 colorized&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/limeReaction.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/limeReaction.gif&#34;&gt;
+    &lt;img title=LINE&amp;#32;headquarters&amp;#32;~2022&amp;#32;colorized src=&#34;https://bresu.github.io/pics/lime_dsgvo/limeReaction.gif&#34; alt=&#34;Woman sitting in front of a computer. Suddenly a Mail-Icon appears on screen. The woman jumps up from her chair&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;h1 id=&#34;die-mühlen-der-irischen-datenschutzabteilungen-mahlen-langsam&#34;&gt;Die Mühlen der irischen Datenschutzabteilungen mahlen langsam
 &lt;span&gt;&lt;a href=&#34;#die-m%c3%bchlen-der-irischen-datenschutzabteilungen-mahlen-langsam&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;blockquote&gt;
@@ -447,7 +584,29 @@ Da kam mir eines Tages beim Prokrastinieren folgende Idee: Wieviel speichert Lim
 &lt;blockquote&gt;
 &lt;p&gt;Die habe ich dann sofort in LibreOffice Calc geöffnet - Microsoft kann mich mal 😄&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/lime_dsgvo/excelSucks.jpg&#34; alt=&#34;&#34; title=&#34;ratio + free + didn&#39;t ask&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/excelSucks.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/jpeg&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/excelSucks.jpg&#34;&gt;
+    &lt;img title=ratio&amp;#32;&amp;#43;&amp;#32;free&amp;#32;&amp;#43;&amp;#32;didn&amp;#39;t&amp;#32;ask src=&#34;https://bresu.github.io/pics/lime_dsgvo/excelSucks.jpg&#34; alt=&#34;An image of the meme &amp;#39;Friendship ended with&amp;#39; stating that the Friendship has ended with Microsoft Excel. Libre Office is now my best friend&#34;&gt;
+
+
+
+&lt;/picture&gt;
 &lt;h1 id=&#34;lets-do-statistics-&#34;&gt;Let&amp;rsquo;s do statistics 📊
 &lt;span&gt;&lt;a href=&#34;#lets-do-statistics-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Die vier Dateien im Anhang hießen so:&lt;/p&gt;
@@ -457,7 +616,29 @@ USER EVENTS.xsls
 PROFILE.xsls
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Die Dateinamen erklären den Inhalt sehr gut, ich habe mir vor allem &lt;code&gt;TRIPS&lt;/code&gt; und &lt;code&gt;USER EVENTS&lt;/code&gt; angeschaut.&lt;/p&gt;
 &lt;p&gt;Ich habe dann ein wenig Statistik-Dings-Bums drüber laufen lassen und das ganze zusammengefasst à la &lt;a href=&#34;https://i.redd.it/evmprgltvfp51.jpg&#34;&gt;Galileo-Style&lt;/a&gt; x Spotify Wrapped:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/lime_dsgvo/embedded.png&#34; alt=&#34;&#34; title=&#34;Made with Photoshop, danke TU Wien für die cheape Lizenz&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/embedded.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/png&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/embedded.png&#34;&gt;
+    &lt;img title=Made&amp;#32;with&amp;#32;Photoshop src=&#34;https://bresu.github.io/pics/lime_dsgvo/embedded.png&#34; alt=&#34;An infographic displaying the following statistics: 288 Euro bei Lime liegengelassen. Das sind ca. 72 Döner (bei 4 Euro pro Döner). 146 Kilometer zurückgelgte Distanz: Fast die Strecke Wien Linz, weil wer möchte in tatsächlich in Linz ankommen? 640 Minuten reine Fahrzeit. Das sind circa 27 Folgen BigTimeTush, also die gesamte zweite Staffel.&#34;&gt;
+
+
+
+&lt;/picture&gt;
 &lt;h1 id=&#34;lets-leave-the-boring-stuff-behind-&#34;&gt;Let&amp;rsquo;s leave the boring stuff behind 🥱
 &lt;span&gt;&lt;a href=&#34;#lets-leave-the-boring-stuff-behind-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Der eigentlich Grund, wieso ich diese Auskunft gemacht habe, ist nämlich folgender:&lt;/p&gt;
@@ -467,10 +648,10 @@ PROFILE.xsls
 &lt;p&gt;Ich wollte wissen, ob Lime die Bilder wirklich aufhebt&amp;hellip;&lt;/p&gt;
 &lt;h1 id=&#34;they-do-&#34;&gt;They do! 🤩
 &lt;span&gt;&lt;a href=&#34;#they-do-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# die urls schauen ungefähr so aus&lt;/span&gt;
-&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://limebike-api.s3.us-west-2.amazonaws.com/trip/end_trip_bike_image/b27241b2-***************************.jpeg&amp;#34;&lt;/span&gt;
-&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://limebike-api.s3.us-west-2.amazonaws.com/trip/end_trip_bike_image/65a56883-***************************.jpeg&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In null Komma nichts war mein Download-Script schon fertig und ich wurde mit &lt;strong&gt;89&lt;/strong&gt; Fotos belohnt.&lt;/p&gt;
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# die urls schauen ungefähr so aus&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://limebike-api.s3.us-west-2.amazonaws.com/trip/end_trip_bike_image/b27241b2-***************************.jpeg&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://limebike-api.s3.us-west-2.amazonaws.com/trip/end_trip_bike_image/65a56883-***************************.jpeg&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In null Komma nichts war mein Download-Script schon fertig und ich wurde mit &lt;strong&gt;89&lt;/strong&gt; Fotos belohnt.&lt;/p&gt;
 &lt;p&gt;Diese kannst du hier anschauen ⬇️&lt;/p&gt;
 &lt;style&gt;
   @font-face {
@@ -550,20 +731,20 @@ function getRandomPic(){
 
 
 &lt;p&gt;KFZ-Kennzeichen stellen tatsächlich ein personenbezogenes Datum dar&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, daher die Zensierung&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;NOYB = &lt;strong&gt;N&lt;/strong&gt;one &lt;strong&gt;O&lt;/strong&gt;f &lt;strong&gt;Y&lt;/strong&gt;our &lt;strong&gt;B&lt;/strong&gt;usiness (genialer Name!)&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://de.wikipedia.org/wiki/Hotfix&#34;&gt;Wikipedia sagt dir, was ein Hotfix ist&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.usp.gv.at/it-geistiges-eigentum/datenschutz/begriffsbestimmungen.html#Daten&#34;&gt;Unternehmensservice hat gesprochen&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</description>
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -627,7 +808,28 @@ In dieser Story wird ein &amp;ldquo;Global Book Exchange&amp;rdquo; beworben, be
 &lt;h1 id=&#34;lets-join-and-see-what-happens&#34;&gt;Let&amp;rsquo;s join and see what happens?
 &lt;span&gt;&lt;a href=&#34;#lets-join-and-see-what-happens&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Ich habe einige Leute angeschrieben, die auf ihrer Story diese Kettennachricht geteilt haben und ihnen gesagt, dass ich auch gerne Teil davon sein möchte.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/bookexchange/youSonOfABitch.gif&#34; alt=&#34;I&amp;rsquo;m in&#34; title=&#34;In your mum ;)&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/youSonOfABitch.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/youSonOfABitch.gif&#34;&gt;
+    &lt;img title=I&amp;#39;m&amp;#32;in src=&#34;https://bresu.github.io/pics/bookexchange/youSonOfABitch.gif&#34; alt=&#34;Popular GIF of Mroty from Rick and Morty snapping his fingers while saying &amp;#39;You son of a bish I&amp;#39;m in&amp;#39;&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Daraufhin bekommst du als neuer Teilnehmer in diesem globalen Regelwerk des Geben-und-Nehmens zwei Copy-Paste-Nachrichten zugeschickt:&lt;/p&gt;
 &lt;p&gt;Zuerst kommt ein Text mit den Anweisungen, an wen du &lt;em&gt;dein&lt;/em&gt; Buch schicken sollst:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -661,7 +863,29 @@ In dieser Story wird ein &amp;ldquo;Global Book Exchange&amp;rdquo; beworben, be
 &lt;p&gt;Die Adresse stammt nicht von der Person, die du angeschrieben hast, sondern von der Person &lt;strong&gt;eine Ebene über der Person, die du angeschrieben hast&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Das heißt, wenn du deine Adresse mit einem deiner Follower teilst, hast du eigentlich keine wirkliche Kontrolle, bei wem deine Adresse am Ende in den DMs landen wird.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/bookexchange/gruMasterplan.jpeg&#34; alt=&#34;Gentleminions&#34; title=&#34;Not very cash money of you&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/gruPlan.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/jpeg&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/gruPlan.jpg&#34;&gt;
+    &lt;img title=Gru&amp;#32;Plan&amp;#32;Meme src=&#34;https://bresu.github.io/pics/bookexchange/gruPlan.jpg&#34; alt=&#34;Bild von Gru aus dem Film &amp;#39;Ich einfach unverbesserlich&amp;#39; wie er seinen großen Plan vorstellt und dabei draufkommt, dass der Plan nicht gut ist. Text: Erstens, Leute reagieren auf deine Story. Zweitens, du schickst Ihnen deine Adresse. Drittens: Deine Adresse wird weitergegeben. Gru schaut ungläubig auf den Satz &amp;#39;Deine Adresse wird weitergegeben&amp;#39;&#34;&gt;
+
+
+
+&lt;/picture&gt;
 &lt;p&gt;Da ich ja nicht viel von der menschlichen Intelligenz halte (vor allem wenn es um moralische und ethische Fragen geht), dachte ich bei dieser Adress-Weitergeberei sofort daran, wie das jemand ausnützen könnte. Es ist eigentlich ziemlich einfach:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Person, deren Adresse man haben möchte, nimmt Teil am Exchange&lt;/li&gt;
@@ -680,15 +904,57 @@ In dieser Story wird ein &amp;ldquo;Global Book Exchange&amp;rdquo; beworben, be
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;wir-kennen-die-theorie-wie-stehts-mit-der-praxis-&#34;&gt;Wir kennen die Theorie, wie steht&amp;rsquo;s mit der Praxis? 📖
 &lt;span&gt;&lt;a href=&#34;#wir-kennen-die-theorie-wie-stehts-mit-der-praxis-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Die grundlegende Funktionsweise dieses Exchange&#39; ist uns nun bekannt, jedoch habe ich noch nicht verraten, ob was aus den versprochenen Büchern wird. Zur maximalen Anzahl von 36 Büchern kann ich sagen, dass &lt;em&gt;theoretisch kein Limit nach oben besteht&lt;/em&gt;.&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;Die grundlegende Funktionsweise dieses Exchange&amp;rsquo; ist uns nun bekannt, jedoch habe ich noch nicht verraten, ob was aus den versprochenen Büchern wird. Zur maximalen Anzahl von 36 Büchern kann ich sagen, dass &lt;em&gt;theoretisch kein Limit nach oben besteht&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Die Zahl 36 errechnet sich, wenn man selbst 6 Leute anwerben kann, die wiederum jeweils 6 Leute finden - So kommt man selbst zu seinen 36 Büchern.&lt;/p&gt;
 &lt;h3 id=&#34;das-ist-auch-der-part-der-so-nach-pyramidensystem--riecht&#34;&gt;Das ist auch der Part, der so nach Pyramidensystem-💩 riecht
 &lt;span&gt;&lt;a href=&#34;#das-ist-auch-der-part-der-so-nach-pyramidensystem--riecht&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/bookexchange/pyramidSchemeOffice.gif&#34; alt=&#34;We love the offive&#34; title=&#34;⃤  ILLUMINATI ⃤&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Denn selbst wenn du es schaffst, 100 Leute dazu zu bringen, beim Exchange mitzumachen, ist das keine Garantie dafür, dass du jemals &lt;em&gt;selber&lt;/em&gt; ein Buch bekommen wirst. Natürlich, bei 100 Leuten werden es ein paar schon schaffen, wieder neue Teilnehmer anzuwerben, aber &lt;em&gt;es gibt keine Garantie, dass &lt;strong&gt;du&lt;/strong&gt; ein Buch bekommen wirst.&lt;/em&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/pyramidSchemeOffice.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/pyramidSchemeOffice.gif&#34;&gt;
+    &lt;img title=Jim&amp;#32;zeichnet&amp;#32;ein&amp;#32;Dreieck&amp;#32;auf src=&#34;https://bresu.github.io/pics/bookexchange/pyramidSchemeOffice.gif&#34; alt=&#34;Jim Halpert aus der Serie &amp;#39;The Office&amp;#39; zeichnet auf ein Flipchart ein Dreieck&#34;&gt;
+
+
+&lt;/picture&gt;
+Denn selbst wenn du es schaffst, 100 Leute dazu zu bringen, beim Exchange mitzumachen, ist das keine Garantie dafür, dass du jemals &lt;em&gt;selber&lt;/em&gt; ein Buch bekommen wirst. Natürlich, bei 100 Leuten werden es ein paar schon schaffen, wieder neue Teilnehmer anzuwerben, aber &lt;em&gt;es gibt keine Garantie, dass &lt;strong&gt;du&lt;/strong&gt; ein Buch bekommen wirst.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Ich habe übrigens bei allen Personen die bei dem Exchange mitgemacht haben bzw. den Text in ihrer Story hatten, nach ca. 2 Wochen nochmal nachgefragt, ob sie bereits Bücher bekommen haben.&lt;/p&gt;
 &lt;p&gt;Und tatsächlich: &lt;strong&gt;They got books!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/bookexchange/bookStack.gif&#34; alt=&#34;&#34; title=&#34;Visual Representation of Tsundoku (japanese term for the stack of unread books next to your bed)&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/bookStack.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/bookStack.gif&#34;&gt;
+    &lt;img title=Bücherstapel src=&#34;https://bresu.github.io/pics/bookexchange/bookStack.gif&#34; alt=&#34;Eine Zeitraffer eines wachsenden Bücherstapels&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Aus der kleinen Menge an Leuten lässt sich leider keine gute Prognose ableiten, aber so viel sei gesagt:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Das Maximum an Büchern für eine Person waren &lt;strong&gt;5&lt;/strong&gt;&lt;/p&gt;
@@ -709,8 +975,30 @@ Das deckt sich auch ziemlich gut mit dem ersten Spike an Suchanfragen nach dem B
 📙 Book Exchange Scam
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Hier sind die Ergebnisse: 📈 📈 📈&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/bookexchange/googleTrends.png&#34; alt=&#34;We love charts&#34; title=&#34;Screenshot of Google Trends Chart&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Was mir sofort aufgefallen ist:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/googleTrends.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/png&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/googleTrends.png&#34;&gt;
+    &lt;img title=Screenshot&amp;#32;of&amp;#32;Google-Trends src=&#34;https://bresu.github.io/pics/bookexchange/googleTrends.png&#34; alt=&#34;Google Trend Grafik, welche die Begriffe &amp;#39;Book Exchange Facebook&amp;#39;, &amp;#39;Book Exchange Instagram&amp;#39; und &amp;#39;Book Exchange Scam&amp;#39; miteinander vergleicht.&#34;&gt;
+
+
+
+&lt;/picture&gt;
+Was mir sofort aufgefallen ist:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Früher war Facebook wirklich populärer als Instagram!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -729,7 +1017,28 @@ We simply don&amp;rsquo;t know. Einige Quellen sagen, es handelt sich dabei um e
 &lt;blockquote&gt;
 &lt;p&gt;Wer allerdings den Secret-Sister-Scam ins Leben gerufen hat bzw. das ganze auf einen Book-Exchange umfunktioniert hat: 🤷‍♂️ 🤷‍♂️ 🤷‍♂️&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/bookexchange/dwightChristmas.gif&#34; alt=&#34;The Office never fails&#34; title=&#34;I don&#39;t even watch The Office but I like Dwight&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/dwightChristmas.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/bookexchange/dwightChristmas.gif&#34;&gt;
+    &lt;img title=Dwight&amp;#32;von&amp;#32;THe&amp;#32;Office src=&#34;https://bresu.github.io/pics/bookexchange/dwightChristmas.gif&#34; alt=&#34;Dwight Schrute aus der Serie &amp;#39;The Office&amp;#39; trägt eine knall-orangene Mütze und sagt: &amp;#39;It&amp;#39;s a Christmas miracle!&amp;#39;&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Meine persönliche Theorie, wieso der Book-Exchange nun seit 6 Jahren immer wieder funktioniert und sein Unwesen auf sozialen Medien treibt, ist folgende:&lt;/p&gt;
 &lt;h1 id=&#34;leute-sind-neugierig-und-wägen-die-kosten-ab&#34;&gt;Leute sind neugierig und wägen die Kosten ab
 &lt;span&gt;&lt;a href=&#34;#leute-sind-neugierig-und-w%c3%a4gen-die-kosten-ab&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -738,20 +1047,20 @@ We simply don&amp;rsquo;t know. Einige Quellen sagen, es handelt sich dabei um e
 &lt;p&gt;Ein Buch, an dem man nicht allzu sehr hängt + die Versandkosten.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Dieser kleine Einsatz für potenzielle 36 Bücher ist nunmal ein wirklich gutes Geschäft. Auch wenn man nur 1 bis 3 Bücher im Durchschnitt erhält: Das Buch, das man verschickt, kann man sich im schlimmsten Fall einfach nochmal neu kaufen.&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;For all the boomers out there: &lt;a href=&#34;https://en.wiktionary.org/wiki/leave_someone_on_read&#34;&gt;Left on read&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;📰 &lt;a href=&#34;https://www.businessinsider.com/facebook-book-exchange-scam-2016-4&#34;&gt;Business Insider 2016&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;Es gibt sogar einen &lt;a href=&#34;https://en.wikipedia.org/wiki/Secret_Sister&#34;&gt;Wikipedia-Artikel!&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</description>
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -771,7 +1080,7 @@ digitalen Service - verlangt heutzutage eine Angabe der Telefonnummer.&lt;/p&gt;
 &lt;p&gt;Der Inhalt dieses Blogs ist nur für Weiterbildungszwecke gedacht und soll niemanden
 zum Begehen von Straftaten aufrufen. Der Autor übernimmt keine Verantwortung für das möglicherweise strafbare Handeln von Leser:innen.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;the-good-ol-days&#34;&gt;The good ol&#39; days
+&lt;h1 id=&#34;the-good-ol-days&#34;&gt;The good ol&amp;rsquo; days
 &lt;span&gt;&lt;a href=&#34;#the-good-ol-days&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;In den guten alten Zeiten des Internets hat man für eine Registrierung nur eine E-Mail gebraucht. Doch in Zeiten von Wegwerf-E-Mails und Angst vor Bots kommt man nicht drum rum:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -799,14 +1108,57 @@ zum Begehen von Straftaten aufrufen. Der Autor übernimmt keine Verantwortung f�
 &lt;p&gt;Es folgen ein paar Optionen die man hierfür hat.&lt;/p&gt;
 &lt;h1 id=&#34;-der-markt-regelt---anonyme-simkarten-de&#34;&gt;☎ Der Markt regelt - Anonyme Simkarten DE
 &lt;span&gt;&lt;a href=&#34;#-der-markt-regelt---anonyme-simkarten-de&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/boehmiCapitalism.gif&#34; alt=&#34;We love Böhmi&#34; title=&#34;Böhmermann ist Gif-Gott&#34;&gt;&lt;/p&gt;
+&lt;/h1&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/simkarten/boehmiCapitalism.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/simkarten/boehmiCapitalism.gif&#34;&gt;
+    &lt;img title=Böhmermann&amp;#32;&amp;#61;&amp;#32;Meme-Gott src=&#34;https://bresu.github.io/pics/simkarten/boehmiCapitalism.gif&#34; alt=&#34;Bewegtes Bild von Jan Böhmermann, wie er &amp;#39;You rock Kapitalismus&amp;#39; in die Kamera schreit&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Wenn man 3 Sekunden zu &amp;ldquo;anonyme Sim-Karte Österreich&amp;rdquo; recherchiert hat, wird man auf
 diese Seite stoßen:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://anonyme-simkarte.de/&#34;&gt;anonyme-simkarte.de&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Der Shop schaut einigermaßen seriös aus, vielleicht auch, weil die Preise für die kleinen goldüberzogenen Chips eher hoch sind. Ich habe vor einiger Zeit mal probeweise zwei Sim-Karten um ca. 20€ bestellt. Ich habe sogar eine Trackingnummer erhalten und konnte live dabei zusehen, &lt;strong&gt;wie mein Paket verloren geht&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/anonymeEmail.jpg&#34; alt=&#34;Screenshot der Antwort&#34; title=&#34;Beste Antwort&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/simkarten/anonymeEmail.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/jpeg&#34; srcset=&#34;https://bresu.github.io/pics/simkarten/anonymeEmail.jpg&#34;&gt;
+    &lt;img title=Beste&amp;#32;(schlechteste)&amp;#32;Antwort src=&#34;https://bresu.github.io/pics/simkarten/anonymeEmail.jpg&#34; alt=&#34;Screenshot der Antwort-Mail. Ihr Inhalt: Hallo, vielen Dank für Ihre Bestellung. Anbei ihre Sendungsnummer. Die Nummer ist unkenntlich gemacht. Leider bewegt sich die Sendung seitdem 16.08.2021 nicht mehr und wir gehen davon aus, das diese verloren wurde.&#34;&gt;
+
+
+
+&lt;/picture&gt;
 &lt;blockquote&gt;
 &lt;p&gt;💩 - aber wenigstens ehrlich&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -829,7 +1181,28 @@ welches u.a. Änderungen im Polizeisicherheitsgesetz - &lt;em&gt;aka das schwamm
 &lt;span&gt;&lt;a href=&#34;#ok-wie-komm-ich-jetzt-an-eine-anonyme-sim-karte&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Also, die ehrliche Antwort: &lt;strong&gt;Anonyme österreichische Nummern gibt es de facto nicht&lt;/strong&gt;
 😩&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/sadChild.webp&#34; alt=&#34;Mood 24/7&#34; title=&#34;My mood 24/7&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/simkarten/sadChild.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/simkarten/sadChild.gif&#34;&gt;
+    &lt;img title=Trauriges&amp;#32;Kind src=&#34;https://bresu.github.io/pics/simkarten/sadChild.gif&#34; alt=&#34;Bewegtes Bild eines Kindes, das anfangs traurig reinschaut. Es beginnt zu schmollen und den Kopf zu senken&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Auf irgendjemanden muss eine Nummer registriert sein. Wenn du jetzt nicht gerade einen Sim-Karten Mixer&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; baust / hast / betreibst oder jemanden findest, der für dich eine Karte kauft &amp;amp; registriert, wird es schwer.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;HIER ABER EINE &lt;em&gt;IDEE&lt;/em&gt; WIE MAN ES TROTZDEM SCHAFFEN KÖNNTE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;🚨 Es sei nochmal erwähnt:&lt;/p&gt;
@@ -857,7 +1230,28 @@ welches u.a. Änderungen im Polizeisicherheitsgesetz - &lt;em&gt;aka das schwamm
 &lt;p&gt;Man kann auch Sim-Karten von zuhause mit den Apps einiger Anbieter registrieren, da kann man auch kreativ werden.&lt;/p&gt;
 &lt;h1 id=&#34;wie-hast-dus-mit-den-sim-karten&#34;&gt;Wie hast du&amp;rsquo;s mit den Sim-Karten?
 &lt;span&gt;&lt;a href=&#34;#wie-hast-dus-mit-den-sim-karten&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/simkarten/dogDooinBusiness.gif&#34; alt=&#34;working Doggo&#34; title=&#34;Representation of me doing some research&#34;&gt;&lt;/p&gt;
+&lt;/h1&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/simkarten/busyDog.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/simkarten/busyDog.gif&#34;&gt;
+    &lt;img title=Good&amp;#32;boy src=&#34;https://bresu.github.io/pics/simkarten/busyDog.gif&#34; alt=&#34;Bewegtes Bild: Ein Hund sitzt in einem Pullover an einem Tisch mit menschlichen Händen und telefoniert, während er mit der anderen Hand einen Stift hin und her wackelt.&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Ich persönlich lese mir immer als erstes die AGBs der Anbieter durch und suche nach &amp;ldquo;Beendigungsgründen&amp;rdquo; und anderen verwandten Begriffen.
 Mich interessiert nämlich, wie lange die Karte nach der ersten Aufladung noch aktiv ist.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -865,20 +1259,20 @@ Mich interessiert nämlich, wie lange die Karte nach der ersten Aufladung noch a
 &lt;/blockquote&gt;
 &lt;p&gt;Dann kauf ich mir die Karte und lasse sie auf meinen echten Namen mit einem echten Ausweis registrieren, weil ich nichts zu verbergen habe 😉&lt;/p&gt;
 &lt;p&gt;Diese Nummer gilt ab dem Zeitpunkt für die angegebene Zeit in den AGBs. Ich beschrifte mir die Transportkarte mit dem Kauf- und Aktivierungsdatum und kann mich jetzt nach Herzenslust bei Tinder, WhatsApp etc. registrieren 😎&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;Dieser &lt;a href=&#34;https://pitchfunnel.com/blog/email-usage-statistics/&#34;&gt;Overview&lt;/a&gt; ist sehr interessant, angeblich sinkt die Anzahl an Spam-E-Mails 🤨&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;Source: Trust me bro&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Cryptocurrency_tumbler&#34;&gt;Was is 1 Mixer?&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</description>
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -912,7 +1306,28 @@ aufzufinden - aber im Gegenteil! Statistik Austria hat halt wirklich ALLES (Man 
 gründlich suchen!). So bin ich dann auf diese Tabellen&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; gestoßen, die jede Gemeinde und deren
 zugehörige Postleitzahl(PLZ) und &lt;strong&gt;Gemeindekennziffer(GKZ)&lt;/strong&gt; beinhaltet.&lt;/p&gt;
 &lt;p&gt;🧐 &lt;em&gt;Was zum F*ck ist eine Gemeindekennziffer?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.webp&#34; alt=&#34;Confused Dog&#34; title=&#34;Mood&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.gif&#34;&gt;
+    &lt;img title=Wie&amp;#32;funktioniert&amp;#32;das? src=&#34;https://bresu.github.io/pics/scraping_austria/confusedDoggo.gif&#34; alt=&#34;Husky schaut fragend in die Kamera&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Gute Frage! Es handelt sich dabei um eine eindeutige Nummer, die jeder Gemeinde zugeordnet wird, sehr ähnlich wie eine PLZ - aber eben keine PLZ. Die GKZ besteht aus 5 Ziffern, die PLZ bekanntlich nur aus 4. PLZs sind alt und nicht sehr schön, man kann aus ihnen nicht eindeutig ablesen, in welchem Bundesland die Gemeinde liegt.&lt;/p&gt;
 &lt;p&gt;Ein Beispiel:&lt;/p&gt;
 &lt;ul&gt;
@@ -938,54 +1353,75 @@ zugehörige Postleitzahl(PLZ) und &lt;strong&gt;Gemeindekennziffer(GKZ)&lt;/stro
 &lt;h1 id=&#34;kombinatorik--permutation&#34;&gt;Kombinatorik &amp;amp; Permutation
 &lt;span&gt;&lt;a href=&#34;#kombinatorik--permutation&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor allem wenn man pro Gemeinde mehrere Domains checken muss. Das schaut dann ungefähr so aus:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span class=&#34;n&#34;&gt;gemeinde_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Bisamberg&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lower&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-
-&lt;span class=&#34;n&#34;&gt;list_possible_domains&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-
-    &lt;span class=&#34;c1&#34;&gt;# Official Gov-Domain&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.gv.at&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
-
-    &lt;span class=&#34;c1&#34;&gt;# Nicht jeder machts anscheinend offiziell&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.at&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
-
-    &lt;span class=&#34;c1&#34;&gt;# Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.tirol.gv.at&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-    &lt;span class=&#34;c1&#34;&gt;# und so weiter&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;gemeinde_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Bisamberg&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lower&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;list_possible_domains&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Official Gov-Domain&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.gv.at&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Nicht jeder machts anscheinend offiziell&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.at&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{gemeinde}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.tirol.gv.at&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gemeinde_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# und so weiter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format &lt;code&gt;&amp;quot;x an der y&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;x bei y&amp;quot;&lt;/code&gt; wird&amp;rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel &lt;em&gt;Krems an der Donau&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span class=&#34;n&#34;&gt;unschoener_gemeinde_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Krems an der Donau&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lower&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;span class=&#34;n&#34;&gt;splitted_gemeinde_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unschoener_gemeinde_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; 
-&lt;span class=&#34;c1&#34;&gt;# [&amp;#39;krems&amp;#39;,&amp;#39;an&amp;#39;,&amp;#39;der&amp;#39;,&amp;#39;donau&amp;#39;] &lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;# Dann hab ich ein paar richtig unschöne Funktionen geschrieben,&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;# um diese Liste zu permutieren&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;# Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus&lt;/span&gt;
-
-&lt;span class=&#34;n&#34;&gt;list_possible_domains&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems.gv.at&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems-an-der-donau.gv.at&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems-donau.gv.at&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems.at&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems-an-der-donau.at&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems-donau.at&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;c1&#34;&gt;# und so weiter...&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;unschoener_gemeinde_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Krems an der Donau&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lower&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;splitted_gemeinde_name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unschoener_gemeinde_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# [&amp;#39;krems&amp;#39;,&amp;#39;an&amp;#39;,&amp;#39;der&amp;#39;,&amp;#39;donau&amp;#39;] &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Dann hab ich ein paar richtig unschöne Funktionen geschrieben,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# um diese Liste zu permutieren&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;list_possible_domains&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems.gv.at&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems-an-der-donau.gv.at&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems-donau.gv.at&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems.at&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems-an-der-donau.at&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://www.krems-donau.at&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# und so weiter...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Darüber hinaus gibt es auch Gemeinden mit &lt;code&gt;&amp;quot;St.&amp;quot;&lt;/code&gt; und &lt;code&gt;&amp;quot;Sankt&amp;quot;&lt;/code&gt; in ihrem Name, das kann auch wiederum zu Problemen bzw. noch mehr Permutationen führen.&lt;/p&gt;
 &lt;h1 id=&#34;bist-du-da&#34;&gt;Bist du da?!
 &lt;span&gt;&lt;a href=&#34;#bist-du-da&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/scraping_austria/youThere.gif&#34; alt=&#34;&#34; title=&#34;r u there?&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;requests&lt;/span&gt;
+&lt;/h1&gt;
 
-&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;domain&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;list_possible_domains&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;try&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;rsp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;domain&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rsp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status_code&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-            &lt;span class=&#34;c1&#34;&gt;# domain abspeichern&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;except&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;continue&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/scraping_austria/youThere.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/scraping_austria/youThere.gif&#34;&gt;
+    &lt;img title=Are&amp;#32;you&amp;#32;there? src=&#34;https://bresu.github.io/pics/scraping_austria/youThere.gif&#34; alt=&#34;Szene aus &amp;#39;Findet Nemo&amp;#39;. Möwen sitzen auf einem Schiffsseil und fragen: &amp;#39;You there&amp;#39;?&#34;&gt;
+
+
+&lt;/picture&gt;
+&lt;p&gt;Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python3&#34; data-lang=&#34;python3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;requests&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;domain&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;list_possible_domains&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;try&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;rsp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;domain&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rsp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status_code&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;c1&#34;&gt;# domain abspeichern&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;except&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;continue&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&#34;false-positives&#34;&gt;False positives
 &lt;span&gt;&lt;a href=&#34;#false-positives&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Nachdem ich so ca. 10.000 Domains auf ihre Existenz überprüft hatte, wurde es ernster.
@@ -1003,29 +1439,29 @@ Dann war ich endlich fertig!&lt;/p&gt;
 &lt;h1 id=&#34;edit-14082022&#34;&gt;EDIT 14.08.2022
 &lt;span&gt;&lt;a href=&#34;#edit-14082022&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Der Datensatz wird vom C3Wien&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; für das &lt;a href=&#34;https://luftfilterbegehren.at/&#34;&gt;Luftfilterbegehren&lt;/a&gt; verwendet. Open-Source ist geil!&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;Super &lt;a href=&#34;https://www.youtube.com/watch?v=Jbix9y8iV38&#34;&gt;YT-Video&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;Danke Statistik Austria.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=77gKSp8WoRg&#34;&gt;🎵 My Hometown&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
 &lt;p&gt;Erwin Koch&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
 &lt;p&gt;Mit Selenium lassen sich Browser-Aktionen automatisieren. &lt;a href=&#34;https://www.selenium.dev/documentation/webdriver/&#34;&gt;Mehr dazu hier&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
 &lt;p&gt;Richtig geile Leute, &lt;a href=&#34;https://c3w.at/&#34;&gt;CCC WIEN&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</description>
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -1062,7 +1498,24 @@ Es sind die Stundenpläne der Schüler:innen einsehbar und es können dadurch&lt
 &lt;li&gt;Religionsbekenntnis (anhand des Religions-Unterrichts) 🤨🤨🤨&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;ausgelesen werden.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/gordonRamsay.webp&#34; alt=&#34;Feel You Gordon&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/gordonShakingHead.webp&#34;&gt;
+
+
+
+
+&lt;/picture&gt;
 &lt;blockquote&gt;
 &lt;p&gt;An dieser Stelle möchte ich erwähnen, dass ich hier keinen schicken &lt;code&gt;Code-Block&lt;/code&gt;
 einrücke und zeigen werde, wie ich es gemacht habe.&lt;/p&gt;
@@ -1084,11 +1537,32 @@ Ich werde aber schon zeigen, dass das Sicherheitskonzept von WebUntis einfach �
 &lt;/blockquote&gt;
 &lt;p&gt;Das ist ist natürlich 💩-Design, weil es so Hacker:innen gelingen könnte, durch einen einzigen gehackten Account, an die Daten von allen anderen Nutzer:innen zu kommen.&lt;/p&gt;
 &lt;p&gt;Und da an vielen Schulen der Login meist wie folgt ausschaut, ist das gar kein so abwegiges Angriffsszenario:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;Username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;Password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Natürlich gibt es viele Variationen für diese Credentials, jedoch wird in manchen Elternbriefen zum Schulanfang ganz klar gezeigt, wie es geht:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.webp&#34; alt=&#34;Ein wenig Google-Dorking und man findet die Dinger wie Sand am Meer&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Natürlich gibt es viele Variationen für diese Credentials, jedoch wird in manchen Elternbriefen zum Schulanfang ganz klar gezeigt, wie es geht:&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.gif&#34;&gt;
+    &lt;img title=Genauer&amp;#32;gehts&amp;#32;nicht. src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.gif&#34; alt=&#34;Screenshot eines Elternbriefes, in dem die Zusammnesetzung des Nutzernamens und des Standard-Passwortes für den Webuntis-Login genau beschrieben werden.&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;blockquote&gt;
 &lt;p&gt;LOL. 😐&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1101,30 +1575,75 @@ Mit ein wenig OSINT-Recherche&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn
 &lt;h1 id=&#34;doch-leider-hat-webuntis-hier-richtig-was-versemmelt&#34;&gt;Doch leider hat WebUntis hier richtig was versemmelt
 &lt;span&gt;&lt;a href=&#34;#doch-leider-hat-webuntis-hier-richtig-was-versemmelt&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Man kann nämlich bei jedem Stundenplan eine &lt;code&gt;print-Funktion&lt;/code&gt; aufrufen. An und für sich keine schlechte Sache:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34; alt=&#34;Ich liebe GIFs :)&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34;&gt;
+    &lt;img title=Why? src=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34; alt=&#34;Bewegtes Bild: Zu sehen ist der Stundenplan nach dem Login. Ein roter Kreise blinkt um das Drucker-Symbol&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Wenn man draufdrückt, öffnet sich ein neues Browser-Fenster (nicht Tab -  &lt;strong&gt;Fenster&lt;/strong&gt;) und der Stundenplan wird anscheinend &amp;ldquo;druckbarer&amp;rdquo; gerendert. Ein PDF entsteht dabei tatsächlich nicht, das ist reines HTML.&lt;/p&gt;
 &lt;p&gt;Und siehe da, was ist denn das? &amp;hellip;Doch etwa kein&amp;hellip; Klarname?!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Ojeojeoje, wer macht denn sowas???&#34;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Keine Pointe, WebUntis ist 1 Witz!&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/jpeg&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34;&gt;
+    &lt;img title=Ganz&amp;#32;klare&amp;#32;Sache src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Ein Screenshot von der Druckansicht. Der Klarname &amp;#39;Max Mustermann&amp;#39; steht in der linken oberen Ecke.&#34;&gt;
+
+
+
+&lt;/picture&gt;
+
+
+&lt;blockquote class=&#34;block-green&#34;&gt;
+    &lt;p&gt;Keine Pointe, WebUntis ist 1 Witz!&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html&#34;&gt;Der Bug-Report&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;Steht zumindest auf ihrer &lt;a href=&#34;https://www.untis.at/&#34;&gt;Website&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;Hab ich mir von vielen Mitmenschen bestätigen lassen - not scientific!&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
 &lt;p&gt;&lt;strong&gt;O&lt;/strong&gt;pen-&lt;strong&gt;S&lt;/strong&gt;ource-&lt;strong&gt;INT&lt;/strong&gt;elligence - FBI für Arme!&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</description>
+&lt;/div&gt;</description>
     </item>
     
   </channel>

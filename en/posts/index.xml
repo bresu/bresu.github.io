@@ -76,7 +76,7 @@ gemeinde_name = &amp;ldquo;Bisamberg&amp;rdquo;.lower()&lt;/p&gt;
 
 ]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&#39;&amp;rsquo;&amp;rsquo;
+&lt;p&gt;&amp;rsquo;&amp;rsquo;&amp;rsquo;
 For one-worded municipalities this approach works fine but it won&amp;rsquo;t work with such as &amp;ldquo;Krems an der Donau&amp;rdquo;. Another example are all municipalities with &amp;ldquo;Sankt&amp;rdquo;, like &amp;ldquo;St. Georgen im Lavanttal&amp;rdquo;. The work-around I came up with is a very simple one:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ugly_gemeinde_name_1 = &amp;quot;Krems an der Donau&amp;quot;.lower()
 
@@ -106,14 +106,14 @@ list_of_possible_domains = [
 &lt;span&gt;&lt;a href=&#34;#you-got-mail&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;After hours of crawling &amp;amp; scraping I finally had a table to work with for scraping the e-mail adresses. It&amp;rsquo;s basically the same step as before when I checked for keywords, only that this time I was looking for words like &amp;ldquo;Kontakt&amp;rdquo; and &amp;ldquo;Impressum&amp;rdquo; and then had to parse only the adress without any unwanted text like the &amp;ldquo;to:&amp;rdquo; junk. For this step I had to use selenium because many of the sites use an excessive amount of javascript. So I had to render it. But I actually really enjoyed working with selenium - very powerful tool!&lt;/p&gt;
 &lt;p&gt;Now all that was left to do was to look for errors (there were a LOT) and some general cleanup and encoding issues. I learned a lot while doing this and also had a lot of fun. You can find the data on my &lt;a href=&#34;https://github.com/bresu/oe_gemeinden&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;My &lt;a href=&#34;https://www.youtube.com/watch?v=77gKSp8WoRg&#34;&gt;hometown&lt;/a&gt;!&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -148,7 +148,7 @@ AFAIK 3 schools in and outside of Vienna are affected - roughly 1800 students to
 &lt;li&gt;Electives and schedule 🤨🤨&lt;/li&gt;
 &lt;li&gt;Religious belief (can be deducted from religion-class) 🤨🤨🤨&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;But what I can show you is how stupid some of WebUntis&#39; design really is!&lt;/p&gt;
+&lt;p&gt;But what I can show you is how stupid some of WebUntis&amp;rsquo; design really is!&lt;/p&gt;
 &lt;p&gt;Enjoy 😁&lt;/p&gt;
 &lt;h1 id=&#34;webuntis-security-bullshit&#34;&gt;WebUntis &lt;del&gt;Security&lt;/del&gt; &lt;em&gt;Bullshit&lt;/em&gt;
 &lt;span&gt;&lt;a href=&#34;#webuntis-security-bullshit&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -162,10 +162,10 @@ AFAIK 3 schools in and outside of Vienna are affected - roughly 1800 students to
 &lt;p&gt;But it even get&amp;rsquo;s better!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The default username and password can be configured and most of the time the login credentials look like this:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;Username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;Password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Every admin has the possibility to customize these defaults, so every school does their own thing - which is good for security!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Every admin has the possibility to customize these defaults, so every school does their own thing - which is good for security!&lt;/p&gt;
 &lt;p&gt;But oh boy you gotta look at this:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.jpg&#34; alt=&#34;Oh no&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -181,19 +181,19 @@ AFAIK 3 schools in and outside of Vienna are affected - roughly 1800 students to
 &lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34; alt=&#34;I MADE THIS GIF WOOOO&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Clicking on that will open a new &lt;em&gt;window&lt;/em&gt; with the timetable being formatted in HTML (no PDFs are created)&lt;/p&gt;
 &lt;p&gt;and what is that?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Oh no, our timetable - it&amp;rsquo;s broken!&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Oh no, our timetable - it&amp;amp;rsquo;s broken!&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Stay safe y&amp;rsquo;all&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html&#34;&gt;Bug report&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;also called &lt;a href=&#34;https://en.wikipedia.org/wiki/Google_hacking&#34;&gt;Google-Hacking&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 </description>
     </item>
     

@@ -53,6 +53,9 @@
     <loc>https://bresu.github.io/tags/unix/</loc>
     <lastmod>2023-01-19T19:41:59+01:00</lastmod>
   </url><url>
+    <loc>https://bresu.github.io/posts/christmas/</loc>
+    <lastmod>2022-12-22T12:40:12+01:00</lastmod>
+  </url><url>
     <loc>https://bresu.github.io/tags/auskunft/</loc>
     <lastmod>2022-12-22T12:40:12+01:00</lastmod>
   </url><url>
@@ -60,9 +63,6 @@
     <lastmod>2022-12-22T12:40:12+01:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/tags/weihnachten/</loc>
-    <lastmod>2022-12-22T12:40:12+01:00</lastmod>
-  </url><url>
-    <loc>https://bresu.github.io/posts/christmas/</loc>
     <lastmod>2022-12-22T12:40:12+01:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/tags/mobilit%C3%A4t/</loc>
@@ -133,10 +133,10 @@
     <loc>https://bresu.github.io/tags/anonymit%C3%A4t/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bresu.github.io/tags/recht/</loc>
+    <loc>https://bresu.github.io/tags/%C3%B6sterreich/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://bresu.github.io/tags/%C3%B6sterreich/</loc>
+    <loc>https://bresu.github.io/tags/recht/</loc>
     <lastmod>2021-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/posts/scraping_austria/</loc>

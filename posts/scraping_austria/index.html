@@ -49,7 +49,6 @@
 <meta property="article:published_time" content="2020-06-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-10T00:00:00+00:00" />
 
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Scraping Austria - Eine Sisyphus-Aufgabe"/>
 <meta name="twitter:description" content="Vom Versuch, die Websites aller österr. Gemeinden zu finden"/>
@@ -270,18 +269,19 @@
 
 
 
-
+<style>
+    .titleImage {
+    border-radius: 12px;
+    }
+</style>
     
 
-
-
-<style>
-.titleImage {
-border-radius: 12px;
-}
-</style>
-
-<img class="titleImage" src="/pics/scraping_austria/titleImage.png" alt="Scraping Austria - Eine Sisyphus-Aufgabe" width="" height="">
+    
+    <picture>
+        <source type="image/webp" srcset="/pics/scraping_austria/titleImage.webp">
+        <source type="image/png" srcset="/pics/scraping_austria/titleImage.png">
+        <img class="titleImage" title=Scraping&#32;Austria&#32;-&#32;Eine&#32;Sisyphus-Aufgabe src="/pics/scraping_austria/titleImage.png" alt="Scraping Austria - Eine Sisyphus-Aufgabe">
+    </picture>
 
             <p>Servus! Die Inspiration für dieses Projekt kommt von diesem Youtube-Video<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Darin zeigt ein sehr
 sympathischer Typ, wie er mit ein wenig Aufwand tausende E-Mails an zig Botschaften in der ganzen
@@ -308,7 +308,28 @@ aufzufinden - aber im Gegenteil! Statistik Austria hat halt wirklich ALLES (Man 
 gründlich suchen!). So bin ich dann auf diese Tabellen<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> gestoßen, die jede Gemeinde und deren
 zugehörige Postleitzahl(PLZ) und <strong>Gemeindekennziffer(GKZ)</strong> beinhaltet.</p>
 <p>🧐 <em>Was zum F*ck ist eine Gemeindekennziffer?</em></p>
-<p><img src="/pics/scraping_austria/confusedDoggo.webp" alt="Confused Dog" title="Mood"></p>
+
+
+
+
+
+
+
+
+
+
+
+<picture>
+    <source type="image/webp" srcset="/pics/scraping_austria/confusedDoggo.webp">
+
+
+
+    
+    <source type="image/gif" srcset="/pics/scraping_austria/confusedDoggo.gif">
+    <img title=Wie&#32;funktioniert&#32;das? src="/pics/scraping_austria/confusedDoggo.gif" alt="Husky schaut fragend in die Kamera">
+
+
+</picture>
 <p>Gute Frage! Es handelt sich dabei um eine eindeutige Nummer, die jeder Gemeinde zugeordnet wird, sehr ähnlich wie eine PLZ - aber eben keine PLZ. Die GKZ besteht aus 5 Ziffern, die PLZ bekanntlich nur aus 4. PLZs sind alt und nicht sehr schön, man kann aus ihnen nicht eindeutig ablesen, in welchem Bundesland die Gemeinde liegt.</p>
 <p>Ein Beispiel:</p>
 <ul>
@@ -334,54 +355,75 @@ zugehörige Postleitzahl(PLZ) und <strong>Gemeindekennziffer(GKZ)</strong> beinh
 <h1 id="kombinatorik--permutation">Kombinatorik &amp; Permutation
 <span><a href="#kombinatorik--permutation">#</a></span>
 </h1><p>Es gibt in Österreich ca. 2100 Gemeinden. Das ist eine relativ große Zahl, vor allem wenn man pro Gemeinde mehrere Domains checken muss. Das schaut dann ungefähr so aus:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="n">gemeinde_name</span> <span class="o">=</span> <span class="s2">&#34;Bisamberg&#34;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-
-<span class="n">list_possible_domains</span> <span class="o">=</span> <span class="p">[</span>
-
-    <span class="c1"># Official Gov-Domain</span>
-    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.gv.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">),</span>
-
-    <span class="c1"># Nicht jeder machts anscheinend offiziell</span>
-    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">),</span>
-
-    <span class="c1"># Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]</span>
-    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.tirol.gv.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">)</span>
-
-    <span class="c1"># und so weiter</span>
-<span class="p">]</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="line"><span class="cl"><span class="n">gemeinde_name</span> <span class="o">=</span> <span class="s2">&#34;Bisamberg&#34;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">list_possible_domains</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Official Gov-Domain</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.gv.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Nicht jeder machts anscheinend offiziell</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Super Patrioten haben noch(!) eine Domain-Endung [.tirol, .bgld und .ooe]</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.</span><span class="si">{gemeinde}</span><span class="s2">.tirol.gv.at&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeinde</span><span class="o">=</span><span class="n">gemeinde_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># und so weiter</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span></span></span></code></pre></div>
 <p>Dieser Herangehensweise eignete sich hervorragend für ein-wörtrige Gemeinden, aber für Gemeinden mit dem Format <code>&quot;x an der y&quot;</code>, <code>&quot;x bei y&quot;</code> wird&rsquo;s schwieriger. Veranschaulicht habe ich es am Beispiel <em>Krems an der Donau</em></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="n">unschoener_gemeinde_name</span> <span class="o">=</span> <span class="s2">&#34;Krems an der Donau&#34;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="n">splitted_gemeinde_name</span> <span class="o">=</span> <span class="n">unschoener_gemeinde_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span> 
-<span class="c1"># [&#39;krems&#39;,&#39;an&#39;,&#39;der&#39;,&#39;donau&#39;] </span>
-
-<span class="c1"># Dann hab ich ein paar richtig unschöne Funktionen geschrieben,</span>
-<span class="c1"># um diese Liste zu permutieren</span>
-<span class="c1"># Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus</span>
-
-<span class="n">list_possible_domains</span> <span class="o">=</span> <span class="p">[</span>
-
-    <span class="s2">&#34;http://www.krems.gv.at&#34;</span>
-    <span class="s2">&#34;http://www.krems-an-der-donau.gv.at&#34;</span>
-    <span class="s2">&#34;http://www.krems-donau.gv.at&#34;</span>
-    <span class="s2">&#34;http://www.krems.at&#34;</span>
-    <span class="s2">&#34;http://www.krems-an-der-donau.at&#34;</span>
-    <span class="s2">&#34;http://www.krems-donau.at&#34;</span>
-    <span class="c1"># und so weiter...</span>
-<span class="p">]</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="line"><span class="cl"><span class="n">unschoener_gemeinde_name</span> <span class="o">=</span> <span class="s2">&#34;Krems an der Donau&#34;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">splitted_gemeinde_name</span> <span class="o">=</span> <span class="n">unschoener_gemeinde_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># [&#39;krems&#39;,&#39;an&#39;,&#39;der&#39;,&#39;donau&#39;] </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Dann hab ich ein paar richtig unschöne Funktionen geschrieben,</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># um diese Liste zu permutieren</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Die Details erspare ich euch, aber das Ergebnis schaut dann ca. so aus</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">list_possible_domains</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.krems.gv.at&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.krems-an-der-donau.gv.at&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.krems-donau.gv.at&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.krems.at&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.krems-an-der-donau.at&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http://www.krems-donau.at&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># und so weiter...</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span></span></span></code></pre></div>
 <p>Darüber hinaus gibt es auch Gemeinden mit <code>&quot;St.&quot;</code> und <code>&quot;Sankt&quot;</code> in ihrem Name, das kann auch wiederum zu Problemen bzw. noch mehr Permutationen führen.</p>
 <h1 id="bist-du-da">Bist du da?!
 <span><a href="#bist-du-da">#</a></span>
-</h1><p><img src="/pics/scraping_austria/youThere.gif" alt="" title="r u there?"></p>
-<p>Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="kn">import</span> <span class="nn">requests</span>
+</h1>
 
-<span class="k">for</span> <span class="n">domain</span> <span class="ow">in</span> <span class="n">list_possible_domains</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">rsp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">rsp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-            <span class="c1"># domain abspeichern</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">continue</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+<picture>
+    <source type="image/webp" srcset="/pics/scraping_austria/youThere.webp">
+
+
+
+    
+    <source type="image/gif" srcset="/pics/scraping_austria/youThere.gif">
+    <img title=Are&#32;you&#32;there? src="/pics/scraping_austria/youThere.gif" alt="Szene aus &#39;Findet Nemo&#39;. Möwen sitzen auf einem Schiffsseil und fragen: &#39;You there&#39;?">
+
+
+</picture>
+<p>Nachdem ich eine Liste von Links generiert hatte, bin ich die dann einfach einen nach dem anderen durchgegangen. Zuerst waren es nur einfache GET-Requests, um überhaupt die Existenz der Domain zu bestätigen.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python3" data-lang="python3"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">domain</span> <span class="ow">in</span> <span class="n">list_possible_domains</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rsp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">rsp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># domain abspeichern</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span></span></span></code></pre></div>
 <h1 id="false-positives">False positives
 <span><a href="#false-positives">#</a></span>
 </h1><p>Nachdem ich so ca. 10.000 Domains auf ihre Existenz überprüft hatte, wurde es ernster.
@@ -399,29 +441,29 @@ Dann war ich endlich fertig!</p>
 <h1 id="edit-14082022">EDIT 14.08.2022
 <span><a href="#edit-14082022">#</a></span>
 </h1><p>Der Datensatz wird vom C3Wien<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> für das <a href="https://luftfilterbegehren.at/">Luftfilterbegehren</a> verwendet. Open-Source ist geil!</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Super <a href="https://www.youtube.com/watch?v=Jbix9y8iV38">YT-Video</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>Danke Statistik Austria.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p><a href="https://www.youtube.com/watch?v=77gKSp8WoRg">🎵 My Hometown</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>Erwin Koch&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p>Mit Selenium lassen sich Browser-Aktionen automatisieren. <a href="https://www.selenium.dev/documentation/webdriver/">Mehr dazu hier</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
+<li id="fn:6">
 <p>Richtig geile Leute, <a href="https://c3w.at/">CCC WIEN</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
         </div>
         
 

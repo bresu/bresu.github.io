@@ -45,7 +45,24 @@ Es sind die Stundenpläne der Schüler:innen einsehbar und es können dadurch&lt
 &lt;li&gt;Religionsbekenntnis (anhand des Religions-Unterrichts) 🤨🤨🤨&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;ausgelesen werden.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/gordonRamsay.webp&#34; alt=&#34;Feel You Gordon&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/gordonShakingHead.webp&#34;&gt;
+
+
+
+
+&lt;/picture&gt;
 &lt;blockquote&gt;
 &lt;p&gt;An dieser Stelle möchte ich erwähnen, dass ich hier keinen schicken &lt;code&gt;Code-Block&lt;/code&gt;
 einrücke und zeigen werde, wie ich es gemacht habe.&lt;/p&gt;
@@ -67,11 +84,32 @@ Ich werde aber schon zeigen, dass das Sicherheitskonzept von WebUntis einfach �
 &lt;/blockquote&gt;
 &lt;p&gt;Das ist ist natürlich 💩-Design, weil es so Hacker:innen gelingen könnte, durch einen einzigen gehackten Account, an die Daten von allen anderen Nutzer:innen zu kommen.&lt;/p&gt;
 &lt;p&gt;Und da an vielen Schulen der Login meist wie folgt ausschaut, ist das gar kein so abwegiges Angriffsszenario:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;Username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;n&#34;&gt;Password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Natürlich gibt es viele Variationen für diese Credentials, jedoch wird in manchen Elternbriefen zum Schulanfang ganz klar gezeigt, wie es geht:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.webp&#34; alt=&#34;Ein wenig Google-Dorking und man findet die Dinger wie Sand am Meer&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# Schüler: Maximilian Mustermann (10.10.2001)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;must.max&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;20011010&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Natürlich gibt es viele Variationen für diese Credentials, jedoch wird in manchen Elternbriefen zum Schulanfang ganz klar gezeigt, wie es geht:&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.gif&#34;&gt;
+    &lt;img title=Genauer&amp;#32;gehts&amp;#32;nicht. src=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.gif&#34; alt=&#34;Screenshot eines Elternbriefes, in dem die Zusammnesetzung des Nutzernamens und des Standard-Passwortes für den Webuntis-Login genau beschrieben werden.&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;blockquote&gt;
 &lt;p&gt;LOL. 😐&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -84,30 +122,75 @@ Mit ein wenig OSINT-Recherche&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn
 &lt;h1 id=&#34;doch-leider-hat-webuntis-hier-richtig-was-versemmelt&#34;&gt;Doch leider hat WebUntis hier richtig was versemmelt
 &lt;span&gt;&lt;a href=&#34;#doch-leider-hat-webuntis-hier-richtig-was-versemmelt&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h1&gt;&lt;p&gt;Man kann nämlich bei jedem Stundenplan eine &lt;code&gt;print-Funktion&lt;/code&gt; aufrufen. An und für sich keine schlechte Sache:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34; alt=&#34;Ich liebe GIFs :)&#34;&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34;&gt;
+    &lt;img title=Why? src=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.gif&#34; alt=&#34;Bewegtes Bild: Zu sehen ist der Stundenplan nach dem Login. Ein roter Kreise blinkt um das Drucker-Symbol&#34;&gt;
+
+
+&lt;/picture&gt;
 &lt;p&gt;Wenn man draufdrückt, öffnet sich ein neues Browser-Fenster (nicht Tab -  &lt;strong&gt;Fenster&lt;/strong&gt;) und der Stundenplan wird anscheinend &amp;ldquo;druckbarer&amp;rdquo; gerendert. Ein PDF entsteht dabei tatsächlich nicht, das ist reines HTML.&lt;/p&gt;
 &lt;p&gt;Und siehe da, was ist denn das? &amp;hellip;Doch etwa kein&amp;hellip; Klarname?!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Ojeojeoje, wer macht denn sowas???&#34;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Keine Pointe, WebUntis ist 1 Witz!&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.webp&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/jpeg&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34;&gt;
+    &lt;img title=Ganz&amp;#32;klare&amp;#32;Sache src=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.jpg&#34; alt=&#34;Ein Screenshot von der Druckansicht. Der Klarname &amp;#39;Max Mustermann&amp;#39; steht in der linken oberen Ecke.&#34;&gt;
+
+
+
+&lt;/picture&gt;
+
+
+&lt;blockquote class=&#34;block-green&#34;&gt;
+    &lt;p&gt;Keine Pointe, WebUntis ist 1 Witz!&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://packetstormsecurity.com/files/157998/WebUntis-2020.12.1-Cross-Site-Scripting.html&#34;&gt;Der Bug-Report&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;Steht zumindest auf ihrer &lt;a href=&#34;https://www.untis.at/&#34;&gt;Website&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;Hab ich mir von vielen Mitmenschen bestätigen lassen - not scientific!&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
 &lt;p&gt;&lt;strong&gt;O&lt;/strong&gt;pen-&lt;strong&gt;S&lt;/strong&gt;ource-&lt;strong&gt;INT&lt;/strong&gt;elligence - FBI für Arme!&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</description>
+&lt;/div&gt;</description>
     </item>
     
   </channel>
