@@ -1,0 +1,6 @@
+# Security E-Mail:
+post@leandergoetz.eu
+
+# No bug bounty program as of 10.03.2023
+
+# No specified disclosure policy

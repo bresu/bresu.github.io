@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>uni on Leander&#39;s Blog</title>
+    <link>https://bresu.github.io/tags/uni/</link>
+    <description>Leander&#39;s Blog (uni)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Tue, 24 Jan 2023 19:48:32 +0100</lastBuildDate>
+    
+    <atom:link href="https://bresu.github.io/tags/uni/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

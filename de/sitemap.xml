@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bresu.github.io/tags/cli/</loc>
-    <lastmod>2023-01-19T19:41:59+01:00</lastmod>
-  </url><url>
     <loc>https://bresu.github.io/</loc>
-    <lastmod>2023-01-19T19:41:59+01:00</lastmod>
+    <lastmod>2023-01-24T19:48:32+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -19,10 +16,13 @@
                 />
   </url><url>
     <loc>https://bresu.github.io/tags/open-source/</loc>
-    <lastmod>2023-01-19T19:41:59+01:00</lastmod>
+    <lastmod>2023-01-24T19:48:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/posts/ocrmylife/</loc>
+    <lastmod>2023-01-24T19:48:32+01:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/posts/</loc>
-    <lastmod>2023-01-19T19:41:59+01:00</lastmod>
+    <lastmod>2023-01-24T19:48:32+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -35,7 +35,7 @@
                 />
   </url><url>
     <loc>https://bresu.github.io/tags/</loc>
-    <lastmod>2023-01-19T19:41:59+01:00</lastmod>
+    <lastmod>2023-01-24T19:48:32+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -46,6 +46,15 @@
                 hreflang="de"
                 href="https://bresu.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://bresu.github.io/tags/test/</loc>
+    <lastmod>2023-01-24T19:48:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/uni/</loc>
+    <lastmod>2023-01-24T19:48:32+01:00</lastmod>
+  </url><url>
+    <loc>https://bresu.github.io/tags/tutorial/</loc>
+    <lastmod>2023-01-19T19:41:59+01:00</lastmod>
   </url><url>
     <loc>https://bresu.github.io/posts/unihacks/</loc>
     <lastmod>2023-01-19T19:41:59+01:00</lastmod>

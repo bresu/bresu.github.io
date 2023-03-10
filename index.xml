@@ -6,7 +6,7 @@
     <description>Leander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 19 Jan 2023 19:41:59 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jan 2023 19:48:32 +0100</lastBuildDate>
     
     <atom:link href="https://bresu.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -753,8 +753,9 @@ function getRandomPic(){
       <pubDate>Sat, 09 Jul 2022 21:29:30 +0200</pubDate>
       
       <guid>https://bresu.github.io/privacy/</guid>
-      <description>&lt;p&gt;Da diese Seite auf github.io gehostet wird, gilt die &lt;a href=&#34;https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement&#34;&gt;Datenschutzbestimmung von Github&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Da diese Seite auch auf github.io (bresu.github.io) gehostet wird, gilt die &lt;a href=&#34;https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement&#34;&gt;Datenschutzbestimmung von Github&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Darüber hinaus nutze ich den &lt;a href=&#34;https://www.goatcounter.com/help/privacy&#34;&gt;Goat-Counter&lt;/a&gt; um zu sehen, wieviele Menschen sich auf diesen Blog verirren. Keine personenbezogenen Daten werden gespeichert, keine Daten an Dritte weitergegeben. &lt;a href=&#34;https://www.goatcounter.com/help/privacy&#34;&gt;Weitere Informationen.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://bresu.github.io/security.txt&#34;&gt;security.txt&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
