@@ -6,10 +6,194 @@
     <description>Leander&#39;s Blog (datenschutz)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 22 Dec 2022 12:40:12 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 01 May 2023 12:44:57 +0200</lastBuildDate>
     
     <atom:link href="https://bresu.github.io/tags/datenschutz/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Was kommt nach 12282? Richtig: Sehr viele Daten!</title>
+      <link>https://bresu.github.io/posts/fahrrad_wien/</link>
+      <pubDate>Mon, 01 May 2023 12:44:57 +0200</pubDate>
+      
+      <guid>https://bresu.github.io/posts/fahrrad_wien/</guid>
+      <description>&lt;p&gt;Ich habe zwei Firmen gefunden, die beide von derselben &amp;ldquo;Schwachstelle&amp;rdquo; betroffen waren:&lt;/p&gt;
+&lt;p&gt;Der Mensch und sein Verlangen, eine fortlaufende Nummer zu verwenden, obwohl fortlaufende Nummern nicht verwendet werden sollten.&lt;/p&gt;
+&lt;p&gt;Also nach 1 kommt 2, dann 3, 4, 5, … und so weiter. Durch so eine fehlerhafte Implementierung konnte man theoretisch &lt;u&gt;hunderte&lt;/u&gt;, vielleicht sogar &lt;u&gt;tausende&lt;/u&gt; von personenbezogene Daten von &lt;strong&gt;Fahrrad Wien&lt;/strong&gt; illegal abgreifen. Aber was ist überhaupt passiert?&lt;/p&gt;
+&lt;blockquote class=&#34;block-yellow&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;@everyone&lt;/strong&gt;: Nicht zuhause nachmachen, alles von Profis (mir) gemacht. 👷‍♂️&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+&lt;p&gt;Fahrrad Wien hat die Lücke nach Meldung &lt;strong&gt;umgehend&lt;/strong&gt; geschlossen ✅&lt;/p&gt;
+&lt;/blockquote&gt;
+# Von Anfang an ⏮️
+&lt;p&gt;Im November 2022 beginnt unsere Geschichte: Ich möchte mir ein &lt;a href=&#34;https://www.graetzlrad.wien/&#34;&gt;Grätzlrad in Wien&lt;/a&gt; ausborgen.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/fahrrad_wien/rad.webp&#34; width=&#34;80%&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/jpeg&#34; srcset=&#34;https://bresu.github.io/pics/fahrrad_wien/rad.jpg&#34;&gt;
+    &lt;img title=Grätzlrad&amp;#32;Währing src=&#34;https://bresu.github.io/pics/fahrrad_wien/rad.jpg&#34; alt=&#34;Dunkelgrünes CargoBike angekettet an einen Fahrradständer&#34;&gt;
+
+
+
+&lt;/picture&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+&lt;p&gt;Das ist so ein Grätzlrad. Sind echt cool zum Ausleihen (und sogar &lt;u&gt;gratis&lt;/u&gt;!) 🚴🚴🚴&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ein Rad zu reservieren geht über das &lt;a href=&#34;https://www.graetzlrad.wien/&#34;&gt;Online-Portal&lt;/a&gt; relativ leicht und schnell. Danach erhält man eine Bestätigungsmail in der u.a. nochmal drinnen steht, wo und wann man sich das Rad abholen kann.&lt;/p&gt;
+&lt;blockquote class=&#34;block-orange&#34;&gt;
+&lt;p&gt;Aber warte, was ist denn das für ein Link in der Bestätigungsmail? 🧐&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.graetzlrad.wien/ics/?entry-id=12282&#34;&gt;https://www.graetzlrad.wien/ics/?entry-id=12282&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nett 😄 Drückt man auf den Link, wird ein Download gestartet. Man lädt dann eine iCal-Datei&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; runter, welche, wenn man sie am Handy öffnet, direkt in deiner Kalender-App geöffnet wird.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/fahrrad_wien/kalender.webp&#34; width=&#34;100%&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/png&#34; srcset=&#34;https://bresu.github.io/pics/fahrrad_wien/kalender.png&#34;&gt;
+    &lt;img title=Kalender&amp;#32;Event src=&#34;https://bresu.github.io/pics/fahrrad_wien/kalender.png&#34; alt=&#34;Screenshot eines iPhone Kalender Eintrages. Der Text: Leander Götz, 14:00 bis 17:00 Grätzlrad Währing&#34;&gt;
+
+
+
+&lt;/picture&gt;
+&lt;blockquote class=&#34;block-orange&#34;&gt;
+&lt;p&gt;Aber warte mal, warum steht denn da mein Name!? 😳😳😳&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Dann hab ich die Datei im TextEditor meines Vertrauens geöffnet (Vim 🙏) und mir das genau angeschaut:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;BEGIN:VCALENDAR
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;VERSION:2.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;METHOD:PUBLISH
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CALSCALE:GREGORIAN
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;X-WR-TIMEZONE:Europe/Vienna
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;BEGIN:VEVENT
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SUMMARY:Grätzlrad Währing: Leander Götz 👈 😳🤨
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DTSTART:20221104T140000
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DTEND:20221104T170000
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DESCRIPTION:Grätzlrad Währing: Leander Götz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DTSTAMP:20230220T173616
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;UID:63f3af90137eb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;END:VEVENT
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;END:VCALENDAR&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class=&#34;block-red&#34;&gt;
+&lt;p&gt;Oh no, Datenleck incoming 😨&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/fahrrad_wien/smellLeak.webp&#34; width=&#34;80%&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/fahrrad_wien/smellLeak.gif&#34;&gt;
+    &lt;img title=Datenleck&amp;#32;2023&amp;#32;(colorized) src=&#34;https://bresu.github.io/pics/fahrrad_wien/smellLeak.gif&#34; alt=&#34;Phil Swift schlägt mit FlexTape auf ein Wasserleck in einem Glastank&#34;&gt;
+
+
+&lt;/picture&gt;
+&lt;h2 id=&#34;die-schwachstelle&#34;&gt;Die Schwachstelle
+&lt;span&gt;&lt;a href=&#34;#die-schwachstelle&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Also anscheined dachte sich jemand bei Fahrrad Wien bzw. der &lt;a href=&#34;https://www.fonda.at/&#34;&gt;angeheuerten Firma für diesen Auftrag&lt;/a&gt;, dass es eine &lt;u&gt;gute Idee&lt;/u&gt; ist, wenn der &lt;u&gt;ganze Name&lt;/u&gt; indem Kalender-Event steht, weil man ja selber nicht weiß, wie man heißt, i guess???&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Und jetzt muss man sich nur kurz den oben genannten Link anschauen:&lt;/p&gt;
+&lt;blockquote class=&#34;block-orange&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.graetzlrad.wien/ics/?entry-id=12282&#34;&gt;https://www.graetzlrad.wien/ics/?entry-id=12282&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Das einzige, was mein personalisiertes Kalender-Event von jedem anderen Kalender-Event unterscheidet ist&amp;hellip;&lt;/p&gt;
+&lt;blockquote class=&#34;block-red&#34;&gt;
+&lt;p&gt;Eine 5-stellige Zahl am Ende des Links (12282)&lt;/p&gt;
+&lt;p&gt;(Keine Pointe) 😔&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ich kann also munter auf die Kalender-Events für &lt;em&gt;12281&lt;/em&gt; (-1) oder &lt;em&gt;12283&lt;/em&gt; (+1) kommen, indem ich einfach den Link verändere.
+Und da der Name der Personen in der Datei selbst angegeben ist, kann ich jetzt super alle Daten aller Grätzlrad-Nutzer*innen der letzten Jahre abgrasen! 😟&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;picture&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/fahrrad_wien/hackerman.webp&#34; width=&#34;&#34;&gt;
+
+
+
+    
+    &lt;source type=&#34;image/gif&#34; srcset=&#34;https://bresu.github.io/pics/fahrrad_wien/hackerman.gif&#34;&gt;
+    &lt;img title=literally&amp;#32;me src=&#34;https://bresu.github.io/pics/fahrrad_wien/hackerman.gif&#34; alt=&#34;GIF depicting the Hackerman from the movie Kung Fury&#34;&gt;
+
+
+&lt;/picture&gt;
+&lt;blockquote class=&#34;block-violett&#34;&gt;
+&lt;p&gt;🤓 ☝️ Die haben aber sicher einen Schutz, dass man nicht 1000 Anfragen schicken kann, das würde denen sicher auffallen!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&#34;block-red&#34;&gt;
+&lt;p&gt;No, they don&amp;rsquo;t 😦&lt;/p&gt;
+&lt;p&gt;Habe es getestet, indem ich in sehr unmenschlichem Tempo einige hundert Einträge rauf und runter angefragt habe:&lt;/p&gt;
+&lt;p&gt;Ich wurde kein einziges Mal geblockt 😔&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;meldung-des-problems&#34;&gt;Meldung des Problems
+&lt;span&gt;&lt;a href=&#34;#meldung-des-problems&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Auf jeden Fall hab ich das ganze dann versucht, zu dokumentieren und zu melden. Über die Weihnachtstage habe ich kurz darauf vergessen, aber im März war ich dann soweit, einen fertigen Bericht an die Mobilitätsagentur (Mama von Fahrrad Wien) zu schicken.&lt;/p&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+&lt;p&gt;Noch am selben Tag wurde das Kalender Feature ausgestellt 😄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Von einer Beschwerde bei der Datenschutzbehörde habe ich &lt;u&gt;abgesehen&lt;/u&gt;. Dafür fehlt mir die Energie/ die Ressourcen und ich mag die Leute von der Mobilitätsagentur eigentlich gerne 😘&lt;/p&gt;
+&lt;blockquote class=&#34;block-turquois&#34;&gt;
+&lt;p&gt;&lt;strong&gt;@Fahrrad Wien/ Mobilitätsagentur&lt;/strong&gt;: Folgt mir mal &lt;a href=&#34;https://twitter.com/LeanderDerHero&#34;&gt;auf Twitter&lt;/a&gt;!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;iCal ist cool&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;?????????????????????&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>🎄Ich hab Ferien, die Datenschutzabteilungen aber nicht!🎄</title>
@@ -84,7 +268,7 @@ Da kam mir eines Tages beim Prokrastinieren folgende Idee: Wieviel speichert Lim
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/limeReaction.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/limeReaction.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -128,7 +312,7 @@ Da kam mir eines Tages beim Prokrastinieren folgende Idee: Wieviel speichert Lim
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/excelSucks.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/excelSucks.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -160,7 +344,7 @@ PROFILE.xsls
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/embedded.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/lime_dsgvo/embedded.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -325,7 +509,7 @@ Es sind die Stundenpläne der Schüler:innen einsehbar und es können dadurch&lt
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/gordonShakingHead.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/gordonShakingHead.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -368,7 +552,7 @@ Ich werde aber schon zeigen, dass das Sicherheitskonzept von WebUntis einfach �
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisTutorial.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -402,7 +586,7 @@ Mit ein wenig OSINT-Recherche&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisPlease.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -426,7 +610,7 @@ Mit ein wenig OSINT-Recherche&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/webuntis/webuntisFullname.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -440,7 +624,9 @@ Mit ein wenig OSINT-Recherche&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn
 
 
 &lt;blockquote class=&#34;block-green&#34;&gt;
-    &lt;p&gt;Keine Pointe, WebUntis ist 1 Witz!&lt;/p&gt;
+
+Keine Pointe, WebUntis ist 1 Witz!
+
 &lt;/blockquote&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;

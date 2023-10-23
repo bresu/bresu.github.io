@@ -34,8 +34,9 @@
     
 
     
-        <link rel="stylesheet" href="https://bresu.github.io/css/style.min.dbe3ffb3245f02f22f923327e1abcbc59d0ab760843e08afd56f4a56559cd723.css" integrity="sha256-2&#43;P/syRfAvIvkjMn4avLxZ0Kt2CEPgiv1W9KVlWc1yM=">
+        <link rel="stylesheet" href="https://bresu.github.io/css/style.min.3f12172aa60499901c47e2918f22043952745e8bf826054fa3f1832eedc5dda6.css" integrity="sha256-PxIXKqYEmZAcR&#43;KRjyIEOVJ0Xov4JgVPo/GDLu3F3aY=">
     
+
 
 
 
@@ -45,7 +46,8 @@
 <meta property="og:title" content="Uni Hacks - Work smarter not harder 🧠" />
 <meta property="og:description" content="Eine Ansammlung von häuig verwendeten commands die man im Uni-Leben immer wieder gebrauchen kann. Umgang mit PDFs" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bresu.github.io/posts/unihacks/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://bresu.github.io/posts/unihacks/" />
+<meta property="og:image" content="https://blog.leandergoetz.eu/pics/unihacks/titleImage.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-19T19:41:59+01:00" />
 <meta property="article:modified_time" content="2023-01-19T19:41:59+01:00" />
 
@@ -266,10 +268,8 @@
             <p>Studieren beginnt mit Organisation.</p>
 <p>Wenn man ein wenig Ahnung von Computern hat, dann kann man sich während dem Studium sehr viel Zeit und Nerven sparen.</p>
 <p>Die Tools die ich hier vorstelle, sollten alle auf UNIX-Systemen funktionieren (also sowohl MacOS als auch Linux), mit Windows habe ich nicht viel zu tun, aber es sollte auch dort funktionieren. Falls nicht: einfach nach <strong>&laquo;Befehl&raquo; on Windows</strong> im Internet suchen.</p>
-
-
 <blockquote class="block-green">
-    <p>zum Beispiel: <strong>ls -tr on Windows</strong></p>
+<p>zum Beispiel: <strong>ls -tr on Windows</strong></p>
 </blockquote>
 <h3 id="inhalt">Inhalt:
 <span><a href="#inhalt">#</a></span>
@@ -304,7 +304,7 @@
 <li><a href="#die-kommandozeile-effektiv-verwenden">Die Kommandozeile effektiv verwenden</a>
 <ul>
 <li><a href="#find">find</a></li>
-<li><a href="#grep">grep</a></li>
+<li><a href="#grep">grep&lt;&lt;&gt;&gt;</a></li>
 <li><a href="#mv-mit-mehr-funktionalit%C3%A4t">mv mit mehr Funktionalität</a></li>
 </ul>
 </li>
@@ -338,10 +338,8 @@
 </h1><p>Bevor du PDFs manipulieren willst, solltest du dich ein wenig mit der Abreitsweise und Logik deines Computers vertraut machen.</p>
 <h2 id="mit-einem-computer-via-kommandozeile-interagieren-">Mit einem Computer via Kommandozeile interagieren 👀
 <span><a href="#mit-einem-computer-via-kommandozeile-interagieren-">#</a></span>
-</h2>
-
-<blockquote class="block-yellow">
-    <p><strong>DISCLAIMER</strong> -  Diese Befehle sind UNIX-eigen</p>
+</h2><blockquote class="block-yellow">
+<p><strong>DISCLAIMER</strong> -  Diese Befehle sind UNIX-eigen</p>
 </blockquote>
 <h3 id="terminal-finden">Terminal finden
 <span><a href="#terminal-finden">#</a></span>
@@ -359,7 +357,7 @@
 
 
 <picture>
-    <source type="image/webp" srcset="/pics/unihacks/spotlight.webp">
+    <source type="image/webp" srcset="/pics/unihacks/spotlight.webp" width="">
 
 
 
@@ -386,9 +384,11 @@
 
 
 <blockquote class="block-green">
-    <p><p>Normalerweise kannst du einfach in einen Ordner reingehen, in dem du darauf doppelklickst.</p>
-<p>Das Terminal-Äquvivalent dazu is <strong>cd</strong></p>
-</p>
+
+Normalerweise kannst du einfach in einen Ordner reingehen, in dem du darauf doppelklickst.
+
+Das Terminal-Äquvivalent dazu is **cd**
+
 </blockquote>
 <p>Du befindest dich standardmäßig in <code>/Users/&lt;deinUser&gt;/</code> wenn du das Terminal startest.</p>
 <p>Das kannst du auch überprüfen in dem du einfach <code>pwd</code> (path 2 working directory) in dein Terminal mal eingibst.</p>
@@ -398,9 +398,11 @@
 
 
 <blockquote class="block-turquois">
-    <p><p>Es gibt im Terminal eine Auto-Vervollständigung: zB sollte bei</p>
-<p><strong>cd Deskto ⇥ Tab-Taste</strong> zu <strong>cd Desktop</strong> vervollständigen.</p>
-</p>
+
+Es gibt im Terminal eine Auto-Vervollständigung: zB sollte bei 
+
+**cd Deskto ⇥ Tab-Taste** zu **cd Desktop** vervollständigen.
+
 </blockquote>
 <!--TODO: gif von autovervollständigung-->
 
@@ -415,7 +417,7 @@
 
 
 <picture>
-    <source type="image/webp" srcset="/pics/unihacks/autoTab.webp">
+    <source type="image/webp" srcset="/pics/unihacks/autoTab.webp" width="">
 
 
 
@@ -430,20 +432,16 @@
 <p>Wenn du gleich auf einmal in eine tiefer-gelegene Directory (richtiger Ausdruck für Ordner) gehen möchtest:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> Desktop/uni</span></span></code></pre></div></p>
 <p>Der <strong>/</strong> ist hier essentiell!</p>
-
-
 <blockquote class="block-red">
-    <p><p><strong>ACHTUNG: Zurück zur ursprünglichen Ebene nicht mit &ldquo;..&rdquo;</strong></p>
+<p><strong>ACHTUNG: Zurück zur ursprünglichen Ebene nicht mit &ldquo;..&rdquo;</strong></p>
 <p>Wenn du beispielsweise mit einem cd-Befehl tief hineingehst, z.B bei mir mit</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> Desktop/uni</span></span></code></pre></div>
 <p>und dann wieder auf deine ursprüngliche Position zurück möchest (bei mir <strong>home</strong>) wirst du mit</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ..</span></span></code></pre></div> nur auf die *Desktop*, nicht auf die *home*-Ebene zurückkommen. Um wieder zu deiner Startposition zurück zu kommen, schreibe:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> -</span></span></code></pre></div>
-</p>
 </blockquote>
-<h4 id="ls-list">ls: list
-<span><a href="#ls-list">#</a></span>
-</h4><p>Jetzt wissen wir, wie man mit <strong>cd</strong> sich durch seine ganzen Computer bewegen kann. Jetzt wissen wir aber nicht unbedingt, was in diesen Directories drinnen ist.</p>
+#### ls: list 
+<p>Jetzt wissen wir, wie man mit <strong>cd</strong> sich durch seine ganzen Computer bewegen kann. Jetzt wissen wir aber nicht unbedingt, was in diesen Directories drinnen ist.</p>
 <p>Um das zu sehen, verwendet man den Befehl <strong>ls</strong> (ls steht für list)</p>
 <p>Hier nochmal eine Beispiel Ordnerstruktur:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">home
@@ -482,7 +480,7 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.</p>
 
 
 <picture>
-    <source type="image/webp" srcset="/pics/unihacks/manPageEx.webp">
+    <source type="image/webp" srcset="/pics/unihacks/manPageEx.webp" width="">
 
 
 
@@ -499,13 +497,10 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.</p>
 <li>nach oben zu navigieren <strong>k</strong></li>
 <li>nach unten mit <strong>j</strong></li>
 </ul>
-
-
 <blockquote class="block-green">
-    <p><p>Du kannst auch lustig sein und das manual von <em>man</em> selbst aufrufen - es geht!</p>
+<p>Du kannst auch lustig sein und das manual von <em>man</em> selbst aufrufen - es geht!</p>
 <p><strong>man cd</strong> geht allerdings nicht, das hat einen technischen Grund</p>
 <p><strong>help cd</strong> ist hierfür zu wählen</p>
-</p>
 </blockquote>
 <h3 id="befehle-mkdir---mv---rm-intermediate">Befehle: mkdir - mv - rm (intermediate)
 <span><a href="#befehle-mkdir---mv---rm-intermediate">#</a></span>
@@ -540,10 +535,8 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.</p>
 </span></span><span class="line"><span class="cl">            ├── ausarbeitung.pdf
 </span></span><span class="line"><span class="cl">            ├── ausarbeitung1.pdf
 </span></span><span class="line"><span class="cl">            └── ausarbeitung1_final.pdf            </span></span></code></pre></div>
-
-
 <blockquote class="block-red">
-    <p><strong>ACHTUNG:</strong> wenn du zB <em>test.pdf</em> schon in deinem Ziel Ordner hast, und du <em>mv</em>-st ein anderes <em>test.pdf</em> dorthin, dann wird das ursprüngliche File
+<p><strong>ACHTUNG:</strong> wenn du zB <em>test.pdf</em> schon in deinem Ziel Ordner hast, und du <em>mv</em>-st ein anderes <em>test.pdf</em> dorthin, dann wird das ursprüngliche File
 <u><strong>überschrieben!</strong></u></p>
 </blockquote>
 <h4 id="rm-remove">rm: remove
@@ -552,7 +545,9 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.</p>
 
 
 <blockquote class="block-red">
-    <p><em>rm</em> sorgt dafür, dass die Dateien <u><strong>wirklich gelöscht</strong></u> sind - du wirst sie nicht im Papierkorb finden - sie sind weg!</p>
+
+*rm* sorgt dafür, dass die Dateien <u>**wirklich gelöscht**</u> sind - du wirst sie nicht im Papierkorb finden - sie sind weg!
+
 </blockquote>
 <p>um ganze Ordner zu löschen, musst du die Flag <strong>-r</strong> setzen.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm file.pdf <span class="c1">#löscht file</span>
@@ -566,9 +561,9 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.</p>
 <span><a href="#brew-der-einzige-nicht-beste-package-manager-f%c3%bcr-mac-">#</a></span>
 </h4><p>Die Standard-Befehle auf MacOS sind zwar ganz nett, aber oft möchte man mehr Funktionalität.
 Es gibt viele externe Programme, die genau das tun, was du möchtest bzw. brauchst.
-Um diese runterzuladen brauchst du einen sogenannten package-manager.</p>
+Um diese runterzuladen brauchst du einen sogenannten package-manager (Eine Art AppStore für IT-Menschen).</p>
 <p><strong>brew</strong> ist
-ein sehr bekannter, leider nicht allzu schneller. Mit <em>brew</em> kannst du alle weiter unten angegebenen programme installieren.</p>
+einer der sehr bekannten, leider nicht allzu schnellen. Mit <em>brew</em> kannst du alle weiter unten angegebenen programme installieren.</p>
 <p>Wie du brew installierst, kannst du am besten auf <a href="https://brew.sh/">ihrer Homepage nachlesen.</a></p>
 <h2 id="die-kommandozeile-effektiv-verwenden">Die Kommandozeile effektiv verwenden
 <span><a href="#die-kommandozeile-effektiv-verwenden">#</a></span>
@@ -580,25 +575,19 @@ ein sehr bekannter, leider nicht allzu schneller. Mit <em>brew</em> kannst du al
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find Desktop -iname <span class="s1">&#39;*.pdf&#39;</span> -maxdepth <span class="m">1</span></span></span></code></pre></div>
 <p>Jetzt möchten wir alle PDFs die sich maximal 3 Ebenen unter <em>Desktop</em> befinden anzeigen:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find Desktop -iname <span class="s1">&#39;*.pdf&#39;</span> -maxdepth <span class="m">3</span></span></span></code></pre></div>
-
-
 <blockquote class="block-turquois">
-    <p><p>Der Stern ist ein Placeholder, d.h es kann alles vor <strong>.pdf</strong> stehen. Wenn zB direkt davor eine Zahl stehen sollte:</p>
+<p>Der Stern ist ein Placeholder, d.h es kann alles vor <strong>.pdf</strong> stehen. Wenn zB direkt davor eine Zahl stehen sollte:</p>
 <p><strong>[0-9].pdf</strong></p>
-</p>
 </blockquote>
 <p>Diese Placeholder sind äußerst mächtig. Wenn du mehr darüber lesen möchtest, suche im Internet nach <strong>regex</strong>.</p>
 <p>oder ließ offline nach:</p>
 <pre tabindex="0"><code class="language-dracula" data-lang="dracula">man re_format</code></pre>
-<h3 id="grep">grep
+<h3 id="grep">grep&laquo;&raquo;
 <span><a href="#grep">#</a></span>
-</h3>
-
-<blockquote class="block-orange">
-    <p><p><em>grep</em> ist so etwas wie <em>find</em>, nur für den <strong>Inhalt</strong> von <a href="https://de.wikipedia.org/wiki/Plain_text">Plain Text Dateien</a>.</p>
+</h3><blockquote class="block-orange">
+<p><em>grep</em> ist so etwas wie <em>find</em>, nur für den <strong>Inhalt</strong> von <a href="https://de.wikipedia.org/wiki/Plain_text">Plain Text Dateien</a>.</p>
 <p>Ich wollte hier nur darauf hinweisen, dass <em>grep</em> existiert.</p>
 <p><em>grep</em> ist nicht Inhalt dieses Tutorials.</p>
-</p>
 </blockquote>
 <h3 id="mv-mit-mehr-funktionalität">mv mit mehr Funktionalität
 <span><a href="#mv-mit-mehr-funktionalit%c3%a4t">#</a></span>
@@ -626,18 +615,15 @@ ein sehr bekannter, leider nicht allzu schneller. Mit <em>brew</em> kannst du al
 <span><a href="#bilder-zu-pdf">#</a></span>
 </h2><p>Jeder kennt es: Altfragen, Fotos von Slides oder auch einfach Fotos von handgeschriebenen Mitschriften werden in Uni-WhatsApp-Gruppen herumgeschickt als gäbe es kein morgen. Spätestens in der Prüfungsphase kann man da schon mal den Überblick verlieren.</p>
 <p>Die Lösung:</p>
-
-
 <blockquote class="block-green">
-    <p>Die ganzen Bilder zu einem PDF zusammenfügen! 📈📈📈</p>
+<p>Die ganzen Bilder zu einem PDF zusammenfügen! 📈📈📈</p>
 </blockquote>
 <p>Standardmäßig sollte <em>convert</em> schon auf deiner Maschine installiert sein, überprüfen kannst du das, indem du <em>convert</em> in dein terminal eingibst.</p>
-
-
 <blockquote class="block-yellow">
-    <p>Wenn <code>command not found</code> zurückkommt, musst du vorher noch das Paket dafür installieren:</p>
+<p>Wenn <code>command not found</code> zurückkommt, musst du vorher noch das Paket dafür installieren:</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install imagemagick</span></span></code></pre></div>
+<p>Für Windows gibt es einen Binary install <a href="https://imagemagick.org/script/download.php">hier</a></p>
 <h3 id="how-its-done">How it&rsquo;s done
 <span><a href="#how-its-done">#</a></span>
 </h3><p>Angenommen, wir haben folgende Ordnerstruktur:
@@ -658,11 +644,10 @@ ein sehr bekannter, leider nicht allzu schneller. Mit <em>brew</em> kannst du al
 </span></span><span class="line"><span class="cl">└── otherFile.pdf</span></span></code></pre></div></p>
 <p>Wir wollen also alle <em>jpg</em> zu einem <em>altfragen.pdf</em> zusammenfügen:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">convert *.jpg altfragen.pdf</span></span></code></pre></div>
-
-
 <blockquote class="block-blue">
-    <p><strong>Good-2-Know:</strong> Die original jpg-Files bleiben erhalten!</p>
+<p><strong>Good-2-Know:</strong> Die original jpg-Files bleiben erhalten!</p>
 </blockquote>
+<p><em>convert</em> ist ein ziemlich mächtiger Befehl. Man kann damit auch <a href="../cringe_converter/index.md">Dateiformate konvertieren.</a></p>
 <h2 id="mehrere-pdfs-zu-einem-pdf-zusammenfügen">Mehrere PDFs zu einem PDF zusammenfügen
 <span><a href="#mehrere-pdfs-zu-einem-pdf-zusammenf%c3%bcgen">#</a></span>
 </h2><p>Hierfür benötigen wir <em>ghostscript</em> aka <strong>gs</strong>. <a href="#tools">Weiter oben</a> findest du den Installationsbefehl.</p>
@@ -675,10 +660,8 @@ ein sehr bekannter, leider nicht allzu schneller. Mit <em>brew</em> kannst du al
 <h3 id="how-its-done-1">How it&rsquo;s done
 <span><a href="#how-its-done-1">#</a></span>
 </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gs -dNOPAUSE -dBATCH -sDEVICE<span class="o">=</span>pdfwrite -sOutputFile<span class="o">=</span>out.pdf otherFile.pdf altfragen.pdf</span></span></code></pre></div>
-
-
 <blockquote class="block-green">
-    <p>Du kannst selbstverständlich auch mit <strong>*.pdf</strong> hier arbeiten, allerdings ist die Sortierung standardmäßig <strong>alphabetisch</strong>.</p>
+<p>Du kannst selbstverständlich auch mit <strong>*.pdf</strong> hier arbeiten, allerdings ist die Sortierung standardmäßig <strong>alphabetisch</strong>.</p>
 </blockquote>
 <h2 id="aus-einem-pdf-einzelne-seiten-exportieren">Aus einem PDF einzelne Seiten exportieren
 <span><a href="#aus-einem-pdf-einzelne-seiten-exportieren">#</a></span>
@@ -704,7 +687,7 @@ ein sehr bekannter, leider nicht allzu schneller. Mit <em>brew</em> kannst du al
 
 
 <picture>
-    <source type="image/webp" srcset="/pics/unihacks/421.webp">
+    <source type="image/webp" srcset="/pics/unihacks/421.webp" width="">
 
 
 
@@ -720,7 +703,7 @@ ein sehr bekannter, leider nicht allzu schneller. Mit <em>brew</em> kannst du al
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pdfjam --nup 2x2 slides.pdf --landscape --a4paper --outfile savePaper.pdf </span></span></code></pre></div>
 <h1 id="fazit-und-ausblicke">Fazit und Ausblicke
 <span><a href="#fazit-und-ausblicke">#</a></span>
-</h1><p>Ich hoffe, dir hat irgendetwas in diesem Artikel geholfen. Ein Teil zwei ist derzeit geplant, nämlich:</p>
+</h1><p>Ich hoffe, dir hat irgendwas in diesem Artikel geholfen. Ein Teil zwei ist derzeit geplant, nämlich:</p>
 <p><strong><a href="/posts/ocrmylife/">Bilder und PDFs durchsuchbar machen (ft. Tesseract)</a></strong></p>
 
         </div>

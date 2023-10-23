@@ -88,6 +88,16 @@
   </url><url>
     <loc>https://bresu.github.io/en/tags/security/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://bresu.github.io/tags/security/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://bresu.github.io/en/tags/security/"
+                />
   </url><url>
     <loc>https://bresu.github.io/en/tags/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>

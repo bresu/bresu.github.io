@@ -6,10 +6,95 @@
     <description>Leander&#39;s Blog (tutorial)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <lastBuildDate>Thu, 19 Jan 2023 19:41:59 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 11 Mar 2023 10:48:45 +0100</lastBuildDate>
     
     <atom:link href="https://bresu.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wenn du Websiten für Datei-Umwandlungen verwendest, bist du cringe 😞</title>
+      <link>https://bresu.github.io/posts/cringe_converter/</link>
+      <pubDate>Sat, 11 Mar 2023 10:48:45 +0100</pubDate>
+      
+      <guid>https://bresu.github.io/posts/cringe_converter/</guid>
+      <description>&lt;p&gt;Wir alle kennen es: Man möchte sein Ausweisfoto in letzter Sekunde hochladen:&lt;/p&gt;
+&lt;blockquote class=&#34;block-red&#34;&gt;
+&lt;p&gt;&lt;em&gt;Sorry, dieses Dateiformat ist nicht unterstützt, verwende bitte JPEG!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+Schnell *JPEG-Converter* gegooglt und man landet auf einer von tausend schrecklichen, mit Werbung und Tracking verseuchten Websiten, die Ihren Job teilweise
+gar nicht erfüllen.
+&lt;p&gt;Schluss damit. Hier ein Guide, wie es richtig geht.&lt;/p&gt;
+&lt;h1 id=&#34;digitaler-analphabetismus-bzw-medienkompetenz&#34;&gt;Digitaler Analphabetismus bzw. Medienkompetenz
+&lt;span&gt;&lt;a href=&#34;#digitaler-analphabetismus-bzw-medienkompetenz&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Wir sind von Technik 24/7 umgeben, der Großteil der Bevölkerung hat aber keine Ahnung davon, wie man richtig damit umgeht. Wie wir heute mit Handys und Computern umgehen ist so, als würden wir ständig ein Buch in der Hand halten, ohne Lesen und Schreiben zu können.&lt;/p&gt;
+&lt;p&gt;Wobei teilweise kann die breite Masse dann durchaus &amp;ldquo;Lesen&amp;rdquo;, nur ist es genau vordefiniert, was und wie gelesen wird - wirkliche Freiheit dabei hat man also nicht.&lt;/p&gt;
+&lt;p&gt;Websiten die hungrig nach Profit und/oder Daten sind, nützen diese fehlende Bildung schamlos aus. Man will sich gar nicht ausmalen, wieviele vertrauliche Dokumente, private Fotos und Ausweiskopien auf irgendeinem zwielichtigen Server liegen, nur weil Menschen keine Ahnung haben, wie man ein &lt;strong&gt;fucking PDF aus Bildern erstellt&lt;/strong&gt; 😔&lt;/p&gt;
+&lt;blockquote class=&#34;block-yellow&#34;&gt;
+&lt;p&gt;Dieser Guide soll dir helfen, endlich &lt;strong&gt;digital frei&lt;/strong&gt; zu sein.&lt;/p&gt;
+&lt;p&gt;Damit meine ich, die Abhängigkeit von zwielichtigen, closed-source und proprietären Anbietern so klein wie möglich zu halten.&lt;/p&gt;
+&lt;p&gt;Have fun 😄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;mach-erstmal-die-basics-&#34;&gt;Mach erstmal die Basics 📈
+&lt;span&gt;&lt;a href=&#34;#mach-erstmal-die-basics-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;blockquote class=&#34;block-green&#34;&gt;
+&lt;p&gt;Lies dir bevor du hier weitermachst bitte &lt;a href=&#34;https://bresu.github.io/posts/unihacks&#34;&gt;diesen Artikel durch&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Wir erinnern uns, dass unser Computer einfach nur eine Verschachtelung von Ordnern ist. Weiters solltest du wissen, dass das Terminal ein netter Ort ist, vor dem man sich nicht fürchten muss, sondern mit dem Computer sehr direkt interagieren kann.&lt;/p&gt;
+&lt;p&gt;Um Bilder umzuwandeln, brauchen wir nun ein externe Library, diese Laden wir mit &lt;a href=&#34;../unihacks/index.md#brew-der-einzige-nicht-beste-package-manager-f%C3%BCr-mac-%F0%9F%8D%BA&#34;&gt;brew&lt;/a&gt; runter.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install imagemagick&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Für Windows gibt es einen Binary install &lt;a href=&#34;https://imagemagick.org/script/download.php&#34;&gt;hier&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote class=&#34;block-blue&#34;&gt;
+&lt;p&gt;Nach Installation funktionieren alle folgenden Schritte auch &lt;u&gt;offline&lt;/u&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;lets-go-to-the-terminal&#34;&gt;Let&amp;rsquo;s go (to the Terminal)
+&lt;span&gt;&lt;a href=&#34;#lets-go-to-the-terminal&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Navigiere zuerst in den Ordner mit den gewünschten Dateien, beispielsweise so (auf Windows &lt;em&gt;dir&lt;/em&gt; statt &lt;em&gt;cd&lt;/em&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/Desktop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/Documents
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/Downloads&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Angenommen wir haben in dem Ordner Handyfotos von unserem Studienausweis:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;usi_kurs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ausweis_front.HEIC &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Apple-Format&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── ausweis_back.HEIC&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;H&lt;/strong&gt;igh &lt;strong&gt;E&lt;/strong&gt;fficiency &lt;strong&gt;I&lt;/strong&gt;mage &lt;strong&gt;C&lt;/strong&gt;oding (&lt;em&gt;HEIC&lt;/em&gt;) ist ein Dateiformat, das vor allem beim Bilder knippsen mit dem iPhone verwendet wird. Da das Format noch relativ neu ist, wird es von vielen Websiten&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;
+noch nicht unterstützt.&lt;/p&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+&lt;p&gt;Also müssen wir das Ding konvertieren 🦾&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Glücklicherweise geht das mit imagemagick sehr sehr einfach:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;magick ausweis_front.HEIC ausweis_front.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;magick ausweis_back.HEIC ausweis_back.jpg&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In unserem Ordner finden wir dann die Original-Dateien unverändert und die entsprechenden Ziel-Dateien
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;usi_kurs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ausweis_front.HEIC
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ausweis_back.HEIC
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── ausweis_front.jpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── ausweis_back.jpg&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;cool-aber-wie-füge-ich-die-jetzt-zusammen-zu-einem-jpg&#34;&gt;Cool, aber wie füge ich die jetzt zusammen zu einem jpg?
+&lt;span&gt;&lt;a href=&#34;#cool-aber-wie-f%c3%bcge-ich-die-jetzt-zusammen-zu-einem-jpg&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h1&gt;&lt;p&gt;Oft erlauben Websites nur eine einzige Datei, was natürlich bei Ausweisfotos blöd ist, weil das Ding eine Vorder- und Rückseite hat.&lt;/p&gt;
+&lt;p&gt;Auch hier haben die Legenden von imagemagick an alles gedacht:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;magick ausweis_front.HEIC ausweis_back.HEIC -append einFile.jpg&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class=&#34;block-turquois&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Cool:&lt;/strong&gt; Man kann Umwandlung und Aneinanderhängen auf einmal machen 😲&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Wenn man direkt ein PDF mit seinem Ausweis haben möchte, einfach das Output-Format ändern:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;magick ausweis_front.HEIC ausweis_back.HEIC -append meinPDF.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;blockquote class=&#34;block-green&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Fazit&lt;/strong&gt;: Open-Source ist super 😄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class=&#34;block-gray&#34;&gt;
+&lt;p&gt;&lt;strong&gt;P.S.&lt;/strong&gt; Das Titelbild habe ich mit Hilfe von Stable Diffusion erstellt 🤖❤️&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;*hust* &lt;em&gt;usi&lt;/em&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Uni Hacks - Work smarter not harder 🧠</title>
@@ -20,10 +105,8 @@
       <description>&lt;p&gt;Studieren beginnt mit Organisation.&lt;/p&gt;
 &lt;p&gt;Wenn man ein wenig Ahnung von Computern hat, dann kann man sich während dem Studium sehr viel Zeit und Nerven sparen.&lt;/p&gt;
 &lt;p&gt;Die Tools die ich hier vorstelle, sollten alle auf UNIX-Systemen funktionieren (also sowohl MacOS als auch Linux), mit Windows habe ich nicht viel zu tun, aber es sollte auch dort funktionieren. Falls nicht: einfach nach &lt;strong&gt;&amp;laquo;Befehl&amp;raquo; on Windows&lt;/strong&gt; im Internet suchen.&lt;/p&gt;
-
-
 &lt;blockquote class=&#34;block-green&#34;&gt;
-    &lt;p&gt;zum Beispiel: &lt;strong&gt;ls -tr on Windows&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;zum Beispiel: &lt;strong&gt;ls -tr on Windows&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;inhalt&#34;&gt;Inhalt:
 &lt;span&gt;&lt;a href=&#34;#inhalt&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -58,7 +141,7 @@
 &lt;li&gt;&lt;a href=&#34;#die-kommandozeile-effektiv-verwenden&#34;&gt;Die Kommandozeile effektiv verwenden&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#find&#34;&gt;find&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#grep&#34;&gt;grep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#grep&#34;&gt;grep&amp;lt;&amp;lt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#mv-mit-mehr-funktionalit%C3%A4t&#34;&gt;mv mit mehr Funktionalität&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -92,10 +175,8 @@
 &lt;/h1&gt;&lt;p&gt;Bevor du PDFs manipulieren willst, solltest du dich ein wenig mit der Abreitsweise und Logik deines Computers vertraut machen.&lt;/p&gt;
 &lt;h2 id=&#34;mit-einem-computer-via-kommandozeile-interagieren-&#34;&gt;Mit einem Computer via Kommandozeile interagieren 👀
 &lt;span&gt;&lt;a href=&#34;#mit-einem-computer-via-kommandozeile-interagieren-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h2&gt;
-
-&lt;blockquote class=&#34;block-yellow&#34;&gt;
-    &lt;p&gt;&lt;strong&gt;DISCLAIMER&lt;/strong&gt; -  Diese Befehle sind UNIX-eigen&lt;/p&gt;
+&lt;/h2&gt;&lt;blockquote class=&#34;block-yellow&#34;&gt;
+&lt;p&gt;&lt;strong&gt;DISCLAIMER&lt;/strong&gt; -  Diese Befehle sind UNIX-eigen&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;terminal-finden&#34;&gt;Terminal finden
 &lt;span&gt;&lt;a href=&#34;#terminal-finden&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -113,7 +194,7 @@
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/spotlight.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/spotlight.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -140,9 +221,11 @@
 
 
 &lt;blockquote class=&#34;block-green&#34;&gt;
-    &lt;p&gt;&lt;p&gt;Normalerweise kannst du einfach in einen Ordner reingehen, in dem du darauf doppelklickst.&lt;/p&gt;
-&lt;p&gt;Das Terminal-Äquvivalent dazu is &lt;strong&gt;cd&lt;/strong&gt;&lt;/p&gt;
-&lt;/p&gt;
+
+Normalerweise kannst du einfach in einen Ordner reingehen, in dem du darauf doppelklickst.
+
+Das Terminal-Äquvivalent dazu is **cd**
+
 &lt;/blockquote&gt;
 &lt;p&gt;Du befindest dich standardmäßig in &lt;code&gt;/Users/&amp;lt;deinUser&amp;gt;/&lt;/code&gt; wenn du das Terminal startest.&lt;/p&gt;
 &lt;p&gt;Das kannst du auch überprüfen in dem du einfach &lt;code&gt;pwd&lt;/code&gt; (path 2 working directory) in dein Terminal mal eingibst.&lt;/p&gt;
@@ -152,9 +235,11 @@
 
 
 &lt;blockquote class=&#34;block-turquois&#34;&gt;
-    &lt;p&gt;&lt;p&gt;Es gibt im Terminal eine Auto-Vervollständigung: zB sollte bei&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;cd Deskto ⇥ Tab-Taste&lt;/strong&gt; zu &lt;strong&gt;cd Desktop&lt;/strong&gt; vervollständigen.&lt;/p&gt;
-&lt;/p&gt;
+
+Es gibt im Terminal eine Auto-Vervollständigung: zB sollte bei 
+
+**cd Deskto ⇥ Tab-Taste** zu **cd Desktop** vervollständigen.
+
 &lt;/blockquote&gt;
 &lt;!--TODO: gif von autovervollständigung--&gt;
 
@@ -169,7 +254,7 @@
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/autoTab.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/autoTab.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -184,20 +269,16 @@
 &lt;p&gt;Wenn du gleich auf einmal in eine tiefer-gelegene Directory (richtiger Ausdruck für Ordner) gehen möchtest:
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Der &lt;strong&gt;/&lt;/strong&gt; ist hier essentiell!&lt;/p&gt;
-
-
 &lt;blockquote class=&#34;block-red&#34;&gt;
-    &lt;p&gt;&lt;p&gt;&lt;strong&gt;ACHTUNG: Zurück zur ursprünglichen Ebene nicht mit &amp;ldquo;..&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ACHTUNG: Zurück zur ursprünglichen Ebene nicht mit &amp;ldquo;..&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Wenn du beispielsweise mit einem cd-Befehl tief hineingehst, z.B bei mir mit&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Desktop/uni&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;und dann wieder auf deine ursprüngliche Position zurück möchest (bei mir &lt;strong&gt;home&lt;/strong&gt;) wirst du mit&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; nur auf die *Desktop*, nicht auf die *home*-Ebene zurückkommen. Um wieder zu deiner Startposition zurück zu kommen, schreibe:
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; -&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&#34;ls-list&#34;&gt;ls: list
-&lt;span&gt;&lt;a href=&#34;#ls-list&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h4&gt;&lt;p&gt;Jetzt wissen wir, wie man mit &lt;strong&gt;cd&lt;/strong&gt; sich durch seine ganzen Computer bewegen kann. Jetzt wissen wir aber nicht unbedingt, was in diesen Directories drinnen ist.&lt;/p&gt;
+#### ls: list 
+&lt;p&gt;Jetzt wissen wir, wie man mit &lt;strong&gt;cd&lt;/strong&gt; sich durch seine ganzen Computer bewegen kann. Jetzt wissen wir aber nicht unbedingt, was in diesen Directories drinnen ist.&lt;/p&gt;
 &lt;p&gt;Um das zu sehen, verwendet man den Befehl &lt;strong&gt;ls&lt;/strong&gt; (ls steht für list)&lt;/p&gt;
 &lt;p&gt;Hier nochmal eine Beispiel Ordnerstruktur:
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;home
@@ -236,7 +317,7 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/manPageEx.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/manPageEx.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -253,13 +334,10 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
 &lt;li&gt;nach oben zu navigieren &lt;strong&gt;k&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;nach unten mit &lt;strong&gt;j&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-
 &lt;blockquote class=&#34;block-green&#34;&gt;
-    &lt;p&gt;&lt;p&gt;Du kannst auch lustig sein und das manual von &lt;em&gt;man&lt;/em&gt; selbst aufrufen - es geht!&lt;/p&gt;
+&lt;p&gt;Du kannst auch lustig sein und das manual von &lt;em&gt;man&lt;/em&gt; selbst aufrufen - es geht!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;man cd&lt;/strong&gt; geht allerdings nicht, das hat einen technischen Grund&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;help cd&lt;/strong&gt; ist hierfür zu wählen&lt;/p&gt;
-&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;befehle-mkdir---mv---rm-intermediate&#34;&gt;Befehle: mkdir - mv - rm (intermediate)
 &lt;span&gt;&lt;a href=&#34;#befehle-mkdir---mv---rm-intermediate&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -294,10 +372,8 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung.pdf
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            ├── ausarbeitung1.pdf
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            └── ausarbeitung1_final.pdf            &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;blockquote class=&#34;block-red&#34;&gt;
-    &lt;p&gt;&lt;strong&gt;ACHTUNG:&lt;/strong&gt; wenn du zB &lt;em&gt;test.pdf&lt;/em&gt; schon in deinem Ziel Ordner hast, und du &lt;em&gt;mv&lt;/em&gt;-st ein anderes &lt;em&gt;test.pdf&lt;/em&gt; dorthin, dann wird das ursprüngliche File
+&lt;p&gt;&lt;strong&gt;ACHTUNG:&lt;/strong&gt; wenn du zB &lt;em&gt;test.pdf&lt;/em&gt; schon in deinem Ziel Ordner hast, und du &lt;em&gt;mv&lt;/em&gt;-st ein anderes &lt;em&gt;test.pdf&lt;/em&gt; dorthin, dann wird das ursprüngliche File
 &lt;u&gt;&lt;strong&gt;überschrieben!&lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;rm-remove&#34;&gt;rm: remove
@@ -306,7 +382,9 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
 
 
 &lt;blockquote class=&#34;block-red&#34;&gt;
-    &lt;p&gt;&lt;em&gt;rm&lt;/em&gt; sorgt dafür, dass die Dateien &lt;u&gt;&lt;strong&gt;wirklich gelöscht&lt;/strong&gt;&lt;/u&gt; sind - du wirst sie nicht im Papierkorb finden - sie sind weg!&lt;/p&gt;
+
+*rm* sorgt dafür, dass die Dateien &lt;u&gt;**wirklich gelöscht**&lt;/u&gt; sind - du wirst sie nicht im Papierkorb finden - sie sind weg!
+
 &lt;/blockquote&gt;
 &lt;p&gt;um ganze Ordner zu löschen, musst du die Flag &lt;strong&gt;-r&lt;/strong&gt; setzen.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm file.pdf &lt;span class=&#34;c1&#34;&gt;#löscht file&lt;/span&gt;
@@ -320,9 +398,9 @@ Welche flags es so gibt, erfährst du mit dem nächsten Befehl.&lt;/p&gt;
 &lt;span&gt;&lt;a href=&#34;#brew-der-einzige-nicht-beste-package-manager-f%c3%bcr-mac-&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h4&gt;&lt;p&gt;Die Standard-Befehle auf MacOS sind zwar ganz nett, aber oft möchte man mehr Funktionalität.
 Es gibt viele externe Programme, die genau das tun, was du möchtest bzw. brauchst.
-Um diese runterzuladen brauchst du einen sogenannten package-manager.&lt;/p&gt;
+Um diese runterzuladen brauchst du einen sogenannten package-manager (Eine Art AppStore für IT-Menschen).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;brew&lt;/strong&gt; ist
-ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; kannst du alle weiter unten angegebenen programme installieren.&lt;/p&gt;
+einer der sehr bekannten, leider nicht allzu schnellen. Mit &lt;em&gt;brew&lt;/em&gt; kannst du alle weiter unten angegebenen programme installieren.&lt;/p&gt;
 &lt;p&gt;Wie du brew installierst, kannst du am besten auf &lt;a href=&#34;https://brew.sh/&#34;&gt;ihrer Homepage nachlesen.&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;die-kommandozeile-effektiv-verwenden&#34;&gt;Die Kommandozeile effektiv verwenden
 &lt;span&gt;&lt;a href=&#34;#die-kommandozeile-effektiv-verwenden&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -334,25 +412,19 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find Desktop -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.pdf&amp;#39;&lt;/span&gt; -maxdepth &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Jetzt möchten wir alle PDFs die sich maximal 3 Ebenen unter &lt;em&gt;Desktop&lt;/em&gt; befinden anzeigen:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find Desktop -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.pdf&amp;#39;&lt;/span&gt; -maxdepth &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;blockquote class=&#34;block-turquois&#34;&gt;
-    &lt;p&gt;&lt;p&gt;Der Stern ist ein Placeholder, d.h es kann alles vor &lt;strong&gt;.pdf&lt;/strong&gt; stehen. Wenn zB direkt davor eine Zahl stehen sollte:&lt;/p&gt;
+&lt;p&gt;Der Stern ist ein Placeholder, d.h es kann alles vor &lt;strong&gt;.pdf&lt;/strong&gt; stehen. Wenn zB direkt davor eine Zahl stehen sollte:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;[0-9].pdf&lt;/strong&gt;&lt;/p&gt;
-&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Diese Placeholder sind äußerst mächtig. Wenn du mehr darüber lesen möchtest, suche im Internet nach &lt;strong&gt;regex&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;oder ließ offline nach:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-dracula&#34; data-lang=&#34;dracula&#34;&gt;man re_format&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;grep&#34;&gt;grep
+&lt;h3 id=&#34;grep&#34;&gt;grep&amp;laquo;&amp;raquo;
 &lt;span&gt;&lt;a href=&#34;#grep&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h3&gt;
-
-&lt;blockquote class=&#34;block-orange&#34;&gt;
-    &lt;p&gt;&lt;p&gt;&lt;em&gt;grep&lt;/em&gt; ist so etwas wie &lt;em&gt;find&lt;/em&gt;, nur für den &lt;strong&gt;Inhalt&lt;/strong&gt; von &lt;a href=&#34;https://de.wikipedia.org/wiki/Plain_text&#34;&gt;Plain Text Dateien&lt;/a&gt;.&lt;/p&gt;
+&lt;/h3&gt;&lt;blockquote class=&#34;block-orange&#34;&gt;
+&lt;p&gt;&lt;em&gt;grep&lt;/em&gt; ist so etwas wie &lt;em&gt;find&lt;/em&gt;, nur für den &lt;strong&gt;Inhalt&lt;/strong&gt; von &lt;a href=&#34;https://de.wikipedia.org/wiki/Plain_text&#34;&gt;Plain Text Dateien&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Ich wollte hier nur darauf hinweisen, dass &lt;em&gt;grep&lt;/em&gt; existiert.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;grep&lt;/em&gt; ist nicht Inhalt dieses Tutorials.&lt;/p&gt;
-&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;mv-mit-mehr-funktionalität&#34;&gt;mv mit mehr Funktionalität
 &lt;span&gt;&lt;a href=&#34;#mv-mit-mehr-funktionalit%c3%a4t&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -380,18 +452,15 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;span&gt;&lt;a href=&#34;#bilder-zu-pdf&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Jeder kennt es: Altfragen, Fotos von Slides oder auch einfach Fotos von handgeschriebenen Mitschriften werden in Uni-WhatsApp-Gruppen herumgeschickt als gäbe es kein morgen. Spätestens in der Prüfungsphase kann man da schon mal den Überblick verlieren.&lt;/p&gt;
 &lt;p&gt;Die Lösung:&lt;/p&gt;
-
-
 &lt;blockquote class=&#34;block-green&#34;&gt;
-    &lt;p&gt;Die ganzen Bilder zu einem PDF zusammenfügen! 📈📈📈&lt;/p&gt;
+&lt;p&gt;Die ganzen Bilder zu einem PDF zusammenfügen! 📈📈📈&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Standardmäßig sollte &lt;em&gt;convert&lt;/em&gt; schon auf deiner Maschine installiert sein, überprüfen kannst du das, indem du &lt;em&gt;convert&lt;/em&gt; in dein terminal eingibst.&lt;/p&gt;
-
-
 &lt;blockquote class=&#34;block-yellow&#34;&gt;
-    &lt;p&gt;Wenn &lt;code&gt;command not found&lt;/code&gt; zurückkommt, musst du vorher noch das Paket dafür installieren:&lt;/p&gt;
+&lt;p&gt;Wenn &lt;code&gt;command not found&lt;/code&gt; zurückkommt, musst du vorher noch das Paket dafür installieren:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install imagemagick&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Für Windows gibt es einen Binary install &lt;a href=&#34;https://imagemagick.org/script/download.php&#34;&gt;hier&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;how-its-done&#34;&gt;How it&amp;rsquo;s done
 &lt;span&gt;&lt;a href=&#34;#how-its-done&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Angenommen, wir haben folgende Ordnerstruktur:
@@ -412,11 +481,10 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── otherFile.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Wir wollen also alle &lt;em&gt;jpg&lt;/em&gt; zu einem &lt;em&gt;altfragen.pdf&lt;/em&gt; zusammenfügen:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;convert *.jpg altfragen.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;blockquote class=&#34;block-blue&#34;&gt;
-    &lt;p&gt;&lt;strong&gt;Good-2-Know:&lt;/strong&gt; Die original jpg-Files bleiben erhalten!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Good-2-Know:&lt;/strong&gt; Die original jpg-Files bleiben erhalten!&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;convert&lt;/em&gt; ist ein ziemlich mächtiger Befehl. Man kann damit auch &lt;a href=&#34;../cringe_converter/index.md&#34;&gt;Dateiformate konvertieren.&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;mehrere-pdfs-zu-einem-pdf-zusammenfügen&#34;&gt;Mehrere PDFs zu einem PDF zusammenfügen
 &lt;span&gt;&lt;a href=&#34;#mehrere-pdfs-zu-einem-pdf-zusammenf%c3%bcgen&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Hierfür benötigen wir &lt;em&gt;ghostscript&lt;/em&gt; aka &lt;strong&gt;gs&lt;/strong&gt;. &lt;a href=&#34;#tools&#34;&gt;Weiter oben&lt;/a&gt; findest du den Installationsbefehl.&lt;/p&gt;
@@ -429,10 +497,8 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;h3 id=&#34;how-its-done-1&#34;&gt;How it&amp;rsquo;s done
 &lt;span&gt;&lt;a href=&#34;#how-its-done-1&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gs -dNOPAUSE -dBATCH -sDEVICE&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;pdfwrite -sOutputFile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;out.pdf otherFile.pdf altfragen.pdf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;blockquote class=&#34;block-green&#34;&gt;
-    &lt;p&gt;Du kannst selbstverständlich auch mit &lt;strong&gt;*.pdf&lt;/strong&gt; hier arbeiten, allerdings ist die Sortierung standardmäßig &lt;strong&gt;alphabetisch&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Du kannst selbstverständlich auch mit &lt;strong&gt;*.pdf&lt;/strong&gt; hier arbeiten, allerdings ist die Sortierung standardmäßig &lt;strong&gt;alphabetisch&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;aus-einem-pdf-einzelne-seiten-exportieren&#34;&gt;Aus einem PDF einzelne Seiten exportieren
 &lt;span&gt;&lt;a href=&#34;#aus-einem-pdf-einzelne-seiten-exportieren&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
@@ -458,7 +524,7 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 
 
 &lt;picture&gt;
-    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/421.webp&#34;&gt;
+    &lt;source type=&#34;image/webp&#34; srcset=&#34;https://bresu.github.io/pics/unihacks/421.webp&#34; width=&#34;&#34;&gt;
 
 
 
@@ -474,7 +540,7 @@ ein sehr bekannter, leider nicht allzu schneller. Mit &lt;em&gt;brew&lt;/em&gt; 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pdfjam --nup 2x2 slides.pdf --landscape --a4paper --outfile savePaper.pdf &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&#34;fazit-und-ausblicke&#34;&gt;Fazit und Ausblicke
 &lt;span&gt;&lt;a href=&#34;#fazit-und-ausblicke&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
-&lt;/h1&gt;&lt;p&gt;Ich hoffe, dir hat irgendetwas in diesem Artikel geholfen. Ein Teil zwei ist derzeit geplant, nämlich:&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;Ich hoffe, dir hat irgendwas in diesem Artikel geholfen. Ein Teil zwei ist derzeit geplant, nämlich:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://bresu.github.io/posts/ocrmylife/&#34;&gt;Bilder und PDFs durchsuchbar machen (ft. Tesseract)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
